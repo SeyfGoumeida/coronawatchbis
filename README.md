@@ -1,7 +1,7 @@
 # JPAExample
 
 JDK11 compatible
-
+PostgreSQL 13 
 Download or git clone the project
 
 # Edit
@@ -11,24 +11,13 @@ Open this project inside Intellij
 or
 
 Import this project as a Gradle project inside Eclipse
-
+# Before you Run
+Creat a DATABASE with ur pgAdmin 4 and name it : coronawatchdb 
 # Run
-Launch the main program: https://github.com/charroux/JPAExample/blob/master/src/main/java/com/efrei/JPAExample/JpaExampleApplication.java
+Launch the main program: https://github.com/SeyfGoumeida/coronawatchbis/blob/master/src/main/java/com/efrei/CoronaWatch/CoronaWatchApplication.java
 
-Open the H2 web console: http://localhost:8080/h2-console
-
-Look at the console the database URL: H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:9ed803a4-ffdc-4af0-b59d-01f04295964d'
-
-Then copy the given url (jdbc:h2:mem:9ed803a4-ffdc-4af0-b59d-01f04295964d as an example) to the JDBC URL field.
+Open the pgAdmin 4 on ur PC or use the postgresql console and check the database 
 
 # Inspect the database through a Web Service 
 
-Web Service: http://localhost:8080/cities
-
-The code at the server side is: https://github.com/charroux/JPAExample/blob/master/src/main/java/com/efrei/JPAExample/RestWebService.java
-
-# Transactions management
-
-The Web Service contains a method annotated with @Transactionnal
-
-This means that the requests in the database will be cancelled is an exception occurs.
+Web Service: http://localhost:8080/XXXXXXXXXXXXXXXX

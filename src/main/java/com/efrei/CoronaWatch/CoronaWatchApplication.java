@@ -6,10 +6,10 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
 
 @SpringBootApplication
-public class JpaExampleApplication {
+public class CoronaWatchApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(JpaExampleApplication.class, args);
+		SpringApplication.run(CoronaWatchApplication.class, args);
 	}
 	
 	@Bean
