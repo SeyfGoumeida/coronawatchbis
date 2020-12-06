@@ -2,7 +2,10 @@ package com.efrei.CoronaWatch;
 
 import com.efrei.CoronaWatch.Entities.Article;
 import com.efrei.CoronaWatch.Entities.Redactor;
+import com.efrei.CoronaWatch.Entities.SuperAdmin;
+import com.efrei.CoronaWatch.Entities.User;
 import com.efrei.CoronaWatch.Repositories.ArticleRepository;
+import com.efrei.CoronaWatch.Repositories.UserRepository;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -16,7 +19,7 @@ public class CoronaWatchApplication {
 	}
 	
 	@Bean
-	public CommandLineRunner demo( ArticleRepository articlerepository) {
+	public CommandLineRunner demo(ArticleRepository articlerepository , UserRepository userrepository) {
 		return (args) -> {
 			
 
@@ -32,6 +35,8 @@ public class CoronaWatchApplication {
 			articlerepository.save(article1);
 			articlerepository.save(article2);
 
+			SuperAdmin SuperAdmin = new SuperAdmin("SuperAdmin","Super","Admin","superadmin@gmail.com","azerty","SuperAdmin");
+			userrepository.save(SuperAdmin);
 		/*	System.out.println("-------------------------------");
 			System.out.println("Vehicules found with findAll():");
 			for (Vehicule vehicule : repository.findAll()) {

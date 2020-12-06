@@ -2,6 +2,7 @@ package com.efrei.CoronaWatch.Controlers;
 
 import com.efrei.CoronaWatch.Entities.Article;
 import com.efrei.CoronaWatch.Repositories.ArticleRepository;
+import com.efrei.CoronaWatch.Repositories.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
@@ -11,15 +12,16 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-public class RestWebService {
+public class ArticlesControler {
 
     ArticleRepository articleRepository;
 
     @Autowired
-    public RestWebService(ArticleRepository articleRepository) {
+    public ArticlesControler(ArticleRepository articleRepository) {
         super();
         this.articleRepository = articleRepository;
     }
+
 
     @GetMapping("/articles")
     public Iterable<Article> getArtticles(){

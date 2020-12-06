@@ -14,7 +14,9 @@ import java.util.Set;
 public class Moderator extends User{
 
     private Set<Article> moderatorArticles = new HashSet<Article>();
-
+    public  Moderator(){super();}
+    public Moderator(String userName, String firstName, String secondName, String email, String passWord, String userType){
+        super(userName,firstName,secondName,email,passWord,userType);}
     @OneToMany(mappedBy="articleModerator", cascade= CascadeType.ALL, fetch = FetchType.EAGER)
     @JsonIgnore
     public Set<Article> getModeratorArticles() {

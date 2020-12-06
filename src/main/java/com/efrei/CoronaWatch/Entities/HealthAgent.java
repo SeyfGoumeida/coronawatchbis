@@ -13,6 +13,11 @@ import java.util.Set;
 
 public class HealthAgent extends User {
     private Set<Statistics> healthAgentStatistics= new HashSet<>();
+
+    public  HealthAgent(){super();}
+    public HealthAgent(String userName, String firstName, String secondName, String email, String passWord, String userType){
+        super(userName,firstName,secondName,email,passWord,userType);}
+
     @OneToMany(mappedBy="statisticsHealthAgent", cascade= CascadeType.ALL, fetch = FetchType.EAGER)
     @JsonIgnore
     public Set<Statistics> getHealthAgentStatistics() {
