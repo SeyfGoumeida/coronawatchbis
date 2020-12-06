@@ -13,6 +13,7 @@ or
 Import this project as a Gradle project inside Eclipse
 # Before you Run
 Creat a DATABASE with ur pgAdmin 4 and name it : coronawatchdb 
+
 edit the file application.properties with the DB credentials (LOCAL)
 # Run
 Launch the main program: https://github.com/SeyfGoumeida/coronawatchbis/blob/master/src/main/java/com/efrei/CoronaWatch/CoronaWatchApplication.java
