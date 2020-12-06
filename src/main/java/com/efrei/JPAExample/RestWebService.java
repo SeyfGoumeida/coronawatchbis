@@ -1,4 +1,4 @@
-package com.efrei.JPAExample;
+/*package com.efrei.JPAExample;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.transaction.annotation.Propagation;
@@ -35,3 +35,4 @@ public class RestWebService {
 
 
 }
+*/

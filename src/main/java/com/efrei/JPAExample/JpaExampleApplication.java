@@ -37,11 +37,13 @@ public class JpaExampleApplication {
 			Redactor redactor1 =  new Redactor("UserRedactor","firstnameRedactor","LastNameRedactor","Redactor@gmail.com","azerty","Redactor");
 			Article article1 = new Article("Article Title ","Article Content");
 			article1.setArticleRedactor(redactor1);
-			articlerepository.save(article1);
+
 
 			Redactor redactor2 = new Redactor("UserRedactor2","firstnameRedacto2","LastNameRedactor 2","Redactor2@gmail.com","azerty","Redactor");
 			Article article2 = new Article("Article Title 2 ","Article Content 2");
 			article2.setArticleRedactor(redactor2);
+
+			articlerepository.save(article1);
 			articlerepository.save(article2);
 
 		/*	System.out.println("-------------------------------");

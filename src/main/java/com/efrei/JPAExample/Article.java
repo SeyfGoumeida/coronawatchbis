@@ -26,7 +26,7 @@ public class Article {
         this.content = content;
     }
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     public long getIdArticle() {
         return idArticle;
     }
@@ -68,7 +68,7 @@ public class Article {
     public void setArticleModerator(Moderator articleModerator) {
         this.articleModerator = articleModerator;
     }
-    @ManyToOne(cascade= CascadeType.ALL)
+    @ManyToOne(cascade= CascadeType.ALL,optional = true, targetEntity=Redactor.class)
     public Redactor getArticleRedactor() {
         return articleRedactor;
     }

@@ -1,11 +1,9 @@
 package com.efrei.JPAExample;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 @Entity
+@Table(name="USERX")
 public class User {
     protected long idUser;
     protected String userName;
@@ -18,7 +16,6 @@ public class User {
     public User(){super();}
 
     public User(String userName, String firstName, String secondName, String email, String passWord, String userType) {
-        this.idUser = idUser;
         this.userName = userName;
         this.firstName = firstName;
         this.secondName = secondName;
@@ -26,8 +23,10 @@ public class User {
         this.passWord = passWord;
         this.userType = userType;
     }
+    // strategy = GenerationType.IDENTITY
+    // strategy = GenerationType.AUTO
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     public long getIdUser() {
         return idUser;
     }

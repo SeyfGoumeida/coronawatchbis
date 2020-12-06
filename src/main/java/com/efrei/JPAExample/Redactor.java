@@ -16,6 +16,7 @@ import java.util.Set;
 public class Redactor extends User {
 
     private Set<Article> redactorCommentaries = new HashSet<Article>();
+    public  Redactor(){super();}
     public Redactor(String userName, String firstName, String secondName, String email, String passWord, String userType){
         super(userName,firstName,secondName,email,passWord,userType);}
     @OneToMany(mappedBy="articleRedactor", cascade= CascadeType.ALL, fetch = FetchType.EAGER)
