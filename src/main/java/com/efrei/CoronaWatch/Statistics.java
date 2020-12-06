@@ -1,4 +1,4 @@
-package com.efrei.JPAExample;
+package com.efrei.CoronaWatch;
 
 import javax.persistence.*;
 
@@ -22,7 +22,7 @@ public class Statistics {
         this.nbRecovred = nbRecovred;
     }
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     public long getIdStatistics() {
         return idStatistics;
     }

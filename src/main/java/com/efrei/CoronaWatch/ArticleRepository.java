@@ -1,7 +1,7 @@
-package com.efrei.JPAExample;
+package com.efrei.CoronaWatch;
 
 import org.springframework.data.repository.CrudRepository;
-import java.util.List;
+
 import java.util.Set;
 
 public interface ArticleRepository extends CrudRepository<Article, Long> {

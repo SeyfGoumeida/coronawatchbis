@@ -1,4 +1,4 @@
-package com.efrei.JPAExample;
+package com.efrei.CoronaWatch;
 
 import javax.persistence.*;
 @Entity
@@ -14,7 +14,7 @@ public class Commentary {
     }
     public Commentary(){super();}
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     public long getIdCommentary() {
         return idCommentary;
     }

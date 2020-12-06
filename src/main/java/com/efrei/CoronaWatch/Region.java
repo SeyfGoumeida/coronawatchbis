@@ -1,7 +1,6 @@
-package com.efrei.JPAExample;
+package com.efrei.CoronaWatch;
 
 import javax.persistence.*;
-import java.nio.MappedByteBuffer;
 
 @Entity
 public class Region {
@@ -18,7 +17,7 @@ public class Region {
         this.regionName = regionName;
     }
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     public long getIdRegion() {
         return idRegion;
     }

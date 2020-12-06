@@ -1,4 +1,4 @@
-package com.efrei.JPAExample;
+package com.efrei.CoronaWatch;
 
 import javax.persistence.*;
 
@@ -17,7 +17,7 @@ public class Attachment {
         this.content = content;
     }
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     public long getIdAttachment() {
         return idAttachment;
     }

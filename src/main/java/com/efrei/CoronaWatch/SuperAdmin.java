@@ -1,4 +1,4 @@
-package com.efrei.JPAExample;
+package com.efrei.CoronaWatch;
 
 import javax.persistence.Entity;
 
