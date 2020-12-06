@@ -32,6 +32,7 @@ public class RestWebService {
         articleRepository.save(article);
        /* if(article.getPlateNumber().equals("AA11BB")){
             throw new Exception();
+            dajkddajda
         }*/
     }
 
