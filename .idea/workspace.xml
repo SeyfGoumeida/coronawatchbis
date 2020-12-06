@@ -4,8 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="51fcae89-0c64-44ef-bcb3-e41348457253" name="Default Changelist" comment="[FIX] system.properties FILE">
-      <change beforePath="$PROJECT_DIR$/system.properties" beforeDir="false" afterPath="$PROJECT_DIR$/system.properties" afterDir="false" />
+    <list default="true" id="51fcae89-0c64-44ef-bcb3-e41348457253" name="Default Changelist" comment="[FIX] system.properties">
+      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -68,7 +68,7 @@
       <updated>1607259580770</updated>
       <workItem from="1607259582648" duration="627000" />
       <workItem from="1607260384932" duration="5202000" />
-      <workItem from="1607265665612" duration="5810000" />
+      <workItem from="1607265665612" duration="6167000" />
     </task>
     <task id="LOCAL-00001" summary="[FIX] Postgresql integration issues &amp; @ID IDENTITY">
       <created>1607263367424</created>
@@ -126,7 +126,21 @@
       <option name="project" value="LOCAL" />
       <updated>1607269415551</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="[TEST] commenting .gitignore">
+      <created>1607271618758</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1607271618758</updated>
+    </task>
+    <task id="LOCAL-00010" summary="[FIX] system.properties">
+      <created>1607271755758</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1607271755758</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -163,6 +177,8 @@
     <MESSAGE value="[FIX] gradle for heroku deployement" />
     <MESSAGE value="[ADD] system.properties FILE" />
     <MESSAGE value="[FIX] system.properties FILE" />
-    <option name="LAST_COMMIT_MESSAGE" value="[FIX] system.properties FILE" />
+    <MESSAGE value="[TEST] commenting .gitignore" />
+    <MESSAGE value="[FIX] system.properties" />
+    <option name="LAST_COMMIT_MESSAGE" value="[FIX] system.properties" />
   </component>
 </project>
