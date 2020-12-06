@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="51fcae89-0c64-44ef-bcb3-e41348457253" name="Default Changelist" comment="[FIX] system.properties FILE">
+      <change beforePath="$PROJECT_DIR$/system.properties" beforeDir="false" afterPath="$PROJECT_DIR$/system.properties" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ExternalProjectsData">
+    <projectState path="$PROJECT_DIR$">
+      <ProjectState />
+    </projectState>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectId" id="1lHglNelB8dSvjkPd4Dh29SatyP" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="ExpandSpringBootJavaOptionsPanel" value="true" />
+    <property name="RequestMappingsPanelOrder0" value="0" />
+    <property name="RequestMappingsPanelOrder1" value="1" />
+    <property name="RequestMappingsPanelWidth0" value="75" />
+    <property name="RequestMappingsPanelWidth1" value="75" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="nodejs_package_manager_path" value="npm" />
+  </component>
+  <component name="RunManager">
+    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
+      <option name="arquillianRunConfiguration">
+        <value>
+          <option name="containerStateName" value="" />
+        </value>
+      </option>
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="JpaExampleApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="coronawatch.main" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.efrei.CoronaWatch.CoronaWatchApplication" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="51fcae89-0c64-44ef-bcb3-e41348457253" name="Default Changelist" comment="" />
+      <created>1607259580770</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1607259580770</updated>
+      <workItem from="1607259582648" duration="627000" />
+      <workItem from="1607260384932" duration="5202000" />
+      <workItem from="1607265665612" duration="5810000" />
+    </task>
+    <task id="LOCAL-00001" summary="[FIX] Postgresql integration issues &amp; @ID IDENTITY">
+      <created>1607263367424</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1607263367424</updated>
+    </task>
+    <task id="LOCAL-00002" summary="[EDIT] All @ID IDENTITY &amp; README.md">
+      <created>1607263970572</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1607263970572</updated>
+    </task>
+    <task id="LOCAL-00003" summary="[FIX] Packages &amp; [ADD]RestWebService">
+      <created>1607265139709</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1607265139709</updated>
+    </task>
+    <task id="LOCAL-00004" summary="[Test] sourceCompatibility = '11' with sourceCompatibility = '1.8'">
+      <created>1607267882987</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1607267882987</updated>
+    </task>
+    <task id="LOCAL-00005" summary="[Test] sourceCompatibility = '11' back again">
+      <created>1607268105528</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1607268105528</updated>
+    </task>
+    <task id="LOCAL-00006" summary="[FIX] gradle for heroku deployement">
+      <created>1607268854209</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1607268854209</updated>
+    </task>
+    <task id="LOCAL-00007" summary="[ADD] system.properties FILE">
+      <created>1607269086885</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1607269086885</updated>
+    </task>
+    <task id="LOCAL-00008" summary="[FIX] system.properties FILE">
+      <created>1607269415551</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1607269415551</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.History.Properties">
+    <option name="COLUMN_ID_ORDER">
+      <list>
+        <option value="Default.Root" />
+        <option value="Default.Author" />
+        <option value="Default.Date" />
+        <option value="Default.Subject" />
+      </list>
+    </option>
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="[FIX] Postgresql integration issues &amp; @ID IDENTITY" />
+    <MESSAGE value="[EDIT] All @ID IDENTITY &amp; README.md" />
+    <MESSAGE value="[FIX] Packages &amp; [ADD]RestWebService" />
+    <MESSAGE value="[Test] sourceCompatibility = '11' with sourceCompatibility = '1.8'" />
+    <MESSAGE value="[Test] sourceCompatibility = '11' back again" />
+    <MESSAGE value="[FIX] gradle for heroku deployement" />
+    <MESSAGE value="[ADD] system.properties FILE" />
+    <MESSAGE value="[FIX] system.properties FILE" />
+    <option name="LAST_COMMIT_MESSAGE" value="[FIX] system.properties FILE" />
+  </component>
+</project>
