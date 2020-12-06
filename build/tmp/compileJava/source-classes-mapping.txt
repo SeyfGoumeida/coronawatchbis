@@ -2,8 +2,8 @@ com/efrei/CoronaWatch/Entities/Attachment.java
  com.efrei.CoronaWatch.Entities.Attachment
 com/efrei/CoronaWatch/Entities/Moderator.java
  com.efrei.CoronaWatch.Entities.Moderator
-com/efrei/CoronaWatch/Controlers/RestWebService.java
- com.efrei.CoronaWatch.Controlers.RestWebService
+com/efrei/CoronaWatch/Entities/Continent.java
+ com.efrei.CoronaWatch.Entities.Continent
 com/efrei/CoronaWatch/Entities/Article.java
  com.efrei.CoronaWatch.Entities.Article
 com/efrei/CoronaWatch/Entities/HealthAgent.java
@@ -28,5 +28,5 @@ com/efrei/CoronaWatch/Entities/Commentary.java
  com.efrei.CoronaWatch.Entities.Commentary
 com/efrei/CoronaWatch/Entities/Redactor.java
  com.efrei.CoronaWatch.Entities.Redactor
-com/efrei/CoronaWatch/Entities/Continent.java
- com.efrei.CoronaWatch.Entities.Continent
+com/efrei/CoronaWatch/Controlers/RestWebService.java
+ com.efrei.CoronaWatch.Controlers.RestWebService
