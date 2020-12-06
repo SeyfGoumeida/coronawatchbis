@@ -21,12 +21,12 @@ public class RestWebService {
         this.articleRepository = articleRepository;
     }
 
-    @GetMapping("/")
+    @GetMapping("/articles")
     public Iterable<Article> getArtticles(){
         return articleRepository.findAll();
     }
 
-    @PostMapping("/")
+    @PostMapping("/articles")
     @Transactional(propagation = Propagation.REQUIRES_NEW, rollbackFor = Exception.class)
     public void addArticle(@RequestBody Article article) throws Exception {
         articleRepository.save(article);
