@@ -1,5 +1,8 @@
 package com.efrei.CoronaWatch;
 
+import com.efrei.CoronaWatch.Entities.Article;
+import com.efrei.CoronaWatch.Entities.Redactor;
+import com.efrei.CoronaWatch.Repositories.ArticleRepository;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

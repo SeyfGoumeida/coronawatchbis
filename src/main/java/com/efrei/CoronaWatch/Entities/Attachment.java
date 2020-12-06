@@ -1,4 +1,6 @@
-package com.efrei.CoronaWatch;
+package com.efrei.CoronaWatch.Entities;
+
+import com.efrei.CoronaWatch.Entities.Article;
 
 import javax.persistence.*;
 

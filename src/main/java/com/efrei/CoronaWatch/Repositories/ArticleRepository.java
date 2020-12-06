@@ -1,5 +1,6 @@
-package com.efrei.CoronaWatch;
+package com.efrei.CoronaWatch.Repositories;
 
+import com.efrei.CoronaWatch.Entities.Article;
 import org.springframework.data.repository.CrudRepository;
 
 import java.util.Set;

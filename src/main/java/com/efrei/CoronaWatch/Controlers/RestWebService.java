@@ -1,5 +1,7 @@
-/*package com.efrei.JPAExample;
+package com.efrei.CoronaWatch.Controlers;
 
+import com.efrei.CoronaWatch.Entities.Article;
+import com.efrei.CoronaWatch.Repositories.ArticleRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
@@ -11,28 +13,27 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class RestWebService {
 
-    VehiculeRepository vehiculeRepository;
+    ArticleRepository articleRepository;
 
     @Autowired
-    public RestWebService(VehiculeRepository vehiculeRepository) {
+    public RestWebService(ArticleRepository articleRepository) {
         super();
-        this.vehiculeRepository = vehiculeRepository;
+        this.articleRepository = articleRepository;
     }
 
-    @GetMapping("/vehicules")
-    public Iterable<Vehicule> getVehicules(){
-        return vehiculeRepository.findAll();
+    @GetMapping("/articles")
+    public Iterable<Article> getArtticles(){
+        return articleRepository.findAll();
     }
 
-    @PostMapping("/vehicules")
+    @PostMapping("/article")
     @Transactional(propagation = Propagation.REQUIRES_NEW, rollbackFor = Exception.class)
-    public void addVehicule(@RequestBody Vehicule vehicule) throws Exception {
-        vehiculeRepository.save(vehicule);
-        if(vehicule.getPlateNumber().equals("AA11BB")){
+    public void addArticle(@RequestBody Article article) throws Exception {
+        articleRepository.save(article);
+       /* if(article.getPlateNumber().equals("AA11BB")){
             throw new Exception();
-        }
+        }*/
     }
 
 
 }
-*/

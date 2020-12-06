@@ -1,4 +1,4 @@
-package com.efrei.CoronaWatch;
+package com.efrei.CoronaWatch.Entities;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
@@ -13,7 +13,7 @@ public class Article {
     private String content;
     private Set<Commentary> articleCommentaries =  new HashSet<Commentary>();
     private Moderator articleModerator ;
-    private Redactor  articleRedactor;
+    private Redactor articleRedactor;
     private Set<Attachment> articleAttachments = new HashSet<Attachment>();
 
 
