@@ -29,7 +29,6 @@ public class UsersControler {
         this.userRepository = userRepository;
     }
 
-
     @GetMapping("/Users")
     public Iterable<User> getUsers(){
         return userRepository.findAll();
@@ -58,7 +57,6 @@ public class UsersControler {
         }
         return listOfRedactors;
     }
-
     @GetMapping("/Users/Moderators")
     public Iterable<User> getModerators(){
         Iterable<User> listOfUsers = getUsers();
@@ -88,11 +86,23 @@ public class UsersControler {
         return userRepository.findByEmail(user.getEmail());
     }
 
+
+
+    //---------------POST-------------------------
     @PostMapping("/Users/AddUser")
     @Transactional(propagation = Propagation.REQUIRES_NEW, rollbackFor = Exception.class)
     public void addUser(@RequestBody User user) throws Exception {
-        userRepository.save(user);
+        if (user.getUserType().equals("SuperAdmin")){
+            System.out.println( "There is only one SuperAdmin for this app" );
+        }else if(user.getUserType().equals("Moderator") ||
+                 user.getUserType().equals("Redactor")  ||
+                 user.getUserType().equals("HealthAgent")){
+            userRepository.save(user);
+        }else{
+            System.out.println( "you have to choose Moderator or Redactor or HealthAgent" );
+        }
     }
+
     @PostMapping("/Users/Login")
     @Transactional(propagation = Propagation.REQUIRES_NEW, rollbackFor = Exception.class)
     public void Login(@RequestBody User user) throws Exception {

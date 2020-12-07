@@ -34,7 +34,8 @@ public class User {
     public void setIdUser(long idUser) {
         this.idUser = idUser;
     }
-
+    // Email unique
+    @Column(unique=true)
     public String getEmail() {
         return email;
     }
@@ -42,7 +43,8 @@ public class User {
     public void setEmail(String email) {
         this.email = email;
     }
-
+    // UserName unique
+    @Column(unique=true)
     public String getUserName() {
         return userName;
     }
@@ -50,7 +52,8 @@ public class User {
     public void setUserName(String userName) {
         this.userName = userName;
     }
-
+    // FirstName unique
+    @Column(unique=true)
     public String getFirstName() {
         return firstName;
     }
@@ -58,7 +61,8 @@ public class User {
     public void setFirstName(String firstName) {
         this.firstName = firstName;
     }
-
+    // SecondName unique
+    @Column(unique=true)
     public String getSecondName() {
         return secondName;
     }
