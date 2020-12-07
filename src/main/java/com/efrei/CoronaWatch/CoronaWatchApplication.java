@@ -20,11 +20,11 @@ public class CoronaWatchApplication {
 		return (args) -> {
 			
 
-			Redactor redactor =  new Redactor("UserRedactor","firstnameRedactor","LastNameRedactor","Redactor@gmail.com","azerty","Redactor");
-			Redactor redactor2 = new Redactor("UserRedactor2","firstnameRedacto2","LastNameRedactor 2","Redactor2@gmail.com","azerty","Redactor");
-			SuperAdmin SuperAdmin = new SuperAdmin("SuperAdmin","Super","Admin","superadmin@gmail.com","azerty","SuperAdmin");
-			Moderator moderator = new Moderator("UserModerator","firstnameModerator","LastNameModerator","Moderator@gmail.com","azerty","Moderator");
-			HealthAgent healthagent = new HealthAgent("UserHealthAgent","firstnameHealthAgent","LastNameHealthAgent","HealthAgent@gmail.com","azerty","HealthAgent");
+			Redactor redactor =  new Redactor("UserRedactor","firstnameRedactor","LastNameRedactor","Redactor@gmail.com","azerty",UserType.Redactor);
+			Redactor redactor2 = new Redactor("UserRedactor2","firstnameRedacto2","LastNameRedactor 2","Redactor2@gmail.com","azerty",UserType.Redactor);
+			SuperAdmin SuperAdmin = new SuperAdmin("SuperAdmin","Super","Admin","superadmin@gmail.com","azerty",UserType.SuperAdmin);
+			Moderator moderator = new Moderator("UserModerator","firstnameModerator","LastNameModerator","Moderator@gmail.com","azerty",UserType.Moderator);
+			HealthAgent healthagent = new HealthAgent("UserHealthAgent","firstnameHealthAgent","LastNameHealthAgent","HealthAgent@gmail.com","azerty",UserType.HealthAgent);
 
 
 			userrepository.save(healthagent);

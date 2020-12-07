@@ -23,3 +23,19 @@ Open the pgAdmin 4 on ur PC or use the postgresql console and check the database
 # Inspect the database through a Web Service 
 
 Web Service: http://localhost:8080/XXXXXXXXXXXXXXXX
+
+# Errors 
+1)
+
+{"idUser":"","userName":"Test","firstName":"firTeststnameModeratore","secondName":"Teste","email":"Teste","passWord":"Test","userType":"wrongUserType"}
+
+"status": 400,
+
+2)
+
+{"idUser":"","userName":"Teste","firstName":"firTeststnameModeratore","secondName":"Teste","email":"Teste","passWord":"Test","userType":"Moderator"}
+{"idUser":"","userName":"Teste","firstName":"firTeststnameModeratore","secondName":"Teste","email":"Teste","passWord":"Test","userType":"Moderator"}
+
+"status": 500,
+
+

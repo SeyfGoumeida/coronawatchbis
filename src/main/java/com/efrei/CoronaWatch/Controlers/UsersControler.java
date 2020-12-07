@@ -3,6 +3,7 @@ package com.efrei.CoronaWatch.Controlers;
 
         import com.efrei.CoronaWatch.Entities.Redactor;
         import com.efrei.CoronaWatch.Entities.User;
+        import com.efrei.CoronaWatch.Entities.UserType;
         import com.efrei.CoronaWatch.Repositories.UserRepository;
         import org.springframework.beans.factory.annotation.Autowired;
         import org.springframework.transaction.annotation.Propagation;
@@ -92,14 +93,10 @@ public class UsersControler {
     @PostMapping("/Users/AddUser")
     @Transactional(propagation = Propagation.REQUIRES_NEW, rollbackFor = Exception.class)
     public void addUser(@RequestBody User user) throws Exception {
-        if (user.getUserType().equals("SuperAdmin")){
+        if (user.getUserType().equals(UserType.SuperAdmin)){
             System.out.println( "There is only one SuperAdmin for this app" );
-        }else if(user.getUserType().equals("Moderator") ||
-                 user.getUserType().equals("Redactor")  ||
-                 user.getUserType().equals("HealthAgent")){
+        }else {
             userRepository.save(user);
-        }else{
-            System.out.println( "you have to choose Moderator or Redactor or HealthAgent" );
         }
     }
 

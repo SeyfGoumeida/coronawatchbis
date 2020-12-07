@@ -11,11 +11,11 @@ public class User {
     protected String secondName;
     protected String email;
     protected String passWord;
-    protected String userType;
+    protected UserType userType;
 
     public User(){super();}
 
-    public User(String userName, String firstName, String secondName, String email, String passWord, String userType) {
+    public User(String userName, String firstName, String secondName, String email, String passWord, UserType userType) {
         this.userName = userName;
         this.firstName = firstName;
         this.secondName = secondName;
@@ -23,50 +23,48 @@ public class User {
         this.passWord = passWord;
         this.userType = userType;
     }
-    // strategy = GenerationType.IDENTITY
-    // strategy = GenerationType.AUTO
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     public long getIdUser() {
         return idUser;
     }
-
     public void setIdUser(long idUser) {
         this.idUser = idUser;
     }
+
     // Email unique
     @Column(unique=true)
     public String getEmail() {
         return email;
     }
-
     public void setEmail(String email) {
         this.email = email;
     }
+
     // UserName unique
     @Column(unique=true)
     public String getUserName() {
         return userName;
     }
-
     public void setUserName(String userName) {
         this.userName = userName;
     }
+
     // FirstName unique
     @Column(unique=true)
     public String getFirstName() {
         return firstName;
     }
-
     public void setFirstName(String firstName) {
         this.firstName = firstName;
     }
+
     // SecondName unique
     @Column(unique=true)
     public String getSecondName() {
         return secondName;
     }
-
     public void setSecondName(String secondName) {
         this.secondName = secondName;
     }
@@ -74,16 +72,16 @@ public class User {
     public String getPassWord() {
         return passWord;
     }
-
     public void setPassWord(String passWord) {
         this.passWord = passWord;
     }
 
-    public String getUserType() {
+    // to use the Enumiration USerType
+    @Enumerated(EnumType.STRING)
+    public UserType getUserType() {
         return userType;
     }
-
-    public void setUserType(String userType) {
+    public void setUserType(UserType userType) {
         this.userType = userType;
     }
 }
