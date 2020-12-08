@@ -5,31 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="51fcae89-0c64-44ef-bcb3-e41348457253" name="Default Changelist" comment="[EDIT] User Controler &amp; Unique Columns &amp; Specify UserType">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/efrei/CoronaWatch/Entities/UserType.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/6.6.1/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.6.1/executionHistory/executionHistory.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/6.6.1/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.6.1/executionHistory/executionHistory.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/6.6.1/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.6.1/fileHashes/fileHashes.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/6.6.1/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.6.1/fileHashes/fileHashes.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/6.6.1/javaCompile/classAnalysis.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.6.1/javaCompile/classAnalysis.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/6.6.1/javaCompile/javaCompile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.6.1/javaCompile/javaCompile.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/efrei/CoronaWatch/Controlers/UsersControler.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/efrei/CoronaWatch/Controlers/UsersControler.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/efrei/CoronaWatch/CoronaWatchApplication.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/efrei/CoronaWatch/CoronaWatchApplication.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/efrei/CoronaWatch/Entities/HealthAgent.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/efrei/CoronaWatch/Entities/HealthAgent.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/efrei/CoronaWatch/Entities/Moderator.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/efrei/CoronaWatch/Entities/Moderator.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/efrei/CoronaWatch/Entities/Redactor.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/efrei/CoronaWatch/Entities/Redactor.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/efrei/CoronaWatch/Entities/SuperAdmin.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/efrei/CoronaWatch/Entities/SuperAdmin.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/efrei/CoronaWatch/Entities/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/efrei/CoronaWatch/Entities/User.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/tmp/compileJava/source-classes-mapping.txt" beforeDir="false" afterPath="$PROJECT_DIR$/build/tmp/compileJava/source-classes-mapping.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/efrei/CoronaWatch/Controlers/UsersControler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/efrei/CoronaWatch/Controlers/UsersControler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/efrei/CoronaWatch/CoronaWatchApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/efrei/CoronaWatch/CoronaWatchApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/efrei/CoronaWatch/Entities/HealthAgent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/efrei/CoronaWatch/Entities/HealthAgent.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/efrei/CoronaWatch/Entities/Moderator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/efrei/CoronaWatch/Entities/Moderator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/efrei/CoronaWatch/Entities/Redactor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/efrei/CoronaWatch/Entities/Redactor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/efrei/CoronaWatch/Entities/SuperAdmin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/efrei/CoronaWatch/Entities/SuperAdmin.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/efrei/CoronaWatch/Entities/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/efrei/CoronaWatch/Entities/User.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -76,17 +53,6 @@
     <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
   </component>
   <component name="RunManager">
-    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
-      <option name="arquillianRunConfiguration">
-        <value>
-          <option name="containerStateName" value="" />
-        </value>
-      </option>
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="JpaExampleApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
       <module name="coronawatch.main" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.efrei.CoronaWatch.CoronaWatchApplication" />
@@ -111,7 +77,8 @@
       <workItem from="1607276825809" duration="650000" />
       <workItem from="1607286533168" duration="2705000" />
       <workItem from="1607290189287" duration="2284000" />
-      <workItem from="1607360679716" duration="6505000" />
+      <workItem from="1607360679716" duration="9441000" />
+      <workItem from="1607420298461" duration="620000" />
     </task>
     <task id="LOCAL-00001" summary="[FIX] Postgresql integration issues &amp; @ID IDENTITY">
       <created>1607263367424</created>
@@ -232,7 +199,14 @@
       <option name="project" value="LOCAL" />
       <updated>1607368734599</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="[EDIT] User Controler &amp; Unique Columns &amp; Specify UserType">
+      <created>1607369755594</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1607369755594</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
