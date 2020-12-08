@@ -15,6 +15,7 @@ public class Article {
     private Moderator articleModerator ;
     private Redactor articleRedactor;
     private Set<Attachment> articleAttachments = new HashSet<Attachment>();
+    private Boolean articleValidate;
 
 
     public Article(){super();}
@@ -22,6 +23,8 @@ public class Article {
         this.idArticle = idArticle;
         this.title = title;
         this.content = content;
+        this.articleValidate = false;
+
     }
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -82,5 +85,13 @@ public class Article {
 
     public void setArticleAttachments(Set<Attachment> articleAttachments) {
         this.articleAttachments = articleAttachments;
+    }
+
+    public Boolean getArticleValidate() {
+        return articleValidate;
+    }
+
+    public void setArticleValidate(Boolean articleValidate) {
+        this.articleValidate = articleValidate;
     }
 }

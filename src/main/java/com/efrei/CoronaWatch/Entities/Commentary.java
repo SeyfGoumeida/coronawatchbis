@@ -7,10 +7,21 @@ public class Commentary {
     private String commentContent;
     private WebUser commentEditor ;
     private Article commentArticle;
+    private Boolean inappropriate;
+
+    public Boolean getInappropriate() {
+        return inappropriate;
+    }
+
+    public void setInappropriate(Boolean inappropriate) {
+        this.inappropriate = inappropriate;
+    }
 
     public Commentary(long idCommentary, String commentContent) {
         this.idCommentary = idCommentary;
         this.commentContent = commentContent;
+        this.inappropriate = false;
+
     }
     public Commentary(){super();}
     @Id

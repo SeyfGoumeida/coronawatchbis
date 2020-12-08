@@ -11,6 +11,16 @@ public class Statistics {
     private Integer nbRecovred;
     private Region statisticsRegion;
     private HealthAgent statisticsHealthAgent;
+    private Boolean validate;
+
+    public Boolean getValidate() {
+        return validate;
+    }
+
+    public void setValidate(Boolean validate) {
+        this.validate = validate;
+    }
+
     public Statistics(){
         super();
     }
@@ -20,6 +30,7 @@ public class Statistics {
         this.nbSuspected = nbSuspected;
         this.nbConfirmed = nbConfirmed;
         this.nbRecovred = nbRecovred;
+        this.validate = false;
     }
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

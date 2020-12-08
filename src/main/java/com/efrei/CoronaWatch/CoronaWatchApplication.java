@@ -33,9 +33,11 @@ public class CoronaWatchApplication {
 
 			Article article1 = new Article("Article Title ","Article Content");
 			article1.setArticleRedactor(redactor);
-
+			article1.setArticleValidate(true);
 			Article article2 = new Article("Article Title 2 ","Article Content 2");
 			article2.setArticleRedactor(redactor2);
+			article2.setArticleValidate(false);
+
 
 			articlerepository.save(article1);
 			articlerepository.save(article2);

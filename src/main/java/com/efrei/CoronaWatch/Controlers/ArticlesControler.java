@@ -11,6 +11,9 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.ArrayList;
+import java.util.List;
+
 @RestController
 public class ArticlesControler {
 
@@ -23,19 +26,40 @@ public class ArticlesControler {
     }
 
 
-    @GetMapping("/articles")
-    public Iterable<Article> getArtticles(){
+    @GetMapping("/Articles")
+    public Iterable<Article> getArticles(){
         return articleRepository.findAll();
     }
+    @GetMapping("/Articles/Validate")
+    public Iterable<Article> getValidatesArticles(){
+        Iterable<Article> listOfArticles = getArticles();
+        List<Article> listOfValidatesArticles = new ArrayList<>();
+        for(Article article :listOfArticles ){
+            if(article.getArticleValidate())
+            {
+                listOfValidatesArticles.add(article);
+            }
+        }
+        return listOfValidatesArticles;
+    }
+    @GetMapping("/Articles/Invalidate")
+    public Iterable<Article> getInvalidatesArticles(){
+        Iterable<Article> listOfArticles = getArticles();
+        List<Article> listOfInvalidatesArticles = new ArrayList<>();
+        for(Article article :listOfArticles ){
+            if(!article.getArticleValidate())
+            {
+                listOfInvalidatesArticles.add(article);
+            }
+        }
+        return listOfInvalidatesArticles;
+    }
 
-    @PostMapping("/articles")
+    @PostMapping("/Articles")
     @Transactional(propagation = Propagation.REQUIRES_NEW, rollbackFor = Exception.class)
     public void addArticle(@RequestBody Article article) throws Exception {
         articleRepository.save(article);
-       /* if(article.getPlateNumber().equals("AA11BB")){
-            throw new Exception();
-            dajkddajda
-        }*/
+
     }
 
 
