@@ -61,7 +61,7 @@ public class Article {
     public void setArticleCommentaries(Set<Commentary> articleCommentaries) {
         this.articleCommentaries = articleCommentaries;
     }
-    @ManyToOne(cascade= CascadeType.ALL)
+    @ManyToOne(cascade= CascadeType.ALL,optional = true, targetEntity=Moderator.class)
     public Moderator getArticleModerator() {
         return articleModerator;
     }

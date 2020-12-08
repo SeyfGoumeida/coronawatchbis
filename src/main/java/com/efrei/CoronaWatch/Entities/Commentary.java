@@ -41,7 +41,7 @@ public class Commentary {
     public void setCommentContent(String commentContent) {
         this.commentContent = commentContent;
     }
-    @ManyToOne(cascade= CascadeType.ALL)
+    @ManyToOne(cascade= CascadeType.ALL,optional = true, targetEntity=WebUser.class)
     public WebUser getCommentEditor() {
         return commentEditor;
     }
@@ -49,7 +49,7 @@ public class Commentary {
     public void setCommentEditor(WebUser commentEditor) {
         this.commentEditor = commentEditor;
     }
-    @ManyToOne(cascade=CascadeType.ALL)
+    @ManyToOne(cascade= CascadeType.ALL,optional = true, targetEntity=Article.class)
     public Article getCommentArticle() {
         return commentArticle;
     }

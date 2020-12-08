@@ -9,13 +9,12 @@ import java.util.Set;
 @Entity
 public class Continent {
     private long idContinent;
-    private String nameContinent;
+    private Continents nameContinent;
     private Set<Country> countries = new HashSet<Country>();
 
     public Continent(){super();}
 
-    public Continent(long idContinent, String nameContinent) {
-        this.idContinent = idContinent;
+    public Continent( Continents nameContinent) {
         this.nameContinent = nameContinent;
     }
     @OneToMany(mappedBy="countryContinent", cascade=CascadeType.ALL, fetch = FetchType.EAGER)
@@ -37,12 +36,13 @@ public class Continent {
     public void setIdContinent(long idContinent) {
         this.idContinent = idContinent;
     }
-
-    public String getNameContinent() {
+    // to use the Enumiration USerType
+    @Enumerated(EnumType.STRING)
+    public Continents getNameContinent() {
         return nameContinent;
     }
 
-    public void setNameContinent(String nameContinent) {
+    public void setNameContinent(Continents nameContinent) {
         this.nameContinent = nameContinent;
     }
 }

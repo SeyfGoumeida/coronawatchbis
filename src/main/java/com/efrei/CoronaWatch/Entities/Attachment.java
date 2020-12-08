@@ -44,7 +44,7 @@ public class Attachment {
         this.content = content;
     }
 
-    @ManyToOne(cascade= CascadeType.ALL)
+    @ManyToOne(cascade= CascadeType.ALL,optional = true, targetEntity=Article.class)
     public Article getAttachementArticle() {
         return attachementArticle;
     }

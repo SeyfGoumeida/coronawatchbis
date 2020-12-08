@@ -15,8 +15,7 @@ public class Country {
     public Country() {
         super();
     }
-    public Country(long idCountry, String countryName) {
-        this.idCountry = idCountry;
+    public Country( String countryName) {
         this.countryName = countryName;
     }
     @Id
@@ -36,7 +35,7 @@ public class Country {
     public void setCountryName(String countryName) {
         this.countryName = countryName;
     }
-    @ManyToOne(cascade=CascadeType.ALL)
+    @ManyToOne(cascade= CascadeType.ALL,optional = true, targetEntity=Continent.class)
     public Continent getCountryContinent() {
         return countryContinent;
     }

@@ -19,7 +19,6 @@ public class Redactor extends User {
         super(userName,firstName,secondName,email,passWord,userType);}
     @OneToMany(mappedBy="articleRedactor", cascade= CascadeType.ALL, fetch = FetchType.EAGER)
     @JsonIgnore
-
     public Set<Article> getRedactorCommentaries() {
         return redactorCommentaries;
     }
