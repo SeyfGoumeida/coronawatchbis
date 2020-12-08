@@ -2,16 +2,14 @@ package com.efrei.CoronaWatch.Entities;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
-import javax.persistence.CascadeType;
-import javax.persistence.Entity;
-import javax.persistence.FetchType;
-import javax.persistence.OneToMany;
+import javax.persistence.*;
 import java.util.HashSet;
 import java.util.Set;
 
 @Entity
 
 public class HealthAgent extends User {
+
     private Set<Statistics> healthAgentStatistics= new HashSet<>();
 
     public  HealthAgent(){super();}

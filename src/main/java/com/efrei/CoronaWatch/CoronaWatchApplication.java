@@ -36,6 +36,11 @@ public class CoronaWatchApplication {
 			userrepository.save(healthagent);
 			userrepository.save(moderator);
 			userrepository.save(SuperAdmin);
+			userrepository.save(redactor);
+			userrepository.save(redactor2);
+
+
+
 			//--------------TEST ARTICLES -----------------------------
 			Article article1 = new Article("Article Title ", "Article Content");
 			article1.setArticleRedactor(redactor);
@@ -53,13 +58,13 @@ public class CoronaWatchApplication {
 			Country algeria = new Country("Algeria");
 			Country tunisia = new Country("Tunisia");
 			Country morocco = new Country("Morocco");
-			List<Country> africaCountries = new ArrayList<Country>();
+			List<Country> africaCountries = new ArrayList<>();
 			africaCountries.add(algeria);
 			africaCountries.add(tunisia);
 			africaCountries.add(morocco);
 			Set<Country> africaCountriesSet = new HashSet<>(africaCountries);
 			africa.setCountries(africaCountriesSet);
-			Region constantine = new Region("Constantine");
+			Region constantine = new Region("Constantineeeee");
 			constantine.setRegionCountry(algeria);
 
 			Region batna = new Region("Batna");
@@ -67,13 +72,15 @@ public class CoronaWatchApplication {
 			//--------------TEST STATISTICS -----------------------------
 			Statistics statistics = new Statistics(10, 100, 200, 500);
 			statistics.setStatisticsValidate(true);
-			//statistics.setStatisticsHealthAgent(healthagent);
 			statistics.setStatisticsRegion(constantine);
+			statistics.setStatisticsHealthAgent(healthagent);
+
+			statisticsRepository.save(statistics);
 			statisticsRepository.save(statistics);
 
 			Statistics statistics2 = new Statistics(10, 100, 200, 500);
 			statistics2.setStatisticsValidate(false);
-			//statistics2.setStatisticsHealthAgent(healthagent);
+			statistics2.setStatisticsHealthAgent(healthagent);
 			statistics2.setStatisticsRegion(batna);
 			statisticsRepository.save(statistics2);
 

@@ -49,7 +49,7 @@ public class Commentary {
     public void setCommentEditor(WebUser commentEditor) {
         this.commentEditor = commentEditor;
     }
-    @ManyToOne(cascade= CascadeType.ALL,optional = true, targetEntity=Article.class)
+    @ManyToOne(optional = true, targetEntity=Article.class)
     public Article getCommentArticle() {
         return commentArticle;
     }

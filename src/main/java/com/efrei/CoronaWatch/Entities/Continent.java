@@ -17,7 +17,7 @@ public class Continent {
     public Continent( Continents nameContinent) {
         this.nameContinent = nameContinent;
     }
-    @OneToMany(mappedBy="countryContinent", cascade=CascadeType.ALL, fetch = FetchType.EAGER)
+    @OneToMany(mappedBy="countryContinent", fetch = FetchType.EAGER)
     @JsonIgnore
     public Set<Country> getCountries() {
         return countries;

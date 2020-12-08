@@ -43,7 +43,7 @@ public class Country {
     public void setCountryContinent(Continent countryContinent) {
         this.countryContinent = countryContinent;
     }
-    @OneToMany(mappedBy="regionCountry", cascade=CascadeType.ALL, fetch = FetchType.EAGER)
+    @OneToMany(mappedBy="regionCountry", fetch = FetchType.EAGER)
     @JsonIgnore
     public Set<Region> getCountryRegions() {
         return countryRegions;

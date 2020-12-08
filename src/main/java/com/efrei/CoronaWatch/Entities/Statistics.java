@@ -79,7 +79,7 @@ public class Statistics {
     public void setStatisticsRegion(Region statisticsRegion) {
         this.statisticsRegion = statisticsRegion;
     }
-    @ManyToOne(cascade= CascadeType.ALL,optional = true, targetEntity=HealthAgent.class)
+    @ManyToOne(optional = true, targetEntity=HealthAgent.class)
     public HealthAgent getStatisticsHealthAgent() {
         return statisticsHealthAgent;
     }

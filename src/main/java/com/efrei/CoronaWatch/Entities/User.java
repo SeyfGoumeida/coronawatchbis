@@ -3,7 +3,8 @@ package com.efrei.CoronaWatch.Entities;
 import javax.persistence.*;
 
 @Entity
-@Table(name="USERX")
+@Inheritance(strategy = InheritanceType.TABLE_PER_CLASS)
+@Table(name="USERTABLE")
 public class User {
     protected long idUser;
     protected String userName;
@@ -25,7 +26,7 @@ public class User {
     }
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.TABLE)
     public long getIdUser() {
         return idUser;
     }

@@ -13,17 +13,17 @@ import java.util.Set;
 
 public class Redactor extends User {
 
-    private Set<Article> redactorCommentaries = new HashSet<Article>();
+    private Set<Article> redactorArticles = new HashSet<Article>();
     public  Redactor(){super();}
     public Redactor(String userName, String firstName, String secondName, String email, String passWord, UserType userType){
         super(userName,firstName,secondName,email,passWord,userType);}
     @OneToMany(mappedBy="articleRedactor", cascade= CascadeType.ALL, fetch = FetchType.EAGER)
     @JsonIgnore
-    public Set<Article> getRedactorCommentaries() {
-        return redactorCommentaries;
+    public Set<Article> getRedactorArticles() {
+        return redactorArticles;
     }
 
-    public void setRedactorCommentaries(Set<Article> redactorCommentaries) {
-        this.redactorCommentaries = redactorCommentaries;
+    public void setRedactorArticles(Set<Article> redactorArticles) {
+        this.redactorArticles = redactorArticles;
     }
 }
