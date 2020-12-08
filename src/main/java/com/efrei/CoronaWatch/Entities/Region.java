@@ -1,5 +1,7 @@
 package com.efrei.CoronaWatch.Entities;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+
 import javax.persistence.*;
 
 @Entity
@@ -12,8 +14,7 @@ public class Region {
     public Region() {
         super();
     }
-    public Region(long idRegion, String regionName) {
-        this.idRegion = idRegion;
+    public Region( String regionName) {
         this.regionName = regionName;
     }
     @Id
@@ -34,7 +35,7 @@ public class Region {
         this.regionName = regionName;
     }
 
-    @ManyToOne(cascade=CascadeType.ALL)
+    @ManyToOne(cascade= CascadeType.ALL,optional = true, targetEntity=Country.class)
     public Country getRegionCountry() {
         return regionCountry;
     }
@@ -43,7 +44,10 @@ public class Region {
         this.regionCountry = regionCountry;
     }
 
-   @OneToOne(mappedBy="statisticsRegion")
+    @OneToOne(mappedBy="statisticsRegion",optional = true, fetch = FetchType.LAZY)
+    @JsonManagedReference
+    // @JsonBackReference and @JsonManagedReference to avoid Infinite Recursion with Jackson JSON and Hibernate JPA issue
+
     public Statistics getRegionStatistics() {
         return regionStatistics;
     }
