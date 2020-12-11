@@ -6,6 +6,7 @@ package com.efrei.CoronaWatch.Controlers;
         import com.efrei.CoronaWatch.Entities.UserType;
         import com.efrei.CoronaWatch.Repositories.UserRepository;
         import org.springframework.beans.factory.annotation.Autowired;
+        //import org.springframework.security.crypto.bcrypt.BCrypt;
         import org.springframework.transaction.annotation.Propagation;
         import org.springframework.transaction.annotation.Transactional;
         import org.springframework.web.bind.annotation.GetMapping;
@@ -83,8 +84,8 @@ public class UsersControler {
         return listOfHealthAgents;
     }
     @GetMapping("/User")
-    public Iterable<User> getUser(@RequestBody User user){
-        return userRepository.findByEmail(user.getEmail());
+    public User getUser(@RequestBody String email){
+        return userRepository.findByEmail(email);
     }
 
 
@@ -100,11 +101,18 @@ public class UsersControler {
         }
     }
 
-    @PostMapping("/Users/Login")
+    @PostMapping("/Login")
     @Transactional(propagation = Propagation.REQUIRES_NEW, rollbackFor = Exception.class)
-    public void Login(@RequestBody User user) throws Exception {
-        userRepository.findByEmail(user.getEmail());
-
+    public User Login(@RequestBody String email , String password) throws Exception {
+        User user = userRepository.findByEmail(email);
+        if(user != null){
+            if (true/*BCrypt.checkpw(user.getPassWord(),password)*/){
+                return user;
+            }
+            else {
+                return null;
+            }
+        } else return null;
     }
 
 

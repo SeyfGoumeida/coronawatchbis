@@ -18,9 +18,20 @@ dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-web'
 	// for Postgres
 	runtimeOnly 'org.postgresql:postgresql'
-	// for authentification
+
+	// CORS
+	//testImplementation 'org.apache.httpcomponents:httpclient'
+
+
+	// for authentification (spring-security)
 	//implementation 'org.springframework.boot:spring-boot-starter-security'
 	//implementation 'org.springframework.security:spring-security-test'
+
+	//compile("org.projectlombok:lombok:1.16.10")
+	//compile group: 'io.jsonwebtoken', name: 'jjwt', version: '0.7.0'
+	//spring-security-jwt ( Json Web Token )
+	//compile group: 'org.springframework.security', name: 'spring-security-jwt', version: '1.0.2.RELEASE'
+	//compile('javax.xml.bind:jaxb-api:2.3.0')
 
 	testImplementation('org.springframework.boot:spring-boot-starter-test') {
 		exclude group: 'org.junit.vintage', module: 'junit-vintage-engine'

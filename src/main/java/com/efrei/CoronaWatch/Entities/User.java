@@ -9,17 +9,17 @@ public class User {
     protected long idUser;
     protected String userName;
     protected String firstName;
-    protected String secondName;
+    protected String LastName;
     protected String email;
     protected String passWord;
     protected UserType userType;
 
     public User(){super();}
 
-    public User(String userName, String firstName, String secondName, String email, String passWord, UserType userType) {
+    public User(String userName, String firstName, String LastName, String email, String passWord, UserType userType) {
         this.userName = userName;
         this.firstName = firstName;
-        this.secondName = secondName;
+        this.LastName = LastName;
         this.email = email;
         this.passWord = passWord;
         this.userType = userType;
@@ -61,13 +61,13 @@ public class User {
         this.firstName = firstName;
     }
 
-    // SecondName unique
+    // lastName unique
     @Column(unique=true)
-    public String getSecondName() {
-        return secondName;
+    public String getLastName() {
+        return LastName;
     }
-    public void setSecondName(String secondName) {
-        this.secondName = secondName;
+    public void setLastName(String lastName) {
+        this.LastName = lastName;
     }
 
     public String getPassWord() {
@@ -85,4 +85,6 @@ public class User {
     public void setUserType(UserType userType) {
         this.userType = userType;
     }
+
+
 }

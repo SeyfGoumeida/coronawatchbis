@@ -7,7 +7,7 @@ import java.util.Set;
 
 public interface UserRepository extends CrudRepository<User, Long>{
 
-        Set<User> findByEmail(String email);
-        Set<User> findByUserName(String username);
+        User findByEmail(String email);
+        User findByUserName(String username);
 
 }
