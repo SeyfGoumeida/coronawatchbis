@@ -9,12 +9,10 @@ package com.efrei.CoronaWatch.Controlers;
         //import org.springframework.security.crypto.bcrypt.BCrypt;
         import org.springframework.transaction.annotation.Propagation;
         import org.springframework.transaction.annotation.Transactional;
-        import org.springframework.web.bind.annotation.GetMapping;
-        import org.springframework.web.bind.annotation.PostMapping;
-        import org.springframework.web.bind.annotation.RequestBody;
-        import org.springframework.web.bind.annotation.RestController;
+        import org.springframework.web.bind.annotation.*;
 
         import javax.persistence.SecondaryTable;
+        import javax.xml.transform.Result;
         import java.util.ArrayList;
         import java.util.HashSet;
         import java.util.List;
@@ -84,12 +82,23 @@ public class UsersControler {
         return listOfHealthAgents;
     }
     @GetMapping("/User")
-    public User getUser(@RequestBody String email){
+    public User getUser(@RequestParam String email){
         return userRepository.findByEmail(email);
     }
 
 
+    //----------------DELETE----------------------
+    @DeleteMapping("/Users/DeleteUser")
 
+    public void delete(@RequestParam(name = "username") String username) {
+        User user = userRepository.findByUserName(username);
+        if (user == null) {
+            System.out.println( "There is no user with suck username" );
+        }
+        else {
+             userRepository.delete(user);
+        }
+    }
     //---------------POST-------------------------
     @PostMapping("/Users/AddUser")
     @Transactional(propagation = Propagation.REQUIRES_NEW, rollbackFor = Exception.class)

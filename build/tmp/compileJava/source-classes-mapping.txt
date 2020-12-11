@@ -10,35 +10,37 @@ com/efrei/CoronaWatch/Entities/HealthAgent.java
  com.efrei.CoronaWatch.Entities.HealthAgent
 com/efrei/CoronaWatch/Entities/User.java
  com.efrei.CoronaWatch.Entities.User
-com/efrei/CoronaWatch/Repositories/StatisticsRepository.java
- com.efrei.CoronaWatch.Repositories.StatisticsRepository
-com/efrei/CoronaWatch/CoronaWatchApplication.java
- com.efrei.CoronaWatch.CoronaWatchApplication
+com/efrei/CoronaWatch/Entities/Region.java
+ com.efrei.CoronaWatch.Entities.Region
+com/efrei/CoronaWatch/Entities/Country.java
+ com.efrei.CoronaWatch.Entities.Country
 com/efrei/CoronaWatch/Entities/Statistics.java
  com.efrei.CoronaWatch.Entities.Statistics
 com/efrei/CoronaWatch/Entities/SuperAdmin.java
  com.efrei.CoronaWatch.Entities.SuperAdmin
-com/efrei/CoronaWatch/Controlers/UsersControler.java
- com.efrei.CoronaWatch.Controlers.UsersControler
+com/efrei/CoronaWatch/Entities/Continent.java
+ com.efrei.CoronaWatch.Entities.Continent
 com/efrei/CoronaWatch/Entities/WebUser.java
  com.efrei.CoronaWatch.Entities.WebUser
+com/efrei/CoronaWatch/Entities/UserType.java
+ com.efrei.CoronaWatch.Entities.UserType
+com/efrei/CoronaWatch/Entities/Redactor.java
+ com.efrei.CoronaWatch.Entities.Redactor
+com/efrei/CoronaWatch/Entities/Commentary.java
+ com.efrei.CoronaWatch.Entities.Commentary
+com/efrei/CoronaWatch/CoronaWatchApplication.java
+ com.efrei.CoronaWatch.CoronaWatchApplication
 com/efrei/CoronaWatch/Repositories/UserRepository.java
  com.efrei.CoronaWatch.Repositories.UserRepository
 com/efrei/CoronaWatch/Controlers/ArticlesControler.java
  com.efrei.CoronaWatch.Controlers.ArticlesControler
 com/efrei/CoronaWatch/Repositories/ArticleRepository.java
  com.efrei.CoronaWatch.Repositories.ArticleRepository
-com/efrei/CoronaWatch/Entities/Country.java
- com.efrei.CoronaWatch.Entities.Country
 com/efrei/CoronaWatch/Controlers/StatisticsControler.java
  com.efrei.CoronaWatch.Controlers.StatisticsControler
-com/efrei/CoronaWatch/Entities/Region.java
- com.efrei.CoronaWatch.Entities.Region
-com/efrei/CoronaWatch/Entities/Commentary.java
- com.efrei.CoronaWatch.Entities.Commentary
-com/efrei/CoronaWatch/Entities/Redactor.java
- com.efrei.CoronaWatch.Entities.Redactor
-com/efrei/CoronaWatch/Entities/UserType.java
- com.efrei.CoronaWatch.Entities.UserType
-com/efrei/CoronaWatch/Entities/Continent.java
- com.efrei.CoronaWatch.Entities.Continent
+com/efrei/CoronaWatch/CorsFilter.java
+ com.efrei.CoronaWatch.CorsFilter
+com/efrei/CoronaWatch/Repositories/StatisticsRepository.java
+ com.efrei.CoronaWatch.Repositories.StatisticsRepository
+com/efrei/CoronaWatch/Controlers/UsersControler.java
+ com.efrei.CoronaWatch.Controlers.UsersControler
