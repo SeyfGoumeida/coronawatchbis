@@ -9,4 +9,5 @@ public interface StatisticsRepository extends CrudRepository<Statistics, Long> {
 
     Set<Statistics> findByStatisticsHealthAgent(HealthAgent healthAgent);
 
+
 }

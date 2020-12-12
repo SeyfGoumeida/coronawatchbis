@@ -57,10 +57,9 @@ public class Country {
         this.countryRegions = countryRegions;
     }
 
-    @OneToOne(mappedBy="statisticsCountry",optional = true, fetch = FetchType.LAZY)
+    @OneToOne(mappedBy="statisticsCountry", fetch = FetchType.LAZY)
     @JsonManagedReference
     // @JsonBackReference and @JsonManagedReference to avoid Infinite Recursion with Jackson JSON and Hibernate JPA issue
-
     public CountryStatistics getCountryStatistics() {
         return countryCountryStatistics;
     }

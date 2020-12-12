@@ -29,6 +29,13 @@ public class StatisticsControler {
         public Iterable<Statistics> getStatistics(){
             return statisticsRepository.findAll();
         }
+
+        @GetMapping("/Statistics/Validate/World")
+        public Iterable<Statistics> getWorldValidatedStatistics(){
+
+            return statisticsRepository.findAll();
+        }
+
         @GetMapping("/Statistics/Validate")
         public Iterable<Statistics> getValidatesStatistics(){
             Iterable<Statistics> listOfStatistics = getStatistics();

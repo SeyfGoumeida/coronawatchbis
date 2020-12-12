@@ -4,20 +4,36 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="51fcae89-0c64-44ef-bcb3-e41348457253" name="Default Changelist" comment="[DEPLOY] TEST">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/efrei/CoronaWatch/Entities/ContinentStatistics.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/efrei/CoronaWatch/Entities/CountryStatistics.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/efrei/CoronaWatch/Entities/RegionsStatistics.java" afterDir="false" />
+    <list default="true" id="51fcae89-0c64-44ef-bcb3-e41348457253" name="Default Changelist" comment="[ADD] Statistics for Region , Country , Continent">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/efrei/CoronaWatch/Repositories/ContinentRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/efrei/CoronaWatch/Repositories/ContinentStatisticsRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/efrei/CoronaWatch/Repositories/CountryRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/efrei/CoronaWatch/Repositories/CountryStatisticsCountry.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/efrei/CoronaWatch/Repositories/RegionRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/6.6.1/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.6.1/executionHistory/executionHistory.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/6.6.1/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.6.1/executionHistory/executionHistory.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/6.6.1/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.6.1/fileHashes/fileHashes.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/6.6.1/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.6.1/fileHashes/fileHashes.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/6.6.1/javaCompile/classAnalysis.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.6.1/javaCompile/classAnalysis.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/6.6.1/javaCompile/javaCompile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.6.1/javaCompile/javaCompile.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/efrei/CoronaWatch/CoronaWatchApplication.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/efrei/CoronaWatch/CoronaWatchApplication.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/efrei/CoronaWatch/Entities/Continent.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/efrei/CoronaWatch/Entities/Continent.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/efrei/CoronaWatch/Entities/Country.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/efrei/CoronaWatch/Entities/Country.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/efrei/CoronaWatch/Entities/HealthAgent.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/efrei/CoronaWatch/Entities/HealthAgent.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/efrei/CoronaWatch/Entities/Region.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/efrei/CoronaWatch/Entities/Region.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/efrei/CoronaWatch/Entities/Statistics.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/efrei/CoronaWatch/Entities/Statistics.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/tmp/compileJava/source-classes-mapping.txt" beforeDir="false" afterPath="$PROJECT_DIR$/build/tmp/compileJava/source-classes-mapping.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/efrei/CoronaWatch/Controlers/StatisticsControler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/efrei/CoronaWatch/Controlers/StatisticsControler.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/efrei/CoronaWatch/CoronaWatchApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/efrei/CoronaWatch/CoronaWatchApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/efrei/CoronaWatch/Entities/Continent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/efrei/CoronaWatch/Entities/Continent.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/efrei/CoronaWatch/Entities/ContinentStatistics.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/efrei/CoronaWatch/Entities/ContinentStatistics.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/efrei/CoronaWatch/Entities/Country.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/efrei/CoronaWatch/Entities/Country.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/efrei/CoronaWatch/Entities/HealthAgent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/efrei/CoronaWatch/Entities/HealthAgent.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/efrei/CoronaWatch/Entities/CountryStatistics.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/efrei/CoronaWatch/Entities/CountryStatistics.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/efrei/CoronaWatch/Entities/Region.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/efrei/CoronaWatch/Entities/Region.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/efrei/CoronaWatch/Entities/Statistics.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/efrei/CoronaWatch/Entities/Statistics.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/efrei/CoronaWatch/Entities/RegionsStatistics.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/efrei/CoronaWatch/Entities/RegionsStatistics.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/efrei/CoronaWatch/Repositories/StatisticsRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/efrei/CoronaWatch/Repositories/StatisticsRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -33,9 +49,9 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Enum" />
-        <option value="Interface" />
         <option value="package-info" />
         <option value="Class" />
+        <option value="Interface" />
       </list>
     </option>
   </component>
@@ -112,7 +128,7 @@
       <workItem from="1607628882835" duration="667000" />
       <workItem from="1607683993471" duration="7232000" />
       <workItem from="1607697490202" duration="11092000" />
-      <workItem from="1607778503913" duration="6375000" />
+      <workItem from="1607778503913" duration="16782000" />
     </task>
     <task id="LOCAL-00001" summary="[FIX] Postgresql integration issues &amp; @ID IDENTITY">
       <created>1607263367424</created>
@@ -296,7 +312,14 @@
       <option name="project" value="LOCAL" />
       <updated>1607715172491</updated>
     </task>
-    <option name="localTasksCounter" value="27" />
+    <task id="LOCAL-00027" summary="[ADD] Statistics for Region , Country , Continent">
+      <created>1607785973968</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1607785973968</updated>
+    </task>
+    <option name="localTasksCounter" value="28" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -353,6 +376,7 @@
     <MESSAGE value="[Test] To deploy" />
     <MESSAGE value="[ADD] CorsFilter &amp; DeleteUser" />
     <MESSAGE value="[DEPLOY] TEST" />
-    <option name="LAST_COMMIT_MESSAGE" value="[DEPLOY] TEST" />
+    <MESSAGE value="[ADD] Statistics for Region , Country , Continent" />
+    <option name="LAST_COMMIT_MESSAGE" value="[ADD] Statistics for Region , Country , Continent" />
   </component>
 </project>

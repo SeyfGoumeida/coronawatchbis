@@ -1,17 +1,12 @@
 package com.efrei.CoronaWatch;
 
 import com.efrei.CoronaWatch.Entities.*;
-import com.efrei.CoronaWatch.Repositories.ArticleRepository;
-import com.efrei.CoronaWatch.Repositories.StatisticsRepository;
-import com.efrei.CoronaWatch.Repositories.UserRepository;
+import com.efrei.CoronaWatch.Repositories.*;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
 
-import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.List;
 import java.util.Set;
 
 @SpringBootApplication
@@ -22,7 +17,12 @@ public class CoronaWatchApplication {
 	}
 	
 	@Bean
-	public CommandLineRunner demo(ArticleRepository articlerepository , UserRepository userrepository , StatisticsRepository statisticsRepository) {
+	public CommandLineRunner demo(ArticleRepository articlerepository ,
+								  UserRepository userrepository ,
+								  StatisticsRepository statisticsRepository,
+								  RegionRepository regionrepository ,
+								  ContinentRepository continentRepository ,
+								  CountryRepository countryRepository) {
 		return (args) -> {
 
 
@@ -52,37 +52,88 @@ public class CoronaWatchApplication {
 
 			articlerepository.save(article1);
 			articlerepository.save(article2);
-			//--------------TEST REGION     -----------------------------
+			//-------------- REGION COUNTRY CONTINENT    -----------------------------
 
 			Continent africa = new Continent(Continents.Africa);
+			Continent europe = new Continent(Continents.Europe);
+
+			continentRepository.save(africa);
+			continentRepository.save(europe);
+
 			Country algeria = new Country("Algeria");
 			Country tunisia = new Country("Tunisia");
-			Country morocco = new Country("Morocco");
-			List<Country> africaCountries = new ArrayList<>();
-			africaCountries.add(algeria);
-			africaCountries.add(tunisia);
-			africaCountries.add(morocco);
-			Set<Country> africaCountriesSet = new HashSet<>(africaCountries);
-			africa.setCountries(africaCountriesSet);
+			Country france  = new Country("France");
+			Country germany = new Country("Germany");
+
+			countryRepository.save(algeria);
+			countryRepository.save(tunisia);
+			countryRepository.save(france);
+			countryRepository.save(germany);
+
+			Region batna       = new Region("Batna");
 			Region constantine = new Region("Constantineeeee");
-			constantine.setRegionCountry(algeria);
 
-			Region batna = new Region("Batna");
+			regionrepository.save(batna);
+			regionrepository.save(constantine);
+
+
 			constantine.setRegionCountry(algeria);
+			batna.setRegionCountry(algeria);
+			regionrepository.save(batna);
+			regionrepository.save(constantine);
+
+			algeria.setCountryContinent(africa);
+			tunisia.setCountryContinent(africa);
+
+			france.setCountryContinent(europe);
+			germany.setCountryContinent(europe);
+
+
+			algeria.getCountryRegions().add(constantine);
+			algeria.getCountryRegions().add(batna);
+
+
+			countryRepository.save(algeria);
+			countryRepository.save(tunisia);
+			countryRepository.save(france);
+			countryRepository.save(germany);
+
+			africa.getCountries().add(algeria);
+			africa.getCountries().add(tunisia);
+
+			europe.getCountries().add(france);
+			europe.getCountries().add(germany);
+
+			continentRepository.save(africa);
+			continentRepository.save(europe);
 			//--------------TEST STATISTICS -----------------------------
-			RegionsStatistics regionsStatistics = new RegionsStatistics(10, 100, 200, 500);
-			regionsStatistics.setStatisticsValidate(true);
-			regionsStatistics.setStatisticsRegion(constantine);
-			regionsStatistics.setStatisticsHealthAgent(healthagent);
+			RegionsStatistics constantineStatistics = new RegionsStatistics(11111, 11111, 11111, 11111);
+			constantineStatistics.setStatisticsValidate(true);
+			constantineStatistics.setStatisticsRegion(constantine);
+			constantineStatistics.setStatisticsHealthAgent(healthagent);
+			statisticsRepository.save(constantineStatistics);
 
-			statisticsRepository.save(regionsStatistics);
-			statisticsRepository.save(regionsStatistics);
+			RegionsStatistics batnaStatistics = new RegionsStatistics(22222, 22222, 22222, 22222);
+			batnaStatistics.setStatisticsValidate(false);
+			batnaStatistics.setStatisticsHealthAgent(healthagent);
+			batnaStatistics.setStatisticsRegion(batna);
+			statisticsRepository.save(batnaStatistics);
 
-			RegionsStatistics regionsStatistics2 = new RegionsStatistics(10, 100, 200, 500);
-			regionsStatistics2.setStatisticsValidate(false);
-			regionsStatistics2.setStatisticsHealthAgent(healthagent);
-			regionsStatistics2.setStatisticsRegion(batna);
-			statisticsRepository.save(regionsStatistics2);
+			CountryStatistics algeriaStatistics = new CountryStatistics(33333, 33333, 33333, 33333);
+			algeriaStatistics.setStatisticsValidate(true);
+			algeriaStatistics.setStatisticsCountry(algeria);
+			algeriaStatistics.setStatisticsHealthAgent(healthagent);
+			constantineStatistics.setRegionsStatisticsCountryStatistics(algeriaStatistics);
+			statisticsRepository.save(algeriaStatistics);
+
+
+
+
+
+			System.out.println("____________________________"+algeria.getCountryRegions().size());
+			System.out.println("____________________________" + batnaStatistics.getStatisticsRegion().getRegionName());
+			System.out.println("____________________________"+africa.getCountries().size());
+
 
 
 

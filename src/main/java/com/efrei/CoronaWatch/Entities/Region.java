@@ -44,10 +44,9 @@ public class Region {
         this.regionCountry = regionCountry;
     }
 
-    @OneToOne(mappedBy="statisticsRegion",optional = true, fetch = FetchType.LAZY)
+    @OneToOne(mappedBy="statisticsRegion", cascade= CascadeType.ALL, fetch = FetchType.LAZY)
     @JsonManagedReference
     // @JsonBackReference and @JsonManagedReference to avoid Infinite Recursion with Jackson JSON and Hibernate JPA issue
-
     public RegionsStatistics getRegionStatistics() {
         return regionRegionsStatistics;
     }
