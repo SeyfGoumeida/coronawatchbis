@@ -16,8 +16,8 @@ public class RegionsStatistics extends Statistics {
     public RegionsStatistics(){
         super();
     }
-    public RegionsStatistics(Integer nbDeaths, Integer nbSuspected, Integer nbConfirmed, Integer nbRecovred) {
-        super(nbDeaths,nbSuspected,nbConfirmed,nbRecovred);
+    public RegionsStatistics(Integer nbDeaths, Integer nbSuspected, Integer nbConfirmed, Integer nbRecovred,StatisticsTypes statisticsTypes) {
+        super(nbDeaths,nbSuspected,nbConfirmed,nbRecovred,statisticsTypes);
         this.statisticsValidate = false;
     }
 
@@ -45,19 +45,16 @@ public class RegionsStatistics extends Statistics {
     public void setNbDeaths(Integer nbDeaths) {
 
         super.setNbDeaths(nbDeaths);
-        regionsStatisticsCountryStatistics.setNbDeaths(regionsStatisticsCountryStatistics.getNbDeaths()+nbDeaths);
     }
 
     public void setNbSuspected(Integer nbSuspected) {
 
         super.setNbSuspected(nbSuspected);
-        regionsStatisticsCountryStatistics.setNbSuspected(regionsStatisticsCountryStatistics.getNbSuspected()+nbSuspected);
     }
 
     public void setNbConfirmed(Integer nbConfirmed) {
 
         super.setNbConfirmed(nbConfirmed);
-        regionsStatisticsCountryStatistics.setNbConfirmed(regionsStatisticsCountryStatistics.getNbConfirmed()+nbConfirmed);
 
     }
 
@@ -65,7 +62,6 @@ public class RegionsStatistics extends Statistics {
     public void setNbRecovred(Integer nbRecovred) {
 
         super.setNbConfirmed(nbRecovred);
-        regionsStatisticsCountryStatistics.setNbRecovred(regionsStatisticsCountryStatistics.getNbRecovred()+nbRecovred);
 
     }
 

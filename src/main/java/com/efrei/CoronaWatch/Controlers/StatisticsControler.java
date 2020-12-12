@@ -1,7 +1,7 @@
 package com.efrei.CoronaWatch.Controlers;
 
-import com.efrei.CoronaWatch.Entities.RegionsStatistics;
-import com.efrei.CoronaWatch.Entities.Statistics;
+import com.efrei.CoronaWatch.Entities.*;
+import com.efrei.CoronaWatch.Repositories.ContinentStatisticsRepository;
 import com.efrei.CoronaWatch.Repositories.StatisticsRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.transaction.annotation.Propagation;
@@ -26,14 +26,21 @@ public class StatisticsControler {
 
 
         @GetMapping("/Statistics")
-        public Iterable<Statistics> getStatistics(){
-            return statisticsRepository.findAll();
-        }
+        public Iterable<Statistics> getStatistics(){ return statisticsRepository.findAll(); }
 
-        @GetMapping("/Statistics/Validate/World")
-        public Iterable<Statistics> getWorldValidatedStatistics(){
+        @GetMapping("/Statistics/World")
+        public Iterable<Statistics> getStatisticsWord(){
 
-            return statisticsRepository.findAll();
+            Iterable<Statistics> listOfStatistics = getStatistics();
+            List<Statistics> listOfValidatedStatistics = new ArrayList<>();
+            for(Statistics statistics :listOfStatistics ){
+                if(statistics.getStatisticsValidate() && statistics.getStatisticsType().equals(StatisticsTypes.Continent))
+                {
+                    listOfValidatedStatistics.add(statistics);
+                }
+            }
+            return listOfValidatedStatistics;
+
         }
 
         @GetMapping("/Statistics/Validate")
@@ -61,10 +68,10 @@ public class StatisticsControler {
             return listOfValidatesStatistics;
         }
 
-        @PostMapping("/Statistics")
+        @PostMapping("/Statistics/Region")
         @Transactional(propagation = Propagation.REQUIRES_NEW, rollbackFor = Exception.class)
-        public void addStatistics(@RequestBody RegionsStatistics regionsStatistics) throws Exception {
-            statisticsRepository.save(regionsStatistics);
+        public void addStatistics(@RequestBody Statistics statistics) throws Exception {
+            statisticsRepository.save(statistics);
 
         }
 

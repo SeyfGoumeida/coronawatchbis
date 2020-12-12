@@ -19,8 +19,8 @@ public class CountryStatistics extends Statistics {
         super();
     }
 
-    public CountryStatistics(Integer nbDeaths, Integer nbSuspected, Integer nbConfirmed, Integer nbRecovred) {
-        super(nbDeaths, nbSuspected, nbConfirmed, nbRecovred);
+    public CountryStatistics(Integer nbDeaths, Integer nbSuspected, Integer nbConfirmed, Integer nbRecovred,StatisticsTypes statisticsTypes) {
+        super(nbDeaths, nbSuspected, nbConfirmed, nbRecovred,statisticsTypes);
         this.statisticsValidate = false;
     }
 

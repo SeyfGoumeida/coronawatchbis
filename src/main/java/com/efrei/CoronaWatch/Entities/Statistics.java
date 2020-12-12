@@ -15,18 +15,21 @@ public class Statistics {
     private Integer nbRecovred;
     private HealthAgent statisticsHealthAgent;
     private Boolean statisticsValidate;
+    private StatisticsTypes statisticsType;
 
 
 
     public Statistics(){
         super();
     }
-    public Statistics(Integer nbDeaths, Integer nbSuspected, Integer nbConfirmed, Integer nbRecovred) {
+    public Statistics(Integer nbDeaths, Integer nbSuspected, Integer nbConfirmed, Integer nbRecovred,StatisticsTypes statisticsType) {
         this.nbDeaths = nbDeaths;
         this.nbSuspected = nbSuspected;
         this.nbConfirmed = nbConfirmed;
         this.nbRecovred = nbRecovred;
         this.statisticsValidate = false;
+        this.statisticsType = statisticsType;
+        this.statisticsHealthAgent =null;
     }
     @Id
     @GeneratedValue(strategy = GenerationType.TABLE)
@@ -86,4 +89,11 @@ public class Statistics {
         this.statisticsValidate = statisticsValidate;
     }
 
+    public StatisticsTypes getStatisticsType() {
+        return statisticsType;
+    }
+
+    public void setStatisticsType(StatisticsTypes statisticsType) {
+        this.statisticsType = statisticsType;
+    }
 }
