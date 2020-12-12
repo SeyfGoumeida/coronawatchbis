@@ -29,7 +29,25 @@ public class StatisticsControler {
         public Iterable<Statistics> getStatistics(){ return statisticsRepository.findAll(); }
 
         @GetMapping("/Statistics/World")
-        public Iterable<Statistics> getStatisticsWord(){
+        public Statistics getStatisticsWord(){
+
+            Iterable<Statistics> listOfStatistics = getStatistics();
+            Statistics WorldsStatistics = new Statistics(0,0,0,0,StatisticsTypes.Word);
+            for(Statistics statistics :listOfStatistics ){
+                if(statistics.getStatisticsValidate() && statistics.getStatisticsType().equals(StatisticsTypes.Continent))
+                {
+                    WorldsStatistics.setNbConfirmed(WorldsStatistics.getNbConfirmed()+statistics.getNbConfirmed());
+                    WorldsStatistics.setNbDeaths(WorldsStatistics.getNbDeaths()+statistics.getNbDeaths());
+                    WorldsStatistics.setNbRecovred(WorldsStatistics.getNbRecovred()+statistics.getNbRecovred());
+                    WorldsStatistics.setNbSuspected(WorldsStatistics.getNbSuspected()+statistics.getNbSuspected());
+
+                }
+            }
+            return WorldsStatistics;
+
+        }
+        @GetMapping("/Statistics/Continents")
+        public Iterable<Statistics> getStatisticsContinents(){
 
             Iterable<Statistics> listOfStatistics = getStatistics();
             List<Statistics> listOfValidatedStatistics = new ArrayList<>();
@@ -42,7 +60,6 @@ public class StatisticsControler {
             return listOfValidatedStatistics;
 
         }
-
         @GetMapping("/Statistics/Validate")
         public Iterable<Statistics> getValidatesStatistics(){
             Iterable<Statistics> listOfStatistics = getStatistics();
