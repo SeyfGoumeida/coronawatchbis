@@ -4,7 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="51fcae89-0c64-44ef-bcb3-e41348457253" name="Default Changelist" comment="[ADD] Word Statistics">
+    <list default="true" id="51fcae89-0c64-44ef-bcb3-e41348457253" name="Default Changelist" comment="[change]  application.properties">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -103,7 +104,7 @@
       <workItem from="1607683993471" duration="7232000" />
       <workItem from="1607697490202" duration="11092000" />
       <workItem from="1607778503913" duration="16782000" />
-      <workItem from="1607796909423" duration="8961000" />
+      <workItem from="1607796909423" duration="9215000" />
     </task>
     <task id="LOCAL-00001" summary="[FIX] Postgresql integration issues &amp; @ID IDENTITY">
       <created>1607263367424</created>
@@ -301,7 +302,14 @@
       <option name="project" value="LOCAL" />
       <updated>1607806402632</updated>
     </task>
-    <option name="localTasksCounter" value="29" />
+    <task id="LOCAL-00029" summary="[change]  application.properties">
+      <created>1607806714423</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1607806714423</updated>
+    </task>
+    <option name="localTasksCounter" value="30" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -334,7 +342,6 @@
     <ignored-roots>
       <path value="$PROJECT_DIR$/src/main/coronawatch" />
     </ignored-roots>
-    <MESSAGE value="[EDIT] All @ID IDENTITY &amp; README.md" />
     <MESSAGE value="[FIX] Packages &amp; [ADD]RestWebService" />
     <MESSAGE value="[Test] sourceCompatibility = '11' with sourceCompatibility = '1.8'" />
     <MESSAGE value="[Test] sourceCompatibility = '11' back again" />
@@ -359,6 +366,7 @@
     <MESSAGE value="[DEPLOY] TEST" />
     <MESSAGE value="[ADD] Statistics for Region , Country , Continent" />
     <MESSAGE value="[ADD] Word Statistics" />
-    <option name="LAST_COMMIT_MESSAGE" value="[ADD] Word Statistics" />
+    <MESSAGE value="[change]  application.properties" />
+    <option name="LAST_COMMIT_MESSAGE" value="[change]  application.properties" />
   </component>
 </project>
