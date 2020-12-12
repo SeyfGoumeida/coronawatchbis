@@ -1,6 +1,7 @@
 package com.efrei.CoronaWatch.Entities;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 
 import javax.persistence.*;
 import java.util.HashSet;
@@ -12,6 +13,9 @@ public class Country {
     private String countryName;
     private Continent countryContinent;
     private Set<Region> countryRegions = new HashSet<Region>();
+    private CountryStatistics countryCountryStatistics;
+
+
     public Country() {
         super();
     }
@@ -51,5 +55,17 @@ public class Country {
 
     public void setCountryRegions(Set<Region> countryRegions) {
         this.countryRegions = countryRegions;
+    }
+
+    @OneToOne(mappedBy="statisticsCountry",optional = true, fetch = FetchType.LAZY)
+    @JsonManagedReference
+    // @JsonBackReference and @JsonManagedReference to avoid Infinite Recursion with Jackson JSON and Hibernate JPA issue
+
+    public CountryStatistics getCountryStatistics() {
+        return countryCountryStatistics;
+    }
+
+    public void setCountryStatistics(CountryStatistics countryCountryStatistics) {
+        this.countryCountryStatistics = countryCountryStatistics;
     }
 }

@@ -5,13 +5,14 @@ import com.fasterxml.jackson.annotation.JsonBackReference;
 import javax.persistence.*;
 
 @Entity
+@Inheritance(strategy = InheritanceType.TABLE_PER_CLASS)
 public class Statistics {
+
     private long idStatistics;
     private Integer nbDeaths;
     private Integer nbSuspected;
     private Integer nbConfirmed;
     private Integer nbRecovred;
-    private Region statisticsRegion;
     private HealthAgent statisticsHealthAgent;
     private Boolean statisticsValidate;
 
@@ -28,7 +29,7 @@ public class Statistics {
         this.statisticsValidate = false;
     }
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.TABLE)
     public long getIdStatistics() {
         return idStatistics;
     }
@@ -69,16 +70,6 @@ public class Statistics {
         this.nbRecovred = nbRecovred;
     }
 
-    @OneToOne( optional = true, orphanRemoval = true, fetch = FetchType.LAZY, cascade = CascadeType.ALL )
-    @JsonBackReference
-    // @JsonBackReference to avoid Infinite Recursion with Jackson JSON and Hibernate JPA issue
-
-    public Region getStatisticsRegion() {
-        return statisticsRegion;
-    }
-    public void setStatisticsRegion(Region statisticsRegion) {
-        this.statisticsRegion = statisticsRegion;
-    }
     @ManyToOne(optional = true, targetEntity=HealthAgent.class)
     public HealthAgent getStatisticsHealthAgent() {
         return statisticsHealthAgent;
@@ -94,5 +85,5 @@ public class Statistics {
     public void setStatisticsValidate(Boolean statisticsValidate) {
         this.statisticsValidate = statisticsValidate;
     }
-}
 
+}

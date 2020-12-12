@@ -10,7 +10,7 @@ import java.util.Set;
 
 public class HealthAgent extends User {
 
-    private Set<Statistics> healthAgentStatistics= new HashSet<>();
+    private Set<RegionsStatistics> healthAgentStatistics= new HashSet<>();
 
     public  HealthAgent(){super();}
     public HealthAgent(String userName, String firstName, String lastName, String email, String passWord, UserType userType){
@@ -18,11 +18,11 @@ public class HealthAgent extends User {
 
     @OneToMany(mappedBy="statisticsHealthAgent", cascade= CascadeType.ALL, fetch = FetchType.EAGER)
     @JsonIgnore
-    public Set<Statistics> getHealthAgentStatistics() {
+    public Set<RegionsStatistics> getHealthAgentStatistics() {
         return healthAgentStatistics;
     }
 
-    public void setHealthAgentStatistics(Set<Statistics> healthAgentStatistics) {
+    public void setHealthAgentStatistics(Set<RegionsStatistics> healthAgentStatistics) {
         this.healthAgentStatistics = healthAgentStatistics;
     }
 }

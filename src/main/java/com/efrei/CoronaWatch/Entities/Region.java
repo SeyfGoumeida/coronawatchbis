@@ -9,7 +9,7 @@ public class Region {
     private long idRegion;
     private String regionName;
     private Country regionCountry;
-    private Statistics regionStatistics;
+    private RegionsStatistics regionRegionsStatistics;
 
     public Region() {
         super();
@@ -48,11 +48,11 @@ public class Region {
     @JsonManagedReference
     // @JsonBackReference and @JsonManagedReference to avoid Infinite Recursion with Jackson JSON and Hibernate JPA issue
 
-    public Statistics getRegionStatistics() {
-        return regionStatistics;
+    public RegionsStatistics getRegionStatistics() {
+        return regionRegionsStatistics;
     }
 
-    public void setRegionStatistics(Statistics regionStatistics) {
-        this.regionStatistics = regionStatistics;
+    public void setRegionStatistics(RegionsStatistics regionRegionsStatistics) {
+        this.regionRegionsStatistics = regionRegionsStatistics;
     }
 }

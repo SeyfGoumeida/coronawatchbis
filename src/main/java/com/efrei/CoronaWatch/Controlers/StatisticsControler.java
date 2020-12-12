@@ -1,8 +1,7 @@
 package com.efrei.CoronaWatch.Controlers;
 
-import com.efrei.CoronaWatch.Entities.Article;
+import com.efrei.CoronaWatch.Entities.RegionsStatistics;
 import com.efrei.CoronaWatch.Entities.Statistics;
-import com.efrei.CoronaWatch.Repositories.ArticleRepository;
 import com.efrei.CoronaWatch.Repositories.StatisticsRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.transaction.annotation.Propagation;
@@ -57,8 +56,8 @@ public class StatisticsControler {
 
         @PostMapping("/Statistics")
         @Transactional(propagation = Propagation.REQUIRES_NEW, rollbackFor = Exception.class)
-        public void addStatistics(@RequestBody Statistics statistics) throws Exception {
-            statisticsRepository.save(statistics);
+        public void addStatistics(@RequestBody RegionsStatistics regionsStatistics) throws Exception {
+            statisticsRepository.save(regionsStatistics);
 
         }
 

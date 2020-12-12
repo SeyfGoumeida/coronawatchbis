@@ -70,19 +70,19 @@ public class CoronaWatchApplication {
 			Region batna = new Region("Batna");
 			constantine.setRegionCountry(algeria);
 			//--------------TEST STATISTICS -----------------------------
-			Statistics statistics = new Statistics(10, 100, 200, 500);
-			statistics.setStatisticsValidate(true);
-			statistics.setStatisticsRegion(constantine);
-			statistics.setStatisticsHealthAgent(healthagent);
+			RegionsStatistics regionsStatistics = new RegionsStatistics(10, 100, 200, 500);
+			regionsStatistics.setStatisticsValidate(true);
+			regionsStatistics.setStatisticsRegion(constantine);
+			regionsStatistics.setStatisticsHealthAgent(healthagent);
 
-			statisticsRepository.save(statistics);
-			statisticsRepository.save(statistics);
+			statisticsRepository.save(regionsStatistics);
+			statisticsRepository.save(regionsStatistics);
 
-			Statistics statistics2 = new Statistics(10, 100, 200, 500);
-			statistics2.setStatisticsValidate(false);
-			statistics2.setStatisticsHealthAgent(healthagent);
-			statistics2.setStatisticsRegion(batna);
-			statisticsRepository.save(statistics2);
+			RegionsStatistics regionsStatistics2 = new RegionsStatistics(10, 100, 200, 500);
+			regionsStatistics2.setStatisticsValidate(false);
+			regionsStatistics2.setStatisticsHealthAgent(healthagent);
+			regionsStatistics2.setStatisticsRegion(batna);
+			statisticsRepository.save(regionsStatistics2);
 
 
 

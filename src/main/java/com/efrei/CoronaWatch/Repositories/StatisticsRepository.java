@@ -7,9 +7,6 @@ import java.util.Set;
 
 public interface StatisticsRepository extends CrudRepository<Statistics, Long> {
 
-    Set<Statistics> findByStatisticsRegion(Region region);
     Set<Statistics> findByStatisticsHealthAgent(HealthAgent healthAgent);
-
-
 
 }
