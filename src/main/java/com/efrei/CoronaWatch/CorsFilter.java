@@ -1,4 +1,4 @@
-package com.efrei.CoronaWatch;
+/*package com.efrei.CoronaWatch;
 
 
 import org.springframework.core.Ordered;
@@ -40,4 +40,4 @@ public class CorsFilter implements Filter {
         //not needed
     }
 
-}
+}*/

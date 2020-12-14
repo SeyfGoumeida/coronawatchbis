@@ -2,15 +2,17 @@ package com.efrei.CoronaWatch;
 
 import com.efrei.CoronaWatch.Entities.*;
 import com.efrei.CoronaWatch.Repositories.*;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
-
-import java.util.Set;
+import org.springframework.security.crypto.password.PasswordEncoder;
 
 @SpringBootApplication
 public class CoronaWatchApplication {
+	@Autowired
+	PasswordEncoder encoder;
 
 	public static void main(String[] args) {
 		SpringApplication.run(CoronaWatchApplication.class, args);
@@ -26,9 +28,9 @@ public class CoronaWatchApplication {
 		return (args) -> {
 
 
-			Redactor redactor = new Redactor("UserRedactor", "firstnameRedactor", "LastNameRedactor", "Redactor@gmail.com", "azerty", UserType.Redactor);
+			Redactor redactor = new Redactor("UserRedactor", "firstnameRedactor", "LastNameRedactor", "Redactor@gmail.com", encoder.encode("azerty"), UserType.Redactor);
 			Redactor redactor2 = new Redactor("UserRedactor2", "firstnameRedacto2", "LastNameRedactor 2", "Redactor2@gmail.com", "azerty", UserType.Redactor);
-			SuperAdmin SuperAdmin = new SuperAdmin("SuperAdmin", "Super", "Admin", "superadmin@gmail.com", "azerty", UserType.SuperAdmin);
+			SuperAdmin SuperAdmin = new SuperAdmin("SuperAdmin", "Super", "Admin", "superadmin@gmail.com", encoder.encode("azerty"), UserType.SuperAdmin);
 			Moderator moderator = new Moderator("UserModerator", "firstnameModerator", "LastNameModerator", "Moderator@gmail.com", "azerty", UserType.Moderator);
 			HealthAgent healthagent = new HealthAgent("UserHealthAgent", "firstnameHealthAgent", "LastNameHealthAgent", "HealthAgent@gmail.com", "azerty", UserType.HealthAgent);
 
@@ -42,7 +44,7 @@ public class CoronaWatchApplication {
 
 
 			//--------------TEST ARTICLES -----------------------------
-			Article article1 = new Article("Article Title ", "Article Content");
+		/*	Article article1 = new Article("Article Title ", "Article Content");
 			article1.setArticleRedactor(redactor);
 			article1.setArticleValidate(true);
 			Article article2 = new Article("Article Title 2 ", "Article Content 2");
@@ -208,7 +210,7 @@ public class CoronaWatchApplication {
 
 
 
-
+*/
 
 		};
 	}

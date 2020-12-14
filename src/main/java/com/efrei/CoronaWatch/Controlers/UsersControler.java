@@ -1,22 +1,18 @@
 
 package com.efrei.CoronaWatch.Controlers;
 
-        import com.efrei.CoronaWatch.Entities.Redactor;
         import com.efrei.CoronaWatch.Entities.User;
-        import com.efrei.CoronaWatch.Entities.UserType;
-        import com.efrei.CoronaWatch.Repositories.UserRepository;
-        import org.springframework.beans.factory.annotation.Autowired;
-        //import org.springframework.security.crypto.bcrypt.BCrypt;
-        import org.springframework.transaction.annotation.Propagation;
-        import org.springframework.transaction.annotation.Transactional;
-        import org.springframework.web.bind.annotation.*;
+import com.efrei.CoronaWatch.Entities.UserType;
+import com.efrei.CoronaWatch.Repositories.UserRepository;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.transaction.annotation.Propagation;
+import org.springframework.transaction.annotation.Transactional;
+import org.springframework.web.bind.annotation.*;
 
-        import javax.persistence.SecondaryTable;
-        import javax.xml.transform.Result;
-        import java.util.ArrayList;
-        import java.util.HashSet;
-        import java.util.List;
-        import java.util.Set;
+import java.util.ArrayList;
+import java.util.List;
+
+//import org.springframework.security.crypto.bcrypt.BCrypt;
 
 @RestController
 public class UsersControler {
