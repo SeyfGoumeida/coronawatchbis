@@ -3,7 +3,7 @@ package com.efrei.CoronaWatch.Entities;
 import javax.persistence.*;
 
 @Entity
-@Inheritance(strategy = InheritanceType.TABLE_PER_CLASS)
+@Inheritance(strategy = InheritanceType.SINGLE_TABLE    )
 @Table(name="USERTABLE")
 public class User {
     protected long idUser;

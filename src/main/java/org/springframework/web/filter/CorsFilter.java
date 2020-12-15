@@ -1,7 +1,6 @@
-/*package com.efrei.CoronaWatch;
+package org.springframework.web.filter;
 
-
-import org.springframework.core.Ordered;
+/*import org.springframework.core.Ordered;
 import org.springframework.core.annotation.Order;
 import org.springframework.stereotype.Component;
 

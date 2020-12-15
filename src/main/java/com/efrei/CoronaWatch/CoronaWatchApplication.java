@@ -29,10 +29,10 @@ public class CoronaWatchApplication {
 
 
 			Redactor redactor = new Redactor("UserRedactor", "firstnameRedactor", "LastNameRedactor", "Redactor@gmail.com", encoder.encode("azerty"), UserType.Redactor);
-			Redactor redactor2 = new Redactor("UserRedactor2", "firstnameRedacto2", "LastNameRedactor 2", "Redactor2@gmail.com", "azerty", UserType.Redactor);
+			Redactor redactor2 = new Redactor("UserRedactor2", "firstnameRedacto2", "LastNameRedactor 2", "Redactor2@gmail.com",  encoder.encode("azerty"), UserType.Redactor);
 			SuperAdmin SuperAdmin = new SuperAdmin("SuperAdmin", "Super", "Admin", "superadmin@gmail.com", encoder.encode("azerty"), UserType.SuperAdmin);
-			Moderator moderator = new Moderator("UserModerator", "firstnameModerator", "LastNameModerator", "Moderator@gmail.com", "azerty", UserType.Moderator);
-			HealthAgent healthagent = new HealthAgent("UserHealthAgent", "firstnameHealthAgent", "LastNameHealthAgent", "HealthAgent@gmail.com", "azerty", UserType.HealthAgent);
+			Moderator moderator = new Moderator("UserModerator", "firstnameModerator", "LastNameModerator", "Moderator@gmail.com",  encoder.encode("azerty"), UserType.Moderator);
+			HealthAgent healthagent = new HealthAgent("UserHealthAgent", "firstnameHealthAgent", "LastNameHealthAgent", "HealthAgent@gmail.com",  encoder.encode("azerty"), UserType.HealthAgent);
 
 
 			userrepository.save(healthagent);
@@ -44,7 +44,7 @@ public class CoronaWatchApplication {
 
 
 			//--------------TEST ARTICLES -----------------------------
-		/*	Article article1 = new Article("Article Title ", "Article Content");
+			Article article1 = new Article("Article Title ", "Article Content");
 			article1.setArticleRedactor(redactor);
 			article1.setArticleValidate(true);
 			Article article2 = new Article("Article Title 2 ", "Article Content 2");
@@ -207,10 +207,6 @@ public class CoronaWatchApplication {
 			System.out.println("____________________________"+algeria.getCountryRegions().size());
 			System.out.println("____________________________" + batnaStatistics.getStatisticsRegion().getRegionName());
 			System.out.println("____________________________"+africa.getCountries().size());
-
-
-
-*/
 
 		};
 	}
