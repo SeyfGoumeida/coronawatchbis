@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.security.crypto.password.PasswordEncoder;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -20,6 +21,8 @@ public class UsersControler {
     UserRepository userRepository;
 
     @Autowired
+    PasswordEncoder encoder;
+
     public UsersControler(UserRepository userRepository) {
         super();
         this.userRepository = userRepository;
@@ -99,6 +102,11 @@ public class UsersControler {
     @PostMapping("/Users/AddUser")
     @Transactional(propagation = Propagation.REQUIRES_NEW, rollbackFor = Exception.class)
     public void addUser(@RequestBody User user) throws Exception {
+        //String passencoded = user.getPassWord();
+        //System.out.println( "---------------------------------------" );
+        //System.out.println( passencoded );
+        //System.out.println( "---------------------------------------" );
+        //user.setPassWord(encoder.encode(passencoded));
         if (user.getUserType().equals(UserType.SuperAdmin)){
             System.out.println( "There is only one SuperAdmin for this app" );
         }else {

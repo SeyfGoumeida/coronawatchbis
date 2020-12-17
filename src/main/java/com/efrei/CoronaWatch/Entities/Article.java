@@ -35,7 +35,7 @@ public class Article {
     public void setIdArticle(long idArticle) {
         this.idArticle = idArticle;
     }
-
+    @Column(unique=true)
     public String getTitle() {
         return title;
     }

@@ -1,15 +1,12 @@
 package com.efrei.CoronaWatch.Controlers;
 
 import com.efrei.CoronaWatch.Entities.Article;
+import com.efrei.CoronaWatch.Entities.Commentary;
 import com.efrei.CoronaWatch.Repositories.ArticleRepository;
-import com.efrei.CoronaWatch.Repositories.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -55,11 +52,91 @@ public class ArticlesControler {
         return listOfInvalidatesArticles;
     }
 
-    @PostMapping("/Articles")
+
+    @GetMapping("/Articles/Article")
+    public Article getArticle(@RequestParam(name = "id") long id){
+            Article article = articleRepository.findByIdArticle(id);
+            if (article == null) {
+                System.out.println("----------------------------------");
+                System.out.println("There is no article with suck id");
+                System.out.println("----------------------------------");
+                return null;
+            }else {
+                System.out.println("----------------------------------");
+                System.out.println(article.getTitle());
+                System.out.println(article.getContent());
+                System.out.println("----------------------------------");
+                return article;
+            }
+
+    }
+
+    @GetMapping("/Articles/Article/Comments")
+    public Iterable<Commentary> getArticleComments(@RequestParam(name = "id") long id){
+        Article article = articleRepository.findByIdArticle(id);
+
+        if (article == null) {
+            System.out.println("----------------------------------");
+            System.out.println("There is no article with suck id");
+            System.out.println("----------------------------------");
+            return null;
+        }else {
+            System.out.println("----------------------------------");
+            System.out.println(article.getTitle());
+            System.out.println(article.getContent());
+            System.out.println(article.getArticleCommentaries());
+            System.out.println("----------------------------------");
+            return article.getArticleCommentaries();
+        }
+
+    }
+    //----------------POST----------------------
+
+
+    @PostMapping("/Articles/AddArticle")
     @Transactional(propagation = Propagation.REQUIRES_NEW, rollbackFor = Exception.class)
     public void addArticle(@RequestBody Article article) throws Exception {
         articleRepository.save(article);
 
+    }
+
+    //----------------DELETE----------------------
+    @DeleteMapping("/Articles/DeleteArticle")
+
+    public void deleteArticle(@RequestParam(name = "id") long id) {
+        Article article = articleRepository.findByIdArticle(id);
+        if (article == null) {
+            System.out.println( "----------------------------------" );
+            System.out.println( "There is no article with suck id" );
+            System.out.println( "----------------------------------" );
+
+        }
+        else {
+            articleRepository.delete(article);
+        }
+    }
+
+    //----------------PUT----------------------
+    @PutMapping ("/Articles/EditArticle")
+    @Transactional(propagation = Propagation.REQUIRES_NEW, rollbackFor = Exception.class)
+
+    public void editArticle(@RequestParam(name = "id") long id , @RequestBody Article editedarticle) {
+        Article article = articleRepository.findByIdArticle(id);
+        if (article == null) {
+            System.out.println( "----------------------------------" );
+            System.out.println( "There is no article with suck id" );
+            System.out.println( "----------------------------------" );
+
+        }
+        else {
+            article.setArticleValidate(editedarticle.getArticleValidate());
+            article.setArticleRedactor(editedarticle.getArticleRedactor());
+            article.setArticleModerator(editedarticle.getArticleModerator());
+            article.setContent(editedarticle.getContent());
+            article.setTitle(editedarticle.getTitle());
+
+            articleRepository.save(article);
+        }
     }
 
 

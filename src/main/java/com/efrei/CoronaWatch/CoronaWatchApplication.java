@@ -9,6 +9,9 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
 import org.springframework.security.crypto.password.PasswordEncoder;
 
+import java.util.HashSet;
+import java.util.Set;
+
 @SpringBootApplication
 public class CoronaWatchApplication {
 	@Autowired
@@ -29,7 +32,6 @@ public class CoronaWatchApplication {
 
 
 			Redactor redactor = new Redactor("UserRedactor", "firstnameRedactor", "LastNameRedactor", "Redactor@gmail.com", encoder.encode("azerty"), UserType.Redactor);
-			Redactor redactor2 = new Redactor("UserRedactor2", "firstnameRedacto2", "LastNameRedactor 2", "Redactor2@gmail.com",  encoder.encode("azerty"), UserType.Redactor);
 			SuperAdmin SuperAdmin = new SuperAdmin("SuperAdmin", "Super", "Admin", "superadmin@gmail.com", encoder.encode("azerty"), UserType.SuperAdmin);
 			Moderator moderator = new Moderator("UserModerator", "firstnameModerator", "LastNameModerator", "Moderator@gmail.com",  encoder.encode("azerty"), UserType.Moderator);
 			HealthAgent healthagent = new HealthAgent("UserHealthAgent", "firstnameHealthAgent", "LastNameHealthAgent", "HealthAgent@gmail.com",  encoder.encode("azerty"), UserType.HealthAgent);
@@ -39,21 +41,34 @@ public class CoronaWatchApplication {
 			userrepository.save(moderator);
 			userrepository.save(SuperAdmin);
 			userrepository.save(redactor);
-			userrepository.save(redactor2);
 
 
 
 			//--------------TEST ARTICLES -----------------------------
-			Article article1 = new Article("Article Title ", "Article Content");
-			article1.setArticleRedactor(redactor);
+			Article article1 = new Article("Article Title 1 ", "Article Content 1");
 			article1.setArticleValidate(true);
+			Commentary comment1 = new Commentary("Bla Bla Bla Bla Bla Bla Bla Bla ");
+			comment1.setCommentArticle(article1);
+			Commentary comment2 = new Commentary("Bla Bla Bla Bla Bla Bla Bla Bla ");
+			comment2.setCommentArticle(article1);
+			Commentary comment3 = new Commentary("Bla Bla Bla Bla Bla Bla Bla Bla ");
+			comment3.setCommentArticle(article1);
+			Commentary comment4 = new Commentary("Bla Bla Bla Bla Bla Bla Bla Bla ");
+			comment4.setCommentArticle(article1);
+			Set<Commentary> comments = new HashSet<Commentary>();
+			comments.add(comment1);
+			comments.add(comment2);
+			comments.add(comment3);
+			comments.add(comment4);
+			article1.setArticleCommentaries(comments);
 			Article article2 = new Article("Article Title 2 ", "Article Content 2");
-			article2.setArticleRedactor(redactor2);
 			article2.setArticleValidate(false);
-
-
+			Article article3 = new Article("Article Title 3 ", "Article Content 3");
+			article1.setArticleValidate(true);
 			articlerepository.save(article1);
 			articlerepository.save(article2);
+			articlerepository.save(article3);
+
 			//-------------- REGION COUNTRY CONTINENT    -----------------------------
 
 
@@ -73,27 +88,27 @@ public class CoronaWatchApplication {
 			continentRepository.save(antarctica);
 			continentRepository.save(africa);
 			continentRepository.save(europe);
-			ContinentStatistics af = new ContinentStatistics(1,1,1,1,StatisticsTypes.Continent);
+			ContinentStatistics af = new ContinentStatistics(1649480,20515259,74248878,52488879,StatisticsTypes.Continent);
 			af.setStatisticsContinent(africa);
 			africa.setContinentStatistics(af);
 			africa.getContinentStatistics().setStatisticsValidate(true);
-			ContinentStatistics as = new ContinentStatistics(1,1,1,1,StatisticsTypes.Continent);
+			ContinentStatistics as = new ContinentStatistics(0,0,0,0,StatisticsTypes.Continent);
 			as.setStatisticsContinent(asia);
 			asia.setContinentStatistics(as);
 			asia.getContinentStatistics().setStatisticsValidate(true);
-			ContinentStatistics so = new ContinentStatistics(1,1,1,1,StatisticsTypes.Continent);
+			ContinentStatistics so = new ContinentStatistics(0,0,0,0,StatisticsTypes.Continent);
 			so.setStatisticsContinent(south_America);
 			south_America.setContinentStatistics(so);
 			south_America.getContinentStatistics().setStatisticsValidate(true);
-			ContinentStatistics no = new ContinentStatistics(1,1,1,1,StatisticsTypes.Continent);
+			ContinentStatistics no = new ContinentStatistics(0,0,0,0,StatisticsTypes.Continent);
 			no.setStatisticsContinent(north_America);
 			north_America.setContinentStatistics(no);
 			north_America.getContinentStatistics().setStatisticsValidate(true);
-			ContinentStatistics au = new ContinentStatistics(1,1,1,1,StatisticsTypes.Continent);
+			ContinentStatistics au = new ContinentStatistics(0,0,0,0,StatisticsTypes.Continent);
 			au.setStatisticsContinent(australia_Oceania);
 			australia_Oceania.setContinentStatistics(au);
 			australia_Oceania.getContinentStatistics().setStatisticsValidate(true);
-			ContinentStatistics an = new ContinentStatistics(1,1,1,1,StatisticsTypes.Continent);
+			ContinentStatistics an = new ContinentStatistics(0,0,0,0,StatisticsTypes.Continent);
 			an.setStatisticsContinent(antarctica);
 			antarctica.setContinentStatistics(an);
 			antarctica.getContinentStatistics().setStatisticsValidate(true);
@@ -207,6 +222,9 @@ public class CoronaWatchApplication {
 			System.out.println("____________________________"+algeria.getCountryRegions().size());
 			System.out.println("____________________________" + batnaStatistics.getStatisticsRegion().getRegionName());
 			System.out.println("____________________________"+africa.getCountries().size());
+			System.out.println(article1.getIdArticle());
+			System.out.println(article1.getArticleCommentaries());
+
 
 		};
 	}

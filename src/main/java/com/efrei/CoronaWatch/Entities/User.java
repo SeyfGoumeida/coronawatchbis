@@ -11,7 +11,7 @@ public class User {
     protected String firstName;
     protected String LastName;
     protected String email;
-    protected String passWord;
+        protected String passWord;
     protected UserType userType;
 
     public User(){super();}

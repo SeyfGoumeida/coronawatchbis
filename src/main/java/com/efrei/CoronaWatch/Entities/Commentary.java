@@ -17,13 +17,13 @@ public class Commentary {
         this.inappropriate = inappropriate;
     }
 
-    public Commentary(long idCommentary, String commentContent) {
-        this.idCommentary = idCommentary;
+    public Commentary( String commentContent) {
         this.commentContent = commentContent;
         this.inappropriate = false;
 
     }
     public Commentary(){super();}
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     public long getIdCommentary() {
