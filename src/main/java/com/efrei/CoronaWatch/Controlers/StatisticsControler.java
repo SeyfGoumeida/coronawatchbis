@@ -1,7 +1,7 @@
 package com.efrei.CoronaWatch.Controlers;
 
-import com.efrei.CoronaWatch.Entities.*;
-import com.efrei.CoronaWatch.Repositories.ContinentStatisticsRepository;
+import com.efrei.CoronaWatch.Entities.Statistics;
+import com.efrei.CoronaWatch.Entities.StatisticsTypes;
 import com.efrei.CoronaWatch.Repositories.StatisticsRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.transaction.annotation.Propagation;
@@ -38,7 +38,7 @@ public class StatisticsControler {
                 {
                     WorldsStatistics.setNbConfirmed(WorldsStatistics.getNbConfirmed()+statistics.getNbConfirmed());
                     WorldsStatistics.setNbDeaths(WorldsStatistics.getNbDeaths()+statistics.getNbDeaths());
-                    WorldsStatistics.setNbRecovred(WorldsStatistics.getNbRecovred()+statistics.getNbRecovred());
+                    WorldsStatistics.setNbRecovered(WorldsStatistics.getNbRecovered()+statistics.getNbRecovered());
                     WorldsStatistics.setNbSuspected(WorldsStatistics.getNbSuspected()+statistics.getNbSuspected());
 
                 }

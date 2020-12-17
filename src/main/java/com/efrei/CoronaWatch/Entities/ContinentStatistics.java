@@ -20,8 +20,8 @@ public class ContinentStatistics extends Statistics {
     public ContinentStatistics(){
         super();
     }
-    public ContinentStatistics(Integer nbDeaths, Integer nbSuspected, Integer nbConfirmed, Integer nbRecovred,StatisticsTypes statisticsTypes) {
-        super(nbDeaths,nbSuspected,nbConfirmed,nbRecovred,statisticsTypes);
+    public ContinentStatistics(Integer nbDeaths, Integer nbSuspected, Integer nbConfirmed, Integer nbRecovered,StatisticsTypes statisticsTypes) {
+        super(nbDeaths,nbSuspected,nbConfirmed,nbRecovered,statisticsTypes);
         this.statisticsValidate = false;
     }
 

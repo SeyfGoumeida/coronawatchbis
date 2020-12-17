@@ -1,85 +1,87 @@
-com/efrei/CoronaWatch/Repositories/CountryRepository.java
- com.efrei.CoronaWatch.Repositories.CountryRepository
+com/efrei/CoronaWatch/Entities/Article.java
+ com.efrei.CoronaWatch.Entities.Article
 com/efrei/CoronaWatch/Security/Jwt/AuthEntryPointJwt.java
  com.efrei.CoronaWatch.Security.Jwt.AuthEntryPointJwt
-com/efrei/CoronaWatch/Entities/UserType.java
- com.efrei.CoronaWatch.Entities.UserType
-com/efrei/CoronaWatch/Security/Jwt/JwtUtils.java
- com.efrei.CoronaWatch.Security.Jwt.JwtUtils
-com/efrei/CoronaWatch/Repositories/ContinentRepository.java
- com.efrei.CoronaWatch.Repositories.ContinentRepository
-com/efrei/CoronaWatch/Payload/Response/MessageResponse.java
- com.efrei.CoronaWatch.Payload.Response.MessageResponse
-com/efrei/CoronaWatch/Entities/Continents.java
- com.efrei.CoronaWatch.Entities.Continents
-com/efrei/CoronaWatch/Repositories/ArticleRepository.java
- com.efrei.CoronaWatch.Repositories.ArticleRepository
-com/efrei/CoronaWatch/Entities/StatisticsTypes.java
- com.efrei.CoronaWatch.Entities.StatisticsTypes
-com/efrei/CoronaWatch/Payload/Request/SignupRequest.java
- com.efrei.CoronaWatch.Payload.Request.SignupRequest
-com/efrei/CoronaWatch/Payload/Request/LoginRequest.java
- com.efrei.CoronaWatch.Payload.Request.LoginRequest
-com/efrei/CoronaWatch/Payload/Response/JwtResponse.java
- com.efrei.CoronaWatch.Payload.Response.JwtResponse
-com/efrei/CoronaWatch/Security/Jwt/AuthTokenFilter.java
- com.efrei.CoronaWatch.Security.Jwt.AuthTokenFilter
-com/efrei/CoronaWatch/Repositories/RegionRepository.java
- com.efrei.CoronaWatch.Repositories.RegionRepository
 com/efrei/CoronaWatch/Security/Services/UserDetailsImpl.java
  com.efrei.CoronaWatch.Security.Services.UserDetailsImpl
 com/efrei/CoronaWatch/Controlers/AuthController.java
  com.efrei.CoronaWatch.Controlers.AuthController
-com/efrei/CoronaWatch/Entities/Article.java
- com.efrei.CoronaWatch.Entities.Article
+com/efrei/CoronaWatch/Repositories/ContinentRepository.java
+ com.efrei.CoronaWatch.Repositories.ContinentRepository
+com/efrei/CoronaWatch/Entities/Attachment.java
+ com.efrei.CoronaWatch.Entities.Attachment
+com/efrei/CoronaWatch/Entities/Continents.java
+ com.efrei.CoronaWatch.Entities.Continents
 com/efrei/CoronaWatch/Entities/HealthAgent.java
  com.efrei.CoronaWatch.Entities.HealthAgent
 com/efrei/CoronaWatch/Repositories/StatisticsRepository.java
  com.efrei.CoronaWatch.Repositories.StatisticsRepository
-com/efrei/CoronaWatch/CoronaWatchApplication.java
- com.efrei.CoronaWatch.CoronaWatchApplication
-com/efrei/CoronaWatch/Entities/Statistics.java
- com.efrei.CoronaWatch.Entities.Statistics
+com/efrei/CoronaWatch/Entities/WebUser.java
+ com.efrei.CoronaWatch.Entities.WebUser
+com/efrei/CoronaWatch/Payload/Request/LoginRequest.java
+ com.efrei.CoronaWatch.Payload.Request.LoginRequest
+com/efrei/CoronaWatch/Entities/Commentary.java
+ com.efrei.CoronaWatch.Entities.Commentary
 com/efrei/CoronaWatch/Security/WebSecurityConfig.java
  com.efrei.CoronaWatch.Security.WebSecurityConfig
  com.efrei.CoronaWatch.Security.WebSecurityConfig$1
-com/efrei/CoronaWatch/Repositories/UserRepository.java
- com.efrei.CoronaWatch.Repositories.UserRepository
 com/efrei/CoronaWatch/Controlers/ArticlesControler.java
  com.efrei.CoronaWatch.Controlers.ArticlesControler
-com/efrei/CoronaWatch/Entities/RegionsStatistics.java
- com.efrei.CoronaWatch.Entities.RegionsStatistics
+com/efrei/CoronaWatch/Repositories/UserRepository.java
+ com.efrei.CoronaWatch.Repositories.UserRepository
+com/efrei/CoronaWatch/Entities/UserType.java
+ com.efrei.CoronaWatch.Entities.UserType
+com/efrei/CoronaWatch/Repositories/ArticleRepository.java
+ com.efrei.CoronaWatch.Repositories.ArticleRepository
 com/efrei/CoronaWatch/Repositories/ContinentStatisticsRepository.java
  com.efrei.CoronaWatch.Repositories.ContinentStatisticsRepository
+com/efrei/CoronaWatch/Security/Jwt/AuthTokenFilter.java
+ com.efrei.CoronaWatch.Security.Jwt.AuthTokenFilter
 com/efrei/CoronaWatch/Security/Services/UserDetailsServiceImpl.java
  com.efrei.CoronaWatch.Security.Services.UserDetailsServiceImpl
-com/efrei/CoronaWatch/Controlers/StatisticsControler.java
- com.efrei.CoronaWatch.Controlers.StatisticsControler
-com/efrei/CoronaWatch/Entities/Region.java
- com.efrei.CoronaWatch.Entities.Region
+com/efrei/CoronaWatch/Controlers/UsersControler.java
+ com.efrei.CoronaWatch.Controlers.UsersControler
+com/efrei/CoronaWatch/Entities/SuperAdmin.java
+ com.efrei.CoronaWatch.Entities.SuperAdmin
 com/efrei/CoronaWatch/Entities/Redactor.java
  com.efrei.CoronaWatch.Entities.Redactor
 com/efrei/CoronaWatch/Repositories/CountryStatisticsCountry.java
  com.efrei.CoronaWatch.Repositories.CountryStatisticsCountry
-com/efrei/CoronaWatch/Entities/Continent.java
- com.efrei.CoronaWatch.Entities.Continent
-com/efrei/CoronaWatch/Entities/Attachment.java
- com.efrei.CoronaWatch.Entities.Attachment
+com/efrei/CoronaWatch/Payload/Request/SignupRequest.java
+ com.efrei.CoronaWatch.Payload.Request.SignupRequest
+com/efrei/CoronaWatch/Entities/StatisticsTypes.java
+ com.efrei.CoronaWatch.Entities.StatisticsTypes
 com/efrei/CoronaWatch/Entities/Moderator.java
  com.efrei.CoronaWatch.Entities.Moderator
-com/efrei/CoronaWatch/Entities/ContinentStatistics.java
- com.efrei.CoronaWatch.Entities.ContinentStatistics
-com/efrei/CoronaWatch/Entities/CountryStatistics.java
- com.efrei.CoronaWatch.Entities.CountryStatistics
+com/efrei/CoronaWatch/Payload/Response/JwtResponse.java
+ com.efrei.CoronaWatch.Payload.Response.JwtResponse
+com/efrei/CoronaWatch/Payload/Response/MessageResponse.java
+ com.efrei.CoronaWatch.Payload.Response.MessageResponse
+com/efrei/CoronaWatch/Security/Jwt/JwtUtils.java
+ com.efrei.CoronaWatch.Security.Jwt.JwtUtils
 com/efrei/CoronaWatch/Entities/User.java
  com.efrei.CoronaWatch.Entities.User
-com/efrei/CoronaWatch/Entities/SuperAdmin.java
- com.efrei.CoronaWatch.Entities.SuperAdmin
-com/efrei/CoronaWatch/Controlers/UsersControler.java
- com.efrei.CoronaWatch.Controlers.UsersControler
-com/efrei/CoronaWatch/Entities/WebUser.java
- com.efrei.CoronaWatch.Entities.WebUser
+com/efrei/CoronaWatch/Entities/Statistics.java
+ com.efrei.CoronaWatch.Entities.Statistics
+com/efrei/CoronaWatch/Controlers/StatisticsControler.java
+ com.efrei.CoronaWatch.Controlers.StatisticsControler
+com/efrei/CoronaWatch/Repositories/CountryRepository.java
+ com.efrei.CoronaWatch.Repositories.CountryRepository
+com/efrei/CoronaWatch/Entities/Continent.java
+ com.efrei.CoronaWatch.Entities.Continent
+com/efrei/CoronaWatch/Repositories/RegionRepository.java
+ com.efrei.CoronaWatch.Repositories.RegionRepository
+com/efrei/CoronaWatch/Entities/ContinentStatistics.java
+ com.efrei.CoronaWatch.Entities.ContinentStatistics
+com/efrei/CoronaWatch/Entities/RegionsStatistics.java
+ com.efrei.CoronaWatch.Entities.RegionsStatistics
 com/efrei/CoronaWatch/Entities/Country.java
  com.efrei.CoronaWatch.Entities.Country
-com/efrei/CoronaWatch/Entities/Commentary.java
- com.efrei.CoronaWatch.Entities.Commentary
+com/efrei/CoronaWatch/Entities/Region.java
+ com.efrei.CoronaWatch.Entities.Region
+com/efrei/CoronaWatch/Entities/CountryStatistics.java
+ com.efrei.CoronaWatch.Entities.CountryStatistics
+com/efrei/CoronaWatch/CoronaWatchApplication.java
+ com.efrei.CoronaWatch.CoronaWatchApplication
+com/efrei/CoronaWatch/Controlers/RegionsControler.java
+ com.efrei.CoronaWatch.Controlers.RegionsControler

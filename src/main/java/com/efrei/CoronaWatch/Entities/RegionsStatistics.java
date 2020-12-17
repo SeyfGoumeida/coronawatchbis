@@ -16,8 +16,8 @@ public class RegionsStatistics extends Statistics {
     public RegionsStatistics(){
         super();
     }
-    public RegionsStatistics(Integer nbDeaths, Integer nbSuspected, Integer nbConfirmed, Integer nbRecovred,StatisticsTypes statisticsTypes) {
-        super(nbDeaths,nbSuspected,nbConfirmed,nbRecovred,statisticsTypes);
+    public RegionsStatistics(Integer nbDeaths, Integer nbSuspected, Integer nbConfirmed, Integer nbRecovered,StatisticsTypes statisticsTypes) {
+        super(nbDeaths,nbSuspected,nbConfirmed,nbRecovered,statisticsTypes);
         this.statisticsValidate = false;
     }
 
@@ -58,10 +58,9 @@ public class RegionsStatistics extends Statistics {
 
     }
 
+    public void setNbRecovered(Integer nbRecovered) {
 
-    public void setNbRecovred(Integer nbRecovred) {
-
-        super.setNbConfirmed(nbRecovred);
+        super.setNbRecovered(nbRecovered);
 
     }
 

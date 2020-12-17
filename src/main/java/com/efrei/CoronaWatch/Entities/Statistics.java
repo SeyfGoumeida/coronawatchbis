@@ -1,7 +1,5 @@
 package com.efrei.CoronaWatch.Entities;
 
-import com.fasterxml.jackson.annotation.JsonBackReference;
-
 import javax.persistence.*;
 
 @Entity
@@ -12,7 +10,7 @@ public class Statistics {
     private Integer nbDeaths;
     private Integer nbSuspected;
     private Integer nbConfirmed;
-    private Integer nbRecovred;
+    private Integer nbRecovered;
     private HealthAgent statisticsHealthAgent;
     private Boolean statisticsValidate;
     private StatisticsTypes statisticsType;
@@ -22,11 +20,11 @@ public class Statistics {
     public Statistics(){
         super();
     }
-    public Statistics(Integer nbDeaths, Integer nbSuspected, Integer nbConfirmed, Integer nbRecovred,StatisticsTypes statisticsType) {
+    public Statistics(Integer nbDeaths, Integer nbSuspected, Integer nbConfirmed, Integer nbRecovered,StatisticsTypes statisticsType) {
         this.nbDeaths = nbDeaths;
         this.nbSuspected = nbSuspected;
         this.nbConfirmed = nbConfirmed;
-        this.nbRecovred = nbRecovred;
+        this.nbRecovered = nbRecovered;
         this.statisticsValidate = false;
         this.statisticsType = statisticsType;
         this.statisticsHealthAgent =null;
@@ -65,12 +63,12 @@ public class Statistics {
         this.nbConfirmed = nbConfirmed;
     }
 
-    public Integer getNbRecovred() {
-        return nbRecovred;
+    public Integer getNbRecovered() {
+        return nbRecovered;
     }
 
-    public void setNbRecovred(Integer nbRecovred) {
-        this.nbRecovred = nbRecovred;
+    public void setNbRecovered(Integer nbRecovered) {
+        this.nbRecovered = nbRecovered;
     }
 
     @ManyToOne(optional = true, targetEntity=HealthAgent.class)
