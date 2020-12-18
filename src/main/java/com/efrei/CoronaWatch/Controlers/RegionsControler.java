@@ -78,8 +78,11 @@ public class RegionsControler {
         myCountry.getCountryStatistics().setNbRecovered(r);
         myCountry.getCountryStatistics().setNbConfirmed(c);
         countryRepository.save(myCountry);
-
     }
-
-
+    @PostMapping("/Regions/Risk")
+    public void addArticle(@RequestParam(name = "risk") Boolean risk,@RequestParam(name = "id") long id) throws Exception {
+        Region myRegion = getRegionById(id);
+        myRegion.setRegionRisk(risk);
+        regionRepository.save(myRegion);
+    }
 }

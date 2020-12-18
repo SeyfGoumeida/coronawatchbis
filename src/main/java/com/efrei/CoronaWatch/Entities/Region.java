@@ -10,12 +10,14 @@ public class Region {
     private String regionName;
     private Country regionCountry;
     private RegionsStatistics regionRegionsStatistics;
+    private Boolean regionRisk;
 
     public Region() {
         super();
     }
     public Region( String regionName) {
         this.regionName = regionName;
+        this.regionRisk = false;
     }
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -49,6 +51,14 @@ public class Region {
     // @JsonBackReference and @JsonManagedReference to avoid Infinite Recursion with Jackson JSON and Hibernate JPA issue
     public RegionsStatistics getRegionStatistics() {
         return regionRegionsStatistics;
+    }
+
+    public Boolean getRegionRisk() {
+        return regionRisk;
+    }
+
+    public void setRegionRisk(Boolean regionRisk) {
+        this.regionRisk = regionRisk;
     }
 
     public void setRegionStatistics(RegionsStatistics regionRegionsStatistics) {

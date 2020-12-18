@@ -25,14 +25,14 @@ com/efrei/CoronaWatch/Entities/Statistics.java
 com/efrei/CoronaWatch/Security/WebSecurityConfig.java
  com.efrei.CoronaWatch.Security.WebSecurityConfig
  com.efrei.CoronaWatch.Security.WebSecurityConfig$1
-com/efrei/CoronaWatch/Repositories/RegionRepository.java
- com.efrei.CoronaWatch.Repositories.RegionRepository
+com/efrei/CoronaWatch/Entities/Commentary.java
+ com.efrei.CoronaWatch.Entities.Commentary
 com/efrei/CoronaWatch/Repositories/UserRepository.java
  com.efrei.CoronaWatch.Repositories.UserRepository
 com/efrei/CoronaWatch/Controlers/ArticlesControler.java
  com.efrei.CoronaWatch.Controlers.ArticlesControler
-com/efrei/CoronaWatch/Entities/RegionsStatistics.java
- com.efrei.CoronaWatch.Entities.RegionsStatistics
+com/efrei/CoronaWatch/Entities/Country.java
+ com.efrei.CoronaWatch.Entities.Country
 com/efrei/CoronaWatch/Repositories/ContinentStatisticsRepository.java
  com.efrei.CoronaWatch.Repositories.ContinentStatisticsRepository
 com/efrei/CoronaWatch/Security/Jwt/AuthTokenFilter.java
@@ -41,8 +41,8 @@ com/efrei/CoronaWatch/Security/Services/UserDetailsServiceImpl.java
  com.efrei.CoronaWatch.Security.Services.UserDetailsServiceImpl
 com/efrei/CoronaWatch/Controlers/StatisticsControler.java
  com.efrei.CoronaWatch.Controlers.StatisticsControler
-com/efrei/CoronaWatch/Entities/Region.java
- com.efrei.CoronaWatch.Entities.Region
+com/efrei/CoronaWatch/Repositories/ArticleRepository.java
+ com.efrei.CoronaWatch.Repositories.ArticleRepository
 com/efrei/CoronaWatch/Entities/Redactor.java
  com.efrei.CoronaWatch.Entities.Redactor
 com/efrei/CoronaWatch/Repositories/CountryStatisticsCountry.java
@@ -73,15 +73,15 @@ com/efrei/CoronaWatch/Controlers/UsersControler.java
  com.efrei.CoronaWatch.Controlers.UsersControler
 com/efrei/CoronaWatch/Entities/WebUser.java
  com.efrei.CoronaWatch.Entities.WebUser
-com/efrei/CoronaWatch/CoronaWatchApplication.java
- com.efrei.CoronaWatch.CoronaWatchApplication
 com/efrei/CoronaWatch/Entities/StatisticsTypes.java
  com.efrei.CoronaWatch.Entities.StatisticsTypes
-com/efrei/CoronaWatch/Repositories/ArticleRepository.java
- com.efrei.CoronaWatch.Repositories.ArticleRepository
-com/efrei/CoronaWatch/Entities/Country.java
- com.efrei.CoronaWatch.Entities.Country
-com/efrei/CoronaWatch/Entities/Commentary.java
- com.efrei.CoronaWatch.Entities.Commentary
+com/efrei/CoronaWatch/CoronaWatchApplication.java
+ com.efrei.CoronaWatch.CoronaWatchApplication
+com/efrei/CoronaWatch/Repositories/RegionRepository.java
+ com.efrei.CoronaWatch.Repositories.RegionRepository
+com/efrei/CoronaWatch/Entities/RegionsStatistics.java
+ com.efrei.CoronaWatch.Entities.RegionsStatistics
+com/efrei/CoronaWatch/Entities/Region.java
+ com.efrei.CoronaWatch.Entities.Region
 com/efrei/CoronaWatch/Controlers/RegionsControler.java
  com.efrei.CoronaWatch.Controlers.RegionsControler
