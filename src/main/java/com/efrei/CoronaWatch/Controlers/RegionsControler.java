@@ -56,12 +56,28 @@ public class RegionsControler {
     @PostMapping("/Regions/Statistics")
     public void addArticle(@RequestParam(name = "id") long id, @RequestBody Statistics stat) throws Exception {
         Region myRegion = getRegionById(id);
+        Country myCountry = myRegion.getRegionCountry();
+        Integer d;
+        Integer s;
+        Integer r;
+        Integer c;
+        d =  myCountry.getCountryStatistics().getNbDeaths() + stat.getNbDeaths() - myRegion.getRegionStatistics().getNbDeaths();
+        s =  myCountry.getCountryStatistics().getNbSuspected() + stat.getNbSuspected()- myRegion.getRegionStatistics().getNbSuspected();
+        r =  myCountry.getCountryStatistics().getNbRecovered() + stat.getNbRecovered()- myRegion.getRegionStatistics().getNbRecovered();
+        c =  myCountry.getCountryStatistics().getNbConfirmed() + stat.getNbConfirmed()- myRegion.getRegionStatistics().getNbConfirmed();
+
         myRegion.getRegionStatistics().setNbRecovered(stat.getNbRecovered());
         myRegion.getRegionStatistics().setNbConfirmed(stat.getNbConfirmed());
         myRegion.getRegionStatistics().setNbDeaths(stat.getNbDeaths());
         myRegion.getRegionStatistics().setNbSuspected(stat.getNbSuspected());
 
         regionRepository.save(myRegion);
+
+        myCountry.getCountryStatistics().setNbDeaths(d);
+        myCountry.getCountryStatistics().setNbSuspected(s);
+        myCountry.getCountryStatistics().setNbRecovered(r);
+        myCountry.getCountryStatistics().setNbConfirmed(c);
+        countryRepository.save(myCountry);
 
     }
 

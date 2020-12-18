@@ -211,20 +211,17 @@ public class CoronaWatchApplication {
 			statisticsRepository.save(algeria.getCountryStatistics());
 
 
-			Region batna       = new Region("Batnaa");
 			Region constantine = new Region("Constantinee");
-
-			regionrepository.save(batna);
 			regionrepository.save(constantine);
+			RegionsStatistics r = new RegionsStatistics(1649480,20515259,74248878,52488879,StatisticsTypes.Region);
+			r.setStatisticsRegion(constantine);
+			statisticsRepository.save(r);
+			constantine.setRegionStatistics(r);
 
+			regionrepository.save(constantine);
 			constantine.setRegionCountry(algeria);
-			batna.setRegionCountry(algeria);
-			regionrepository.save(batna);
 			regionrepository.save(constantine);
-
 			algeria.getCountryRegions().add(constantine);
-			algeria.getCountryRegions().add(batna);
-
 			countryRepository.save(algeria);
 
 
