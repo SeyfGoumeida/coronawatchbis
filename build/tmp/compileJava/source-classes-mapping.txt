@@ -75,13 +75,13 @@ com/efrei/CoronaWatch/Entities/WebUser.java
  com.efrei.CoronaWatch.Entities.WebUser
 com/efrei/CoronaWatch/Entities/StatisticsTypes.java
  com.efrei.CoronaWatch.Entities.StatisticsTypes
-com/efrei/CoronaWatch/CoronaWatchApplication.java
- com.efrei.CoronaWatch.CoronaWatchApplication
+com/efrei/CoronaWatch/Controlers/RegionsControler.java
+ com.efrei.CoronaWatch.Controlers.RegionsControler
 com/efrei/CoronaWatch/Repositories/RegionRepository.java
  com.efrei.CoronaWatch.Repositories.RegionRepository
 com/efrei/CoronaWatch/Entities/RegionsStatistics.java
  com.efrei.CoronaWatch.Entities.RegionsStatistics
 com/efrei/CoronaWatch/Entities/Region.java
  com.efrei.CoronaWatch.Entities.Region
-com/efrei/CoronaWatch/Controlers/RegionsControler.java
- com.efrei.CoronaWatch.Controlers.RegionsControler
+com/efrei/CoronaWatch/CoronaWatchApplication.java
+ com.efrei.CoronaWatch.CoronaWatchApplication

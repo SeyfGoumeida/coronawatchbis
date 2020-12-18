@@ -200,7 +200,7 @@ public class CoronaWatchApplication {
 			statisticsRepository.save(europe.getContinentStatistics());
 */
 
-			Country algeria = new Country("Algeria");
+			Country algeria = new Country("DZ");
 			countryRepository.save(algeria);
 
 
@@ -211,7 +211,7 @@ public class CoronaWatchApplication {
 			statisticsRepository.save(algeria.getCountryStatistics());
 
 
-			Region constantine = new Region("Constantinee");
+			Region constantine = new Region("25");
 			regionrepository.save(constantine);
 			RegionsStatistics r = new RegionsStatistics(1649480,20515259,74248878,52488879,StatisticsTypes.Region);
 			r.setStatisticsRegion(constantine);
