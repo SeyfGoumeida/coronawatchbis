@@ -106,10 +106,10 @@ public class CoronaWatchApplication {
 		return (args) -> {
 
 
-			Redactor redactor = new Redactor("UserRedactor", "firstnameRedactor", "LastNameRedactor", "Redactor@gmail.com", encoder.encode("azerty"), UserType.Redactor);
+			Redactor redactor = new Redactor("Redactor", "firstnameRedactor", "LastNameRedactor", "Redactor@gmail.com", encoder.encode("azerty"), UserType.Redactor);
 			SuperAdmin SuperAdmin = new SuperAdmin("SuperAdmin", "Super", "Admin", "superadmin@gmail.com", encoder.encode("azerty"), UserType.SuperAdmin);
-			Moderator moderator = new Moderator("UserModerator", "firstnameModerator", "LastNameModerator", "Moderator@gmail.com",  encoder.encode("azerty"), UserType.Moderator);
-			HealthAgent healthagent = new HealthAgent("UserHealthAgent", "firstnameHealthAgent", "LastNameHealthAgent", "HealthAgent@gmail.com",  encoder.encode("azerty"), UserType.HealthAgent);
+			Moderator moderator = new Moderator("Moderator", "firstnameModerator", "LastNameModerator", "Moderator@gmail.com",  encoder.encode("azerty"), UserType.Moderator);
+			HealthAgent healthagent = new HealthAgent("HealthAgent", "firstnameHealthAgent", "LastNameHealthAgent", "HealthAgent@gmail.com",  encoder.encode("azerty"), UserType.HealthAgent);
 
 
 			userrepository.save(healthagent);
@@ -146,7 +146,7 @@ public class CoronaWatchApplication {
 
 			//-------------- REGION COUNTRY CONTINENT    -----------------------------
 
-
+/*
 			Continent africa = new Continent(Continents.Africa);
 			Continent europe = new Continent(Continents.Europe);
 			Continent asia = new Continent(Continents.Asia);
@@ -198,79 +198,38 @@ public class CoronaWatchApplication {
 			statisticsRepository.save(antarctica.getContinentStatistics());
 			statisticsRepository.save(africa.getContinentStatistics());
 			statisticsRepository.save(europe.getContinentStatistics());
-
+*/
 
 			Country algeria = new Country("Algeria");
-			Country tunisia = new Country("Tunisia");
-			Country france  = new Country("France");
-			Country germany = new Country("Germany");
-
 			countryRepository.save(algeria);
-			countryRepository.save(tunisia);
-			countryRepository.save(france);
-			countryRepository.save(germany);
 
-			CountryStatistics al = new CountryStatistics(0,0,0,0,StatisticsTypes.Country);
+
+			CountryStatistics al = new CountryStatistics(1649480,20515259,74248878,52488879,StatisticsTypes.Country);
 			al.setStatisticsCountry(algeria);
 			algeria.setCountryStatistics(al);
-			al.setCountryStatisticsContinentStatistics(africa.getContinentStatistics());
+			al.setStatisticsValidate(true);
 			statisticsRepository.save(algeria.getCountryStatistics());
 
-			CountryStatistics tu = new CountryStatistics(0,0,0,0,StatisticsTypes.Country);
-			tu.setStatisticsCountry(tunisia);
-			tunisia.setCountryStatistics(tu);
-			statisticsRepository.save(tunisia.getCountryStatistics());
 
-			CountryStatistics fr = new CountryStatistics(0,0,0,0,StatisticsTypes.Country);
-			fr.setStatisticsCountry(france);
-			france.setCountryStatistics(fr);
-			statisticsRepository.save(france.getCountryStatistics());
-
-			CountryStatistics gr = new CountryStatistics(0,0,0,0,StatisticsTypes.Country);
-			gr.setStatisticsCountry(germany);
-			germany.setCountryStatistics(gr);
-			statisticsRepository.save(germany.getCountryStatistics());
-
-
-
-
-			Region batna       = new Region("Batna");
-			Region constantine = new Region("Constantineeeee");
+			Region batna       = new Region("Batnaa");
+			Region constantine = new Region("Constantinee");
 
 			regionrepository.save(batna);
 			regionrepository.save(constantine);
-
 
 			constantine.setRegionCountry(algeria);
 			batna.setRegionCountry(algeria);
 			regionrepository.save(batna);
 			regionrepository.save(constantine);
 
-			algeria.setCountryContinent(africa);
-			tunisia.setCountryContinent(africa);
-
-			france.setCountryContinent(europe);
-			germany.setCountryContinent(europe);
-
-
 			algeria.getCountryRegions().add(constantine);
 			algeria.getCountryRegions().add(batna);
 
-
 			countryRepository.save(algeria);
-			countryRepository.save(tunisia);
-			countryRepository.save(france);
-			countryRepository.save(germany);
 
-			africa.getCountries().add(algeria);
-			africa.getCountries().add(tunisia);
 
-			europe.getCountries().add(france);
-			europe.getCountries().add(germany);
-
-			continentRepository.save(africa);
-			continentRepository.save(europe);
 			//--------------TEST STATISTICS -----------------------------
+			/*
 			RegionsStatistics constantineStatistics = new RegionsStatistics(11111, 11111, 11111, 11111,StatisticsTypes.Region);
 			constantineStatistics.setStatisticsValidate(true);
 			constantineStatistics.setStatisticsRegion(constantine);
@@ -290,17 +249,7 @@ public class CoronaWatchApplication {
 			constantineStatistics.setRegionsStatisticsCountryStatistics(algeriaStatistics);
 			statisticsRepository.save(algeriaStatistics);
 
-
-
-
-
-			System.out.println("____________________________"+algeria.getCountryRegions().size());
-			System.out.println("____________________________" + batnaStatistics.getStatisticsRegion().getRegionName());
-			System.out.println("____________________________"+africa.getCountries().size());
-			System.out.println(article1.getIdArticle());
-			System.out.println(article1.getArticleCommentaries());
-
-
+			 */
 
 			readJsonCountries(countryRepository,regionrepository,statisticsRepository);
 

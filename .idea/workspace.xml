@@ -4,33 +4,18 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="51fcae89-0c64-44ef-bcb3-e41348457253" name="Default Changelist" comment="[FIX] HealthAgent ( Region &amp; Country stats )Controler">
-      <change afterPath="$PROJECT_DIR$/com.efrei.CoronaWatch.DataBDD.test.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/efrei/CoronaWatch/DataBDD/geo.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/efrei/CoronaWatch/DataBDD/test.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test.json" afterDir="false" />
+    <list default="true" id="51fcae89-0c64-44ef-bcb3-e41348457253" name="Default Changelist" comment="[ADD] Country &amp; Regions Data base">
       <change beforePath="$PROJECT_DIR$/.gradle/6.6.1/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.6.1/executionHistory/executionHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/6.6.1/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.6.1/executionHistory/executionHistory.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/6.6.1/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.6.1/fileHashes/fileHashes.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/6.6.1/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.6.1/fileHashes/fileHashes.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/6.6.1/javaCompile/classAnalysis.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.6.1/javaCompile/classAnalysis.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/6.6.1/javaCompile/javaCompile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.6.1/javaCompile/javaCompile.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/6.6.1/javaCompile/taskHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.6.1/javaCompile/taskHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/checksums/checksums.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/checksums/checksums.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/checksums/md5-checksums.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/checksums/md5-checksums.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/checksums/sha1-checksums.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/checksums/sha1-checksums.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/efrei/CoronaWatch/Controlers/StatisticsControler.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/efrei/CoronaWatch/Controlers/StatisticsControler.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/efrei/CoronaWatch/CoronaWatchApplication.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/efrei/CoronaWatch/CoronaWatchApplication.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/efrei/CoronaWatch/Entities/ContinentStatistics.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/efrei/CoronaWatch/Entities/ContinentStatistics.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/efrei/CoronaWatch/Entities/CountryStatistics.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/efrei/CoronaWatch/Entities/CountryStatistics.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/efrei/CoronaWatch/Entities/RegionsStatistics.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/efrei/CoronaWatch/Entities/RegionsStatistics.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/efrei/CoronaWatch/Entities/Statistics.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/efrei/CoronaWatch/Entities/Statistics.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/efrei/CoronaWatch/Repositories/CountryRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/efrei/CoronaWatch/Repositories/CountryRepository.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/efrei/CoronaWatch/Repositories/RegionRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/efrei/CoronaWatch/Repositories/RegionRepository.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/tmp/compileJava/source-classes-mapping.txt" beforeDir="false" afterPath="$PROJECT_DIR$/build/tmp/compileJava/source-classes-mapping.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/efrei/CoronaWatch/Controlers/RegionsControler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/efrei/CoronaWatch/Controlers/RegionsControler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/efrei/CoronaWatch/Controlers/StatisticsControler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/efrei/CoronaWatch/Controlers/StatisticsControler.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/efrei/CoronaWatch/CoronaWatchApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/efrei/CoronaWatch/CoronaWatchApplication.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -170,7 +155,7 @@
       <workItem from="1608203618224" duration="16563000" />
       <workItem from="1608228350904" duration="12077000" />
       <workItem from="1608285366365" duration="7278000" />
-      <workItem from="1608312242190" duration="5318000" />
+      <workItem from="1608312242190" duration="6848000" />
     </task>
     <task id="LOCAL-00001" summary="[FIX] Postgresql integration issues &amp; @ID IDENTITY">
       <created>1607263367424</created>
@@ -410,7 +395,14 @@
       <option name="project" value="LOCAL" />
       <updated>1608241348941</updated>
     </task>
-    <option name="localTasksCounter" value="35" />
+    <task id="LOCAL-00035" summary="[ADD] Country &amp; Regions Data base">
+      <created>1608318421040</created>
+      <option name="number" value="00035" />
+      <option name="presentableId" value="LOCAL-00035" />
+      <option name="project" value="LOCAL" />
+      <updated>1608318421040</updated>
+    </task>
+    <option name="localTasksCounter" value="36" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -443,7 +435,6 @@
     <ignored-roots>
       <path value="$PROJECT_DIR$/src/main/coronawatch" />
     </ignored-roots>
-    <MESSAGE value="[ADD] system.properties FILE" />
     <MESSAGE value="[FIX] system.properties FILE" />
     <MESSAGE value="[TEST] commenting .gitignore" />
     <MESSAGE value="[FIX] system.properties" />
@@ -468,6 +459,7 @@
     <MESSAGE value="[FIX] Usertable" />
     <MESSAGE value="[FIX] Redactor ( Article &amp; commentary )Controler" />
     <MESSAGE value="[FIX] HealthAgent ( Region &amp; Country stats )Controler" />
-    <option name="LAST_COMMIT_MESSAGE" value="[FIX] HealthAgent ( Region &amp; Country stats )Controler" />
+    <MESSAGE value="[ADD] Country &amp; Regions Data base" />
+    <option name="LAST_COMMIT_MESSAGE" value="[ADD] Country &amp; Regions Data base" />
   </component>
 </project>

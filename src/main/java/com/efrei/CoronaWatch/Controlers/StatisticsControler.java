@@ -34,25 +34,23 @@ public class StatisticsControler {
             Iterable<Statistics> listOfStatistics = getStatistics();
             Statistics WorldsStatistics = new Statistics(0,0,0,0,StatisticsTypes.Word);
             for(Statistics statistics :listOfStatistics ){
-                if(statistics.getStatisticsValidate() && statistics.getStatisticsType().equals(StatisticsTypes.Continent))
+                if(statistics.getStatisticsValidate() && statistics.getStatisticsType().equals(StatisticsTypes.Country))
                 {
                     WorldsStatistics.setNbConfirmed(WorldsStatistics.getNbConfirmed()+statistics.getNbConfirmed());
                     WorldsStatistics.setNbDeaths(WorldsStatistics.getNbDeaths()+statistics.getNbDeaths());
                     WorldsStatistics.setNbRecovered(WorldsStatistics.getNbRecovered()+statistics.getNbRecovered());
                     WorldsStatistics.setNbSuspected(WorldsStatistics.getNbSuspected()+statistics.getNbSuspected());
-
                 }
             }
             return WorldsStatistics;
-
         }
-        @GetMapping("/Statistics/Continents")
+        @GetMapping("/Statistics/Country")
         public Iterable<Statistics> getStatisticsContinents(){
 
             Iterable<Statistics> listOfStatistics = getStatistics();
             List<Statistics> listOfValidatedStatistics = new ArrayList<>();
             for(Statistics statistics :listOfStatistics ){
-                if(statistics.getStatisticsValidate() && statistics.getStatisticsType().equals(StatisticsTypes.Continent))
+                if(statistics.getStatisticsValidate() && statistics.getStatisticsType().equals(StatisticsTypes.Country))
                 {
                     listOfValidatedStatistics.add(statistics);
                 }
