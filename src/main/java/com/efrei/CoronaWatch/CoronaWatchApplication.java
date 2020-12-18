@@ -2,6 +2,9 @@ package com.efrei.CoronaWatch;
 
 import com.efrei.CoronaWatch.Entities.*;
 import com.efrei.CoronaWatch.Repositories.*;
+import org.json.simple.JSONArray;
+import org.json.simple.JSONObject;
+import org.json.simple.parser.JSONParser;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
@@ -9,8 +12,8 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
 import org.springframework.security.crypto.password.PasswordEncoder;
 
-import java.util.HashSet;
-import java.util.Set;
+import java.io.FileReader;
+import java.util.*;
 
 @SpringBootApplication
 public class CoronaWatchApplication {
@@ -20,7 +23,79 @@ public class CoronaWatchApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(CoronaWatchApplication.class, args);
 	}
-	
+
+	/*public static void writeJsonSimple() throws Exception {
+		JSONObject sampleObject = new JSONObject();
+		sampleObject.put("name", "Stackabuser");
+		sampleObject.put("age", 35);
+
+		JSONArray messages = new JSONArray();
+		messages.add("Hey!");
+		messages.add("What's up?!");
+
+		sampleObject.put("messages", messages);
+		Files.write(Paths.get("C:\\Users\\SEYF_GOUMEIDA\\Documents\\GitHub\\coronawatchbis\\src\\main\\java\\com\\efrei\\CoronaWatch\\DataBDD\\test.json"), sampleObject.toJSONString().getBytes());
+	}*/
+	public static void readJsonRegions(String Country,Country c,CountryRepository countryRepository,RegionRepository regionRepository,StatisticsRepository statisticsRepository) {
+		JSONParser parser = new JSONParser();
+		try {
+			Object obj = parser.parse(new FileReader("C:\\Users\\SEYF_GOUMEIDA\\Documents\\GitHub\\coronawatchbis\\src\\main\\java\\com\\efrei\\CoronaWatch\\DataBDD\\geo.json"));
+
+			JSONObject jsonObject = (JSONObject) obj;
+
+			JSONArray regionsList = (JSONArray) jsonObject.get(Country);
+
+			if (regionsList != null){
+				for(Iterator iterator = regionsList.iterator(); iterator.hasNext();) {
+					String key = (String) iterator.next();
+					System.out.println(key);
+					Region r = new Region(key);
+					regionRepository.save(r);
+					r.setRegionCountry(c);
+					regionRepository.save(r);
+					RegionsStatistics rStatistics = new RegionsStatistics(0, 0, 0, 0,StatisticsTypes.Region);
+					rStatistics.setStatisticsValidate(false);
+					rStatistics.setStatisticsRegion(r);
+					rStatistics.setStatisticsHealthAgent(null);
+					statisticsRepository.save(rStatistics);
+					c.getCountryRegions().add(r);
+				}
+			}
+			countryRepository.save(c);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+
+	public static void readJsonCountries(CountryRepository countryRepository,RegionRepository regionRepository,StatisticsRepository statisticsRepository) {
+		JSONParser parser = new JSONParser();
+		try {
+			Object obj = parser.parse(new FileReader("C:\\Users\\SEYF_GOUMEIDA\\Documents\\GitHub\\coronawatchbis\\src\\main\\java\\com\\efrei\\CoronaWatch\\DataBDD\\geo.json"));
+
+			JSONObject jsonObject = (JSONObject) obj;
+
+			for(Iterator iterator = jsonObject.keySet().iterator(); iterator.hasNext();) {
+				String key = (String) iterator.next();
+				Country c = new Country(key);
+				countryRepository.save(c);
+				CountryStatistics al = new CountryStatistics(0,0,0,0,StatisticsTypes.Country);
+				al.setStatisticsCountry(c);
+				c.setCountryStatistics(al);
+				statisticsRepository.save(c.getCountryStatistics());
+
+				System.out.println(jsonObject.get(key));
+				System.out.println(key);
+				readJsonRegions(key,c,countryRepository,regionRepository,statisticsRepository);
+			}
+
+
+
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+
+
 	@Bean
 	public CommandLineRunner demo(ArticleRepository articlerepository ,
 								  UserRepository userrepository ,
@@ -225,6 +300,9 @@ public class CoronaWatchApplication {
 			System.out.println(article1.getIdArticle());
 			System.out.println(article1.getArticleCommentaries());
 
+
+
+			readJsonCountries(countryRepository,regionrepository,statisticsRepository);
 
 		};
 	}

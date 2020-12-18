@@ -53,8 +53,6 @@ public class RegionsControler {
         return regionRepository.findRegionByIdRegion(id);
     }
     //----------------POST----------------------
-
-
     @PostMapping("/Regions/Statistics")
     public void addArticle(@RequestParam(name = "id") long id, @RequestBody Statistics stat) throws Exception {
         Region myRegion = getRegionById(id);
@@ -66,5 +64,6 @@ public class RegionsControler {
         regionRepository.save(myRegion);
 
     }
+
 
 }
