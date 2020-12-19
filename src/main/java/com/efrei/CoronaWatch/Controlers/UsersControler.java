@@ -107,10 +107,19 @@ public class UsersControler {
         //System.out.println( passencoded );
         //System.out.println( "---------------------------------------" );
         //user.setPassWord(encoder.encode(passencoded));
+
+
         if (user.getUserType().equals(UserType.SuperAdmin)){
             System.out.println( "There is only one SuperAdmin for this app" );
         }else {
-            userRepository.save(user);
+            User user1 = new User();
+            user1.setEmail(user.getEmail());
+            user1.setUserName(user.getUserName());
+            user1.setFirstName(user.getFirstName());
+            user1.setLastName(user.getLastName());
+            user1.setUserType(user.getUserType());
+            user1.setPassWord(encoder.encode(user.getPassWord()));
+            userRepository.save(user1);
         }
     }
 

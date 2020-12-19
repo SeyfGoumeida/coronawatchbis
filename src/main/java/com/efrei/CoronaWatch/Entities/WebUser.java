@@ -14,6 +14,11 @@ import java.util.Set;
 public class WebUser extends User {
 
     private Set<Commentary> webUserCommentaries = new HashSet<Commentary>();
+    public WebUser(){super();};
+    public WebUser(String userName, String firstName, String lastName, String email, String passWord, UserType userType)
+    {
+        super(userName,firstName,lastName,email,passWord,userType);
+    }
 
     @OneToMany(mappedBy="commentEditor", cascade= CascadeType.ALL, fetch = FetchType.EAGER)
     @JsonIgnore

@@ -1,15 +1,20 @@
 package com.efrei.CoronaWatch.Security.Services;
+
 import com.efrei.CoronaWatch.Entities.User;
 import com.efrei.CoronaWatch.Entities.UserType;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
+import java.util.ArrayList;
 import java.util.Collection;
+import java.util.List;
 import java.util.Objects;
 
 public class UserDetailsImpl implements UserDetails {
     private static final long serialVersionUID = 1L;
+    String ROLE_PREFIX = "ROLE_";
 
     private Long id;
 
@@ -42,7 +47,11 @@ public class UserDetailsImpl implements UserDetails {
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
-        return null;
+        List<GrantedAuthority> list = new ArrayList<GrantedAuthority>();
+
+        list.add(new SimpleGrantedAuthority(ROLE_PREFIX + usertype));
+
+        return list;
     }
 
     public UserType getusertype() {
