@@ -1,15 +1,14 @@
 package com.efrei.CoronaWatch.Controlers;
 
+import com.efrei.CoronaWatch.Entities.RegionsStatistics;
 import com.efrei.CoronaWatch.Entities.Statistics;
 import com.efrei.CoronaWatch.Entities.StatisticsTypes;
+import com.efrei.CoronaWatch.Repositories.RegionsStatisticsRepository;
 import com.efrei.CoronaWatch.Repositories.StatisticsRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -17,16 +16,20 @@ import java.util.List;
 public class StatisticsControler {
 
         StatisticsRepository statisticsRepository;
-
+        RegionsStatisticsRepository regionsStatisticsRepository;
         @Autowired
-        public StatisticsControler(StatisticsRepository statisticsRepository) {
+        public StatisticsControler(StatisticsRepository statisticsRepository,RegionsStatisticsRepository regionsStatisticsRepository) {
             super();
             this.statisticsRepository = statisticsRepository;
+            this.regionsStatisticsRepository = regionsStatisticsRepository;
+
         }
 
 
         @GetMapping("/Statistics")
         public Iterable<Statistics> getStatistics(){ return statisticsRepository.findAll(); }
+        @GetMapping("/Statistics/RegionsStatistics")
+        public Iterable<RegionsStatistics> getStatisticsRegionsStatistics(){ return regionsStatisticsRepository.findAll(); }
 
         @GetMapping("/Statistics/World")
         public Statistics getStatisticsWord(){
@@ -58,24 +61,37 @@ public class StatisticsControler {
             return listOfValidatedStatistics;
 
         }
-        @GetMapping("/Statistics/Validate")
-        public Iterable<Statistics> getValidatesStatistics(){
-            Iterable<Statistics> listOfStatistics = getStatistics();
-            List<Statistics> listOfValidatesStatistics = new ArrayList<>();
-            for(Statistics statistics :listOfStatistics ){
-                if(statistics.getStatisticsValidate())
-                {
-                    listOfValidatesStatistics.add(statistics);
-                }
+
+    @GetMapping("/Statistics/Regions")
+    public Iterable<RegionsStatistics> getStatisticsRegions(){
+        Iterable<RegionsStatistics> listOfStatistics = getStatisticsRegionsStatistics();
+        List<RegionsStatistics> listOfValidatesStatistics = new ArrayList<>();
+        for(RegionsStatistics statistics :listOfStatistics ){
+            if( statistics.getStatisticsType()==StatisticsTypes.Region)
+            {
+                listOfValidatesStatistics.add(statistics);
             }
-            return listOfValidatesStatistics;
         }
-        @GetMapping("/Statistics/Invalidate")
-        public Iterable<Statistics> getInvalidatesStatistics(){
-            Iterable<Statistics> listOfStatistics = getStatistics();
-            List<Statistics> listOfValidatesStatistics = new ArrayList<>();
-            for(Statistics statistics :listOfStatistics ){
-                if(!statistics.getStatisticsValidate())
+        return listOfValidatesStatistics;
+    }
+    @GetMapping("/Statistics/Regions/Validate")
+    public Iterable<RegionsStatistics> getValidatesStatisticsRegions(){
+        Iterable<RegionsStatistics> listOfStatistics = getStatisticsRegionsStatistics();
+        List<RegionsStatistics> listOfValidatesStatistics = new ArrayList<>();
+        for(RegionsStatistics statistics :listOfStatistics ){
+            if(statistics.getStatisticsValidate() && statistics.getStatisticsType()==StatisticsTypes.Region)
+            {
+                listOfValidatesStatistics.add(statistics);
+            }
+        }
+        return listOfValidatesStatistics;
+    }
+        @GetMapping("/Statistics/Regions/Invalidate")
+        public Iterable<RegionsStatistics> getInvalidatesStatisticsRegions(){
+            Iterable<RegionsStatistics> listOfStatistics = getStatisticsRegionsStatistics();
+            List<RegionsStatistics> listOfValidatesStatistics = new ArrayList<>();
+            for(RegionsStatistics statistics :listOfStatistics ){
+                if(!statistics.getStatisticsValidate() && statistics.getStatisticsType()==StatisticsTypes.Region)
                 {
                     listOfValidatesStatistics.add(statistics);
                 }
@@ -85,10 +101,18 @@ public class StatisticsControler {
 
         @PostMapping("/Statistics/Region")
         @Transactional(propagation = Propagation.REQUIRES_NEW, rollbackFor = Exception.class)
-        public void addStatistics(@RequestBody Statistics statistics) throws Exception {
-            statisticsRepository.save(statistics);
+        public void addStatistics(@RequestBody RegionsStatistics statistics) throws Exception {
+            regionsStatisticsRepository.save(statistics);
 
         }
+
+    @PutMapping("/Statistics/Region/Validate")
+    @Transactional(propagation = Propagation.REQUIRES_NEW, rollbackFor = Exception.class)
+    public void validateStatistics(@RequestParam(name = "id") long id,@RequestParam(name = "validate")boolean validate)throws Exception  {
+        RegionsStatistics regionStat = regionsStatisticsRepository.findRegionsStatisticsByIdStatistics(id);
+        regionStat.setStatisticsValidate(validate);
+        regionsStatisticsRepository.save(regionStat);
+    }
 
 
 }

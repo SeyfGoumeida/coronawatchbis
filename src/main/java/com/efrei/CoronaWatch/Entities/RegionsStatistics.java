@@ -8,6 +8,8 @@ import javax.persistence.*;
 public class RegionsStatistics extends Statistics {
 
     private Region statisticsRegion;
+    private String statisticsRegionName;
+
     private Boolean statisticsValidate;
     private CountryStatistics regionsStatisticsCountryStatistics;
 
@@ -56,6 +58,14 @@ public class RegionsStatistics extends Statistics {
 
         super.setNbConfirmed(nbConfirmed);
 
+    }
+
+    public String getStatisticsRegionName() {
+        return statisticsRegionName;
+    }
+
+    public void setStatisticsRegionName(String statisticsRegionName) {
+        this.statisticsRegionName = statisticsRegionName;
     }
 
     public void setNbRecovered(Integer nbRecovered) {

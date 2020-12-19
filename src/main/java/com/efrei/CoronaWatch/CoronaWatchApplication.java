@@ -36,7 +36,7 @@ public class CoronaWatchApplication {
 		sampleObject.put("messages", messages);
 		Files.write(Paths.get("C:\\Users\\SEYF_GOUMEIDA\\Documents\\GitHub\\coronawatchbis\\src\\main\\java\\com\\efrei\\CoronaWatch\\DataBDD\\test.json"), sampleObject.toJSONString().getBytes());
 	}*/
-	public static void readJsonRegions(String Country,Country c,CountryRepository countryRepository,RegionRepository regionRepository,StatisticsRepository statisticsRepository) {
+	public static void readJsonRegions(String Country,Country c,CountryRepository countryRepository,RegionRepository regionRepository,RegionsStatisticsRepository regionsStatisticsRepository) {
 		JSONParser parser = new JSONParser();
 		try {
 			Object obj = parser.parse(new FileReader("C:\\Users\\SEYF_GOUMEIDA\\Documents\\GitHub\\coronawatchbis\\src\\main\\java\\com\\efrei\\CoronaWatch\\DataBDD\\geo.json"));
@@ -56,8 +56,10 @@ public class CoronaWatchApplication {
 					RegionsStatistics rStatistics = new RegionsStatistics(0, 0, 0, 0,StatisticsTypes.Region);
 					rStatistics.setStatisticsValidate(false);
 					rStatistics.setStatisticsRegion(r);
+					rStatistics.setStatisticsRegionName(r.getRegionName());
+					rStatistics.setStatisticsValidate(true);
 					rStatistics.setStatisticsHealthAgent(null);
-					statisticsRepository.save(rStatistics);
+					regionsStatisticsRepository.save(rStatistics);
 					c.getCountryRegions().add(r);
 				}
 			}
@@ -67,7 +69,7 @@ public class CoronaWatchApplication {
 		}
 	}
 
-	public static void readJsonCountries(CountryRepository countryRepository,RegionRepository regionRepository,StatisticsRepository statisticsRepository) {
+	public static void readJsonCountries(CountryRepository countryRepository,RegionRepository regionRepository,StatisticsRepository statisticsRepository,RegionsStatisticsRepository regionsStatisticsRepository) {
 		JSONParser parser = new JSONParser();
 		try {
 			Object obj = parser.parse(new FileReader("C:\\Users\\SEYF_GOUMEIDA\\Documents\\GitHub\\coronawatchbis\\src\\main\\java\\com\\efrei\\CoronaWatch\\DataBDD\\geo.json"));
@@ -85,7 +87,7 @@ public class CoronaWatchApplication {
 
 				System.out.println(jsonObject.get(key));
 				System.out.println(key);
-				readJsonRegions(key,c,countryRepository,regionRepository,statisticsRepository);
+				readJsonRegions(key,c,countryRepository,regionRepository,regionsStatisticsRepository);
 			}
 
 
@@ -102,7 +104,9 @@ public class CoronaWatchApplication {
 								  StatisticsRepository statisticsRepository,
 								  RegionRepository regionrepository ,
 								  ContinentRepository continentRepository ,
-								  CountryRepository countryRepository) {
+								  CountryRepository countryRepository,
+								  RegionsStatisticsRepository regionsStatisticsRepository
+	) {
 		return (args) -> {
 
 
@@ -211,10 +215,11 @@ public class CoronaWatchApplication {
 			statisticsRepository.save(algeria.getCountryStatistics());
 
 
-			Region constantine = new Region("25");
+			Region constantine = new Region("Constantine");
 			regionrepository.save(constantine);
 			RegionsStatistics r = new RegionsStatistics(1649480,20515259,74248878,52488879,StatisticsTypes.Region);
 			r.setStatisticsRegion(constantine);
+			r.setStatisticsRegionName(constantine.getRegionName());
 			statisticsRepository.save(r);
 			constantine.setRegionStatistics(r);
 
@@ -222,6 +227,22 @@ public class CoronaWatchApplication {
 			constantine.setRegionCountry(algeria);
 			regionrepository.save(constantine);
 			algeria.getCountryRegions().add(constantine);
+			countryRepository.save(algeria);
+
+
+			Region batna = new Region("Batna");
+			regionrepository.save(batna);
+			RegionsStatistics r1 = new RegionsStatistics(1,2,3,4,StatisticsTypes.Region);
+			r1.setStatisticsRegion(batna);
+			r1.setStatisticsRegionName(batna.getRegionName());
+			r1.setStatisticsValidate(true);
+			statisticsRepository.save(r1);
+			batna.setRegionStatistics(r1);
+
+			regionrepository.save(batna);
+			batna.setRegionCountry(algeria);
+			regionrepository.save(batna);
+			algeria.getCountryRegions().add(batna);
 			countryRepository.save(algeria);
 
 
@@ -248,7 +269,7 @@ public class CoronaWatchApplication {
 
 			 */
 
-			readJsonCountries(countryRepository,regionrepository,statisticsRepository);
+			readJsonCountries(countryRepository,regionrepository,statisticsRepository,regionsStatisticsRepository);
 
 		};
 	}
