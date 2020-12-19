@@ -139,5 +139,41 @@ public class ArticlesControler {
         }
     }
 
+    @PutMapping ("/Articles/Article/Validate")
+    @Transactional(propagation = Propagation.REQUIRES_NEW, rollbackFor = Exception.class)
+
+    public void ValidateArticle(@RequestParam(name = "id") long id , @RequestParam(name = "validate") Boolean validate ) {
+        Article article = articleRepository.findByIdArticle(id);
+        if (article == null) {
+            System.out.println( "----------------------------------" );
+            System.out.println( "There is no article with suck id" );
+            System.out.println( "----------------------------------" );
+
+        }
+        else {
+            article.setArticleValidate(validate);
+            articleRepository.save(article);
+        }
+    }
+
+    @PutMapping("/Articles/Article/Comments")
+    @Transactional(propagation = Propagation.REQUIRES_NEW, rollbackFor = Exception.class)
+    public void InappropriateComments(@RequestParam(name = "id") long id,@RequestParam(name = "commentId") long commentId,@RequestParam(name = "inappropriate") Boolean inappropriate){
+        Article article = articleRepository.findByIdArticle(id);
+
+        if (article == null) {
+            System.out.println("----------------------------------");
+            System.out.println("There is no article with suck id");
+            System.out.println("----------------------------------");
+        }else {
+            for (Commentary c : article.getArticleCommentaries()){
+                if (c.getIdCommentary()==commentId){
+                    c.setInappropriate(inappropriate);
+                }
+            }
+        }
+
+    }
+
 
 }
