@@ -12,7 +12,6 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
 import org.springframework.security.crypto.password.PasswordEncoder;
 
-import java.io.FileReader;
 import java.util.HashSet;
 import java.util.Iterator;
 import java.util.Set;
@@ -38,11 +37,500 @@ public class CoronaWatchApplication {
 		sampleObject.put("messages", messages);
 		Files.write(Paths.get("C:\\Users\\SEYF_GOUMEIDA\\Documents\\GitHub\\coronawatchbis\\src\\main\\java\\com\\efrei\\CoronaWatch\\DataBDD\\test.json"), sampleObject.toJSONString().getBytes());
 	}*/
-	public static void readJsonRegions(String Country,Country c,CountryRepository countryRepository,RegionRepository regionRepository,RegionsStatisticsRepository regionsStatisticsRepository) {
+	public static void readJsonRegions(String Country, Country c, CountryRepository countryRepository,RegionRepository regionRepository,RegionsStatisticsRepository regionsStatisticsRepository) {
 		JSONParser parser = new JSONParser();
 		try {
 
-			Object obj = parser.parse(new FileReader("src\\DataBDD\\geo.json"));
+			Object obj = parser.parse( "{\n" +
+								"  \"Algeria\":[\n" +
+								"    \"Algiers\",\n" +
+								"    \"Souk Ahras\",\n" +
+								"    \"Annaba\",\n" +
+								"    \"Batna City\",\n" +
+								"    \"Sétif\",\n" +
+								"    \"Béjaïa\",\n" +
+								"    \"Bordj Bou Arreridj\",\n" +
+								"    \"Bordj\",\n" +
+								"    \"Tiaret\",\n" +
+								"    \"Oran\",\n" +
+								"    \"Saida\",\n" +
+								"    \"Tlemcen\",\n" +
+								"    \"Oued Smar\",\n" +
+								"    \"Tizi\",\n" +
+								"    \"Tizi Ouzou\",\n" +
+								"    \"Azazga\",\n" +
+								"    \"Blida\",\n" +
+								"    \"Rouiba\",\n" +
+								"    \"Hussein Dey\",\n" +
+								"    \"Draria\",\n" +
+								"    \"Tissemsilt\",\n" +
+								"    \"El Tarf\",\n" +
+								"    \"Constantine\",\n" +
+								"    \"Illizi\",\n" +
+								"    \"Laghouat\",\n" +
+								"    \"Kouba\",\n" +
+								"    \"Jijel\",\n" +
+								"    \"Ghardaïa\",\n" +
+								"    \"Bougara\",\n" +
+								"    \"Chlef\",\n" +
+								"    \"Cheraga\",\n" +
+								"    \"Ouargla\",\n" +
+								"    \"Relizane\",\n" +
+								"    \"Djelfa\",\n" +
+								"    \"Béchar\",\n" +
+								"    \"Tamanghasset\"\n" +
+								"  ],\n" +
+								"  \"Republic of Korea\":[\n" +
+								"    \"Seoul\",\n" +
+								"    \"Incheon\",\n" +
+								"    \"Paju\",\n" +
+								"    \"Cheonan\",\n" +
+								"    \"Yongin\",\n" +
+								"    \"Kwanghui-dong\",\n" +
+								"    \"Pon-dong\",\n" +
+								"    \"Gwangju\",\n" +
+								"    \"Gwangmyeong\",\n" +
+								"    \"Tang-ni\",\n" +
+								"    \"Busan\",\n" +
+								"    \"Seongnam-si\",\n" +
+								"    \"Suwon-si\",\n" +
+								"    \"Namyang\",\n" +
+								"    \"Namyangju\",\n" +
+								"    \"Jeju-si\",\n" +
+								"    \"Ulsan\",\n" +
+								"    \"Osan\"\n" +
+								"  ],\n" +
+								"  \"Hong Kong\":[\n" +
+								"    \"Shuen Wan\",\n" +
+								"    \"Central District\",\n" +
+								"    \"Hung Hom\",\n" +
+								"    \"Kowloon\",\n" +
+								"    \"Quarry Bay\",\n" +
+								"    \"Ngau Tau Kok\",\n" +
+								"    \"Ying Pun\",\n" +
+								"    \"Repulse Bay\",\n" +
+								"    \"Causeway Bay\",\n" +
+								"    \"Tseung Kwan O\",\n" +
+								"    \"Tai Kok Tsui\",\n" +
+								"    \"Tai Wai\",\n" +
+								"    \"Ma On Shan Tsuen\",\n" +
+								"    \"To Kwa Wan\",\n" +
+								"    \"Wong Tai Sin\",\n" +
+								"    \"Tuen Mun San Hui\",\n" +
+								"    \"Ma Yau Tong\"\n" +
+								"  ],\n" +
+								"  \"Philippines\":[\n" +
+								"    \"Manila\",\n" +
+								"    \"Ayala\",\n" +
+								"    \"Bayan\",\n" +
+								"    \"Roosevelt\",\n" +
+								"    \"Blumentritt\",\n" +
+								"    \"Cardona\",\n" +
+								"    \"Pasong Tamo\",\n" +
+								"    \"Buting\",\n" +
+								"    \"Lipa City\",\n" +
+								"    \"Taguig\",\n" +
+								"    \"Baguio City\",\n" +
+								"    \"San Pablo City\",\n" +
+								"    \"San Mateo\",\n" +
+								"    \"Rizal\",\n" +
+								"    \"Naguilian\",\n" +
+								"    \"San Vicente\",\n" +
+								"    \"Sto Nino\",\n" +
+								"    \"Province of Laguna\",\n" +
+								"    \"Quezon\"\n" +
+								"  ],\n" +
+								"  \"France\":[\n" +
+								"    \"Paris\",\n" +
+								"    \"Lyon\",\n" +
+								"    \"Marseille\",\n" +
+								"    \"Toulouse\",\n" +
+								"    \"Nice\",\n" +
+								"    \"Nantes\",\n" +
+								"    \"Montpellier\",\n" +
+								"    \"Bordeaux\",\n" +
+								"    \"Strasbourg\",\n" +
+								"    \"Lille\",\n" +
+								"    \"Reims\",\n" +
+								"    \"Toulon\"\n" +
+								"  ],\n" +
+								"  \"Germany\":[\n" +
+								"    \"Langgons\",\n" +
+								"    \"Holle\",\n" +
+								"    \"Tespe\",\n" +
+								"    \"Walsrode\",\n" +
+								"    \"Salzgitter\",\n" +
+								"    \"Bad Sassendorf\",\n" +
+								"    \"Vienenburg\",\n" +
+								"    \"Rosdorf\",\n" +
+								"    \"Einbeck\",\n" +
+								"    \"Markersbach\",\n" +
+								"    \"Uetersen\",\n" +
+								"    \"Lauenburg\",\n" +
+								"    \"Neustadt in Holstein\",\n" +
+								"    \"Heiligenhafen\",\n" +
+								"    \"Lutjenburg\",\n" +
+								"    \"Quickborn\",\n" +
+								"    \"Tangstedt\",\n" +
+								"    \"Tangstedt\",\n" +
+								"    \"Negast\",\n" +
+								"    \"Langendorf\",\n" +
+								"    \"Stockelsdorf\",\n" +
+								"    \"Prangendorf\",\n" +
+								"    \"Lagerdorf\",\n" +
+								"    \"Jersbek\",\n" +
+								"    \"Lutjensee\",\n" +
+								"    \"Hoisdorf\",\n" +
+								"    \"Tremsbuttel\",\n" +
+								"    \"Nahe\",\n" +
+								"    \"Itzstedt\",\n" +
+								"    \"Dabelow\",\n" +
+								"    \"Monkeberg\",\n" +
+								"    \"Altenholz\",\n" +
+								"    \"Buxtehude\",\n" +
+								"    \"Escheburg\",\n" +
+								"    \"Aurachtal\",\n" +
+								"    \"Frankenwinheim\",\n" +
+								"    \"Armstorf\"\n" +
+								"  ],\n" +
+								"  \"Italy\":[\n" +
+								"    \"Ferrara\",\n" +
+								"    \"Sarnano\",\n" +
+								"    \"Rome\",\n" +
+								"    \"Gabicce Mare\",\n" +
+								"    \"Sasso Marconi\",\n" +
+								"    \"Sarno\",\n" +
+								"    \"Collegno\",\n" +
+								"    \"La Via\",\n" +
+								"    \"Radda in Chianti\",\n" +
+								"    \"Riale\"\n" +
+								"  ],\n" +
+								"  \"United Kingdom\":[\n" +
+								"    \"Pershore\",\n" +
+								"    \"Rowley Regis\",\n" +
+								"    \"Stroud\",\n" +
+								"    \"Birmingham\",\n" +
+								"    \"Worcester\",\n" +
+								"    \"Smethwick\",\n" +
+								"    \"Alcester\",\n" +
+								"    \"Dudley\",\n" +
+								"    \"Ottershaw\",\n" +
+								"    \"Petworth\",\n" +
+								"    \"Bedminster\",\n" +
+								"    \"Hitcham\",\n" +
+								"    \"Westleigh\",\n" +
+								"    \"West Langdon\",\n" +
+								"    \"Handcross\",\n" +
+								"    \"Blackheath\",\n" +
+								"    \"Alrewas\",\n" +
+								"    \"Clapham\",\n" +
+								"    \"Harby\"\n" +
+								"  ],\n" +
+								"  \"United Arab Emirates\":[\n" +
+								"    \"Abu Dhabi\",\n" +
+								"    \"Abu al Abyad\",\n" +
+								"    \"Adhen\",\n" +
+								"    \"Ajman\",\n" +
+								"    \"Al Ain\",\n" +
+								"    \"Al Ajban\",\n" +
+								"    \"Al Aryam\",\n" +
+								"    \"Al Awir\",\n" +
+								"    \"Al Badiyah\",\n" +
+								"    \"Al Bataeh\",\n" +
+								"    \"Al Bithnah\",\n" +
+								"    \"Al Faqa\",\n" +
+								"    \"Al Halah\",\n" +
+								"    \"Al Hamraniyah\",\n" +
+								"    \"Al Hamriyah\",\n" +
+								"    \"Al Jazirah Al Hamra\",\n" +
+								"    \"Al Jeer\",\n" +
+								"    \"Al Khawaneej\",\n" +
+								"    \"Al Lisaili\",\n" +
+								"    \"Al Madam\",\n" +
+								"    \"Al Manama\",\n" +
+								"    \"Al Mirfa\",\n" +
+								"    \"Al Qor\",\n" +
+								"    \"Al Qusaidat\",\n" +
+								"    \"Al Rafaah\",\n" +
+								"    \"Al Rashidya\",\n" +
+								"    \"Al Shuwaib\",\n" +
+								"    \"Al Yahar\",\n" +
+								"    \"Ar-Rams\",\n" +
+								"    \"Asimah\",\n" +
+								"    \"Dadna\",\n" +
+								"    \"Dalma\",\n" +
+								"    \"Dhaid\",\n" +
+								"    \"Dibba Al-Fujairah\",\n" +
+								"    \"Dibba Al-Hisn\",\n" +
+								"    \"Digdaga\",\n" +
+								"    \"Dubai\",\n" +
+								"    \"Falaj Al Mualla\",\n" +
+								"    \"Fujairah\",\n" +
+								"    \"Ghalilah\",\n" +
+								"    \"Ghayathi\",\n" +
+								"    \"Ghub\",\n" +
+								"    \"Habshan\",\n" +
+								"    \"Hatta\",\n" +
+								"    \"Huwaylat\",\n" +
+								"    \"Jebel Ali\",\n" +
+								"    \"Kalba\",\n" +
+								"    \"Khatt\",\n" +
+								"    \"Khor Fakkan\",\n" +
+								"    \"Khor Khwair\",\n" +
+								"    \"Lahbab\",\n" +
+								"    \"Liwa Oasis\",\n" +
+								"    \"Madinat Zayed\",\n" +
+								"    \"Marawah\",\n" +
+								"    \"Masafi\",\n" +
+								"    \"Masfut\",\n" +
+								"    \"Mirbah\",\n" +
+								"    \"Mleiha\",\n" +
+								"    \"Nahil\",\n" +
+								"    \"RAK City\",\n" +
+								"    \"Ruwais\",\n" +
+								"    \"Sha'am\",\n" +
+								"    \"Sharjah\",\n" +
+								"    \"Sila\",\n" +
+								"    \"Sir Bani Yas\",\n" +
+								"    \"Sweihan\",\n" +
+								"    \"Umm Al Quwain\",\n" +
+								"    \"Wadi Shah\",\n" +
+								"    \"Zubarah\"\n" +
+								"  ],\n" +
+								"  \"Syria\":[\n" +
+								"    \"Damascus\",\n" +
+								"    \"`Ara\",\n" +
+								"    \"Aleppo\",\n" +
+								"    \"Ad Darah\"\n" +
+								"  ],\n" +
+								"  \"Guinea\":[\n" +
+								"    \"Conakry\",\n" +
+								"    \"Forécariah\",\n" +
+								"    \"Nzérékoré\",\n" +
+								"    \"Labé\",\n" +
+								"    \"Kankan\",\n" +
+								"    \"Port Kamsar\",\n" +
+								"    \"Boké\",\n" +
+								"    \"Mamou\",\n" +
+								"    \"Dabola\",\n" +
+								"    \"Lola\",\n" +
+								"    \"Sangaredi\",\n" +
+								"    \"Kalia\"\n" +
+								"  ],\n" +
+								"  \"Congo\":[\n" +
+								"    \"Kinshasa\",\n" +
+								"    \"Lubumbashi\",\n" +
+								"    \"Goma\",\n" +
+								"    \"Banana\",\n" +
+								"    \"Likasi\"\n" +
+								"  ],\n" +
+								"  \"Swaziland\":[\n" +
+								"    \"Mbabane\",\n" +
+								"    \"Piggs Peak\",\n" +
+								"    \"Lobamba\",\n" +
+								"    \"Kwaluseni\",\n" +
+								"    \"Manzini\"\n" +
+								"  ],\n" +
+								"  \"Burkina Faso\":[\n" +
+								"    \"Ouagadougou\",\n" +
+								"    \"Bobo-Dioulasso\",\n" +
+								"    \"Tenkodogo\"\n" +
+								"  ],\n" +
+								"  \"Sierra Leone\":[\n" +
+								"    \"Freetown\"\n" +
+								"  ],\n" +
+								"  \"Somalia\":[\n" +
+								"    \"Hargeysa\",\n" +
+								"    \"Mogadishu\"\n" +
+								"  ],\n" +
+								"  \"Niger\":[\n" +
+								"    \"Niamey\"\n" +
+								"  ],\n" +
+								"  \"Central African Republic\":[\n" +
+								"    \"Bangui\"\n" +
+								"  ],\n" +
+								"  \"Togo\":[\n" +
+								"    \"Lomé\",\n" +
+								"    \"Sansanne-Mango\"\n" +
+								"  ],\n" +
+								"  \"Burundi\":[\n" +
+								"    \"Bujumbura\",\n" +
+								"    \"\"\n" +
+								"  ],\n" +
+								"  \"Equatorial Guinea\":[\n" +
+								"    \"Malabo\"\n" +
+								"  ],\n" +
+								"  \"South Sudan\":[\n" +
+								"    \"Juba\"\n" +
+								"  ],\n" +
+								"  \"Senegal\":[\n" +
+								"    \"Sama\",\n" +
+								"    \"Dakar\",\n" +
+								"    \"Guediawaye\",\n" +
+								"    \"Louga\",\n" +
+								"    \"Kaolack\",\n" +
+								"    \"Dodji\",\n" +
+								"    \"Boussinki\",\n" +
+								"    \"Tanaf\",\n" +
+								"    \"Saint-Louis\",\n" +
+								"    \"Camberene\",\n" +
+								"    \"Kedougou\",\n" +
+								"    \"Madina Kokoun\"\n" +
+								"  ],\n" +
+								"  \"Mauritania\":[\n" +
+								"    \"Nouakchott\"\n" +
+								"  ],\n" +
+								"  \"Djibouti\":[\n" +
+								"    \"Djibouti\"\n" +
+								"  ],\n" +
+								"  \"Comoros\":[\n" +
+								"    \"Moutsamoudou\",\n" +
+								"    \"Moroni\"\n" +
+								"  ],\n" +
+								"  \"Tunisia\":[\n" +
+								"    \"Tunis\",\n" +
+								"    \"Le Bardo\",\n" +
+								"    \"Sousse\",\n" +
+								"    \"Gafsa\",\n" +
+								"    \"Monastir\",\n" +
+								"    \"Hammamet\",\n" +
+								"    \"Sidi Bouzid\",\n" +
+								"    \"Manouba\",\n" +
+								"    \"Beja\",\n" +
+								"    \"Rades\",\n" +
+								"    \"Ariana\",\n" +
+								"    \"Sfax\"\n" +
+								"  ],\n" +
+								"  \"Nauru\":[\n" +
+								"    \"Anabar\"\n" +
+								"  ],\n" +
+								"  \"South Georgia and the South Sandwich Islands\":[\n" +
+								"    \"Grytviken\"\n" +
+								"  ],\n" +
+								"  \"U.S. Minor Outlying Islands\":[\n" +
+								"    \"\"\n" +
+								"  ],\n" +
+								"  \"Sint Maarten\":[\n" +
+								"    \"Philipsburg\",\n" +
+								"    \"\"\n" +
+								"  ],\n" +
+								"  \"São Tomé and Príncipe\":[\n" +
+								"    \"Neves\",\n" +
+								"    \"São Tomé\",\n" +
+								"    \"\"\n" +
+								"  ],\n" +
+								"  \"Falkland Islands\":[\n" +
+								"    \"Stanley\"\n" +
+								"  ],\n" +
+								"  \"Northern Mariana Islands\":[\n" +
+								"    \"Saipan\"\n" +
+								"  ],\n" +
+								"  \"East Timor\":[\n" +
+								"    \"Dili\",\n" +
+								"    \"\"\n" +
+								"  ],\n" +
+								"  \"Bonaire\":[\n" +
+								"    \"Kralendijk\",\n" +
+								"    \"Dorp Nikiboko\"\n" +
+								"  ],\n" +
+								"  \"American Samoa\":[\n" +
+								"    \"American Samoa\",\n" +
+								"    \"Pago Pago\"\n" +
+								"  ],\n" +
+								"  \"Federated States of Micronesia\":[\n" +
+								"    \"Yap\"\n" +
+								"  ],\n" +
+								"  \"Palau\":[\n" +
+								"    \"\"\n" +
+								"  ],\n" +
+								"  \"Guyana\":[\n" +
+								"    \"Georgetown\",\n" +
+								"    \"New Amsterdam\",\n" +
+								"    \"Linden\"\n" +
+								"  ],\n" +
+								"  \"Honduras\":[\n" +
+								"    \"Tegucigalpa\",\n" +
+								"    \"San Pedro Sula\",\n" +
+								"    \"Morazan\",\n" +
+								"    \"La Ceiba\",\n" +
+								"    \"Santa Barbara\",\n" +
+								"    \"Copán\",\n" +
+								"    \"Coxen Hole\",\n" +
+								"    \"El Progreso\",\n" +
+								"    \"San Antonio de Flores\",\n" +
+								"    \"Piraera\",\n" +
+								"    \"La Hacienda\",\n" +
+								"    \"Comayaguela\",\n" +
+								"    \"Choloma\",\n" +
+								"    \"Comayagua\",\n" +
+								"    \"Nacaome\",\n" +
+								"    \"Pinalejo\",\n" +
+								"    \"Puerto Lempira\",\n" +
+								"    \"Sula\",\n" +
+								"    \"El Barro\",\n" +
+								"    \"El Paraiso\"\n" +
+								"  ],\n" +
+								"  \"Laos\":[\n" +
+								"    \"Vientiane\"\n" +
+								"  ],\n" +
+								"  \"Uruguay\":[\n" +
+								"    \"Montevideo\",\n" +
+								"    \"La Floresta\",\n" +
+								"    \"Barra de Carrasco\",\n" +
+								"    \"Paysandú\",\n" +
+								"    \"Salto\",\n" +
+								"    \"Las Piedras\",\n" +
+								"    \"Tacuarembó\",\n" +
+								"    \"Toledo\",\n" +
+								"    \"Colonia del Sacramento\",\n" +
+								"    \"Mercedes\",\n" +
+								"    \"Union\",\n" +
+								"    \"Florida\",\n" +
+								"    \"Maldonado\",\n" +
+								"    \"Canelones\",\n" +
+								"    \"La Paz\",\n" +
+								"    \"San Carlos\",\n" +
+								"    \"Durazno\",\n" +
+								"    \"Punta del Este\"\n" +
+								"  ],\n" +
+								"  \"Eritrea\":[\n" +
+								"    \"Asmara\",\n" +
+								"    \"\"\n" +
+								"  ],\n" +
+								"  \"Cuba\":[\n" +
+								"    \"Havana\",\n" +
+								"    \"Habana\",\n" +
+								"    \"La Habana\",\n" +
+								"    \"Matanzas\",\n" +
+								"    \"Villa\",\n" +
+								"    \"Bayamo\",\n" +
+								"    \"Cienfuegos\",\n" +
+								"    \"Santiago de Cuba\",\n" +
+								"    \"Holguín\",\n" +
+								"    \"Ciego de Ávila\",\n" +
+								"    \"Pinar del Río\",\n" +
+								"    \"Sancti Spíritus\",\n" +
+								"    \"Camagüey\",\n" +
+								"    \"Las Tunas\",\n" +
+								"    \"Guantánamo\",\n" +
+								"    \"Varadero\"\n" +
+								"  ],\n" +
+								"  \"Saint Helena\":[\n" +
+								"    \"Tristan Da Cunha\",\n" +
+								"    \"Jamestown\"\n" +
+								"  ],\n" +
+								"  \"Christmas Island\":[\n" +
+								"    \"Flying Fish Cove\"\n" +
+								"  ],\n" +
+								"  \"Ethiopia\":[\n" +
+								"    \"Addis Ababa\",\n" +
+								"    \"Awasa\",\n" +
+								"    \"Jijiga\"\n" +
+								"  ],\n" +
+								"  \"British Indian Ocean Territory\":[\n" +
+								"    \"\"\n" +
+								"  ]\n" +
+								"}");
 
 			JSONObject jsonObject = (JSONObject) obj;
 
@@ -80,7 +568,497 @@ public class CoronaWatchApplication {
 	public static void readJsonCountries(CountryRepository countryRepository,RegionRepository regionRepository,StatisticsRepository statisticsRepository,RegionsStatisticsRepository regionsStatisticsRepository) {
 		JSONParser parser = new JSONParser();
 		try {
-			Object obj = parser.parse(new FileReader("src\\DataBDD\\geo.json"));
+			//Object obj = parser.parse(new FileReader("src\\DataBDD\\geoLITE.json"));
+			Object obj = parser.parse("{\n" +
+					"  \"Algeria\":[\n" +
+					"    \"Algiers\",\n" +
+					"    \"Souk Ahras\",\n" +
+					"    \"Annaba\",\n" +
+					"    \"Batna City\",\n" +
+					"    \"Sétif\",\n" +
+					"    \"Béjaïa\",\n" +
+					"    \"Bordj Bou Arreridj\",\n" +
+					"    \"Bordj\",\n" +
+					"    \"Tiaret\",\n" +
+					"    \"Oran\",\n" +
+					"    \"Saida\",\n" +
+					"    \"Tlemcen\",\n" +
+					"    \"Oued Smar\",\n" +
+					"    \"Tizi\",\n" +
+					"    \"Tizi Ouzou\",\n" +
+					"    \"Azazga\",\n" +
+					"    \"Blida\",\n" +
+					"    \"Rouiba\",\n" +
+					"    \"Hussein Dey\",\n" +
+					"    \"Draria\",\n" +
+					"    \"Tissemsilt\",\n" +
+					"    \"El Tarf\",\n" +
+					"    \"Constantine\",\n" +
+					"    \"Illizi\",\n" +
+					"    \"Laghouat\",\n" +
+					"    \"Kouba\",\n" +
+					"    \"Jijel\",\n" +
+					"    \"Ghardaïa\",\n" +
+					"    \"Bougara\",\n" +
+					"    \"Chlef\",\n" +
+					"    \"Cheraga\",\n" +
+					"    \"Ouargla\",\n" +
+					"    \"Relizane\",\n" +
+					"    \"Djelfa\",\n" +
+					"    \"Béchar\",\n" +
+					"    \"Tamanghasset\"\n" +
+					"  ],\n" +
+					"  \"Republic of Korea\":[\n" +
+					"    \"Seoul\",\n" +
+					"    \"Incheon\",\n" +
+					"    \"Paju\",\n" +
+					"    \"Cheonan\",\n" +
+					"    \"Yongin\",\n" +
+					"    \"Kwanghui-dong\",\n" +
+					"    \"Pon-dong\",\n" +
+					"    \"Gwangju\",\n" +
+					"    \"Gwangmyeong\",\n" +
+					"    \"Tang-ni\",\n" +
+					"    \"Busan\",\n" +
+					"    \"Seongnam-si\",\n" +
+					"    \"Suwon-si\",\n" +
+					"    \"Namyang\",\n" +
+					"    \"Namyangju\",\n" +
+					"    \"Jeju-si\",\n" +
+					"    \"Ulsan\",\n" +
+					"    \"Osan\"\n" +
+					"  ],\n" +
+					"  \"Hong Kong\":[\n" +
+					"    \"Shuen Wan\",\n" +
+					"    \"Central District\",\n" +
+					"    \"Hung Hom\",\n" +
+					"    \"Kowloon\",\n" +
+					"    \"Quarry Bay\",\n" +
+					"    \"Ngau Tau Kok\",\n" +
+					"    \"Ying Pun\",\n" +
+					"    \"Repulse Bay\",\n" +
+					"    \"Causeway Bay\",\n" +
+					"    \"Tseung Kwan O\",\n" +
+					"    \"Tai Kok Tsui\",\n" +
+					"    \"Tai Wai\",\n" +
+					"    \"Ma On Shan Tsuen\",\n" +
+					"    \"To Kwa Wan\",\n" +
+					"    \"Wong Tai Sin\",\n" +
+					"    \"Tuen Mun San Hui\",\n" +
+					"    \"Ma Yau Tong\"\n" +
+					"  ],\n" +
+					"  \"Philippines\":[\n" +
+					"    \"Manila\",\n" +
+					"    \"Ayala\",\n" +
+					"    \"Bayan\",\n" +
+					"    \"Roosevelt\",\n" +
+					"    \"Blumentritt\",\n" +
+					"    \"Cardona\",\n" +
+					"    \"Pasong Tamo\",\n" +
+					"    \"Buting\",\n" +
+					"    \"Lipa City\",\n" +
+					"    \"Taguig\",\n" +
+					"    \"Baguio City\",\n" +
+					"    \"San Pablo City\",\n" +
+					"    \"San Mateo\",\n" +
+					"    \"Rizal\",\n" +
+					"    \"Naguilian\",\n" +
+					"    \"San Vicente\",\n" +
+					"    \"Sto Nino\",\n" +
+					"    \"Province of Laguna\",\n" +
+					"    \"Quezon\"\n" +
+					"  ],\n" +
+					"  \"France\":[\n" +
+					"    \"Paris\",\n" +
+					"    \"Lyon\",\n" +
+					"    \"Marseille\",\n" +
+					"    \"Toulouse\",\n" +
+					"    \"Nice\",\n" +
+					"    \"Nantes\",\n" +
+					"    \"Montpellier\",\n" +
+					"    \"Bordeaux\",\n" +
+					"    \"Strasbourg\",\n" +
+					"    \"Lille\",\n" +
+					"    \"Reims\",\n" +
+					"    \"Toulon\"\n" +
+					"  ],\n" +
+					"  \"Germany\":[\n" +
+					"    \"Langgons\",\n" +
+					"    \"Holle\",\n" +
+					"    \"Tespe\",\n" +
+					"    \"Walsrode\",\n" +
+					"    \"Salzgitter\",\n" +
+					"    \"Bad Sassendorf\",\n" +
+					"    \"Vienenburg\",\n" +
+					"    \"Rosdorf\",\n" +
+					"    \"Einbeck\",\n" +
+					"    \"Markersbach\",\n" +
+					"    \"Uetersen\",\n" +
+					"    \"Lauenburg\",\n" +
+					"    \"Neustadt in Holstein\",\n" +
+					"    \"Heiligenhafen\",\n" +
+					"    \"Lutjenburg\",\n" +
+					"    \"Quickborn\",\n" +
+					"    \"Tangstedt\",\n" +
+					"    \"Tangstedt\",\n" +
+					"    \"Negast\",\n" +
+					"    \"Langendorf\",\n" +
+					"    \"Stockelsdorf\",\n" +
+					"    \"Prangendorf\",\n" +
+					"    \"Lagerdorf\",\n" +
+					"    \"Jersbek\",\n" +
+					"    \"Lutjensee\",\n" +
+					"    \"Hoisdorf\",\n" +
+					"    \"Tremsbuttel\",\n" +
+					"    \"Nahe\",\n" +
+					"    \"Itzstedt\",\n" +
+					"    \"Dabelow\",\n" +
+					"    \"Monkeberg\",\n" +
+					"    \"Altenholz\",\n" +
+					"    \"Buxtehude\",\n" +
+					"    \"Escheburg\",\n" +
+					"    \"Aurachtal\",\n" +
+					"    \"Frankenwinheim\",\n" +
+					"    \"Armstorf\"\n" +
+					"  ],\n" +
+					"  \"Italy\":[\n" +
+					"    \"Ferrara\",\n" +
+					"    \"Sarnano\",\n" +
+					"    \"Rome\",\n" +
+					"    \"Gabicce Mare\",\n" +
+					"    \"Sasso Marconi\",\n" +
+					"    \"Sarno\",\n" +
+					"    \"Collegno\",\n" +
+					"    \"La Via\",\n" +
+					"    \"Radda in Chianti\",\n" +
+					"    \"Riale\"\n" +
+					"  ],\n" +
+					"  \"United Kingdom\":[\n" +
+					"    \"Pershore\",\n" +
+					"    \"Rowley Regis\",\n" +
+					"    \"Stroud\",\n" +
+					"    \"Birmingham\",\n" +
+					"    \"Worcester\",\n" +
+					"    \"Smethwick\",\n" +
+					"    \"Alcester\",\n" +
+					"    \"Dudley\",\n" +
+					"    \"Ottershaw\",\n" +
+					"    \"Petworth\",\n" +
+					"    \"Bedminster\",\n" +
+					"    \"Hitcham\",\n" +
+					"    \"Westleigh\",\n" +
+					"    \"West Langdon\",\n" +
+					"    \"Handcross\",\n" +
+					"    \"Blackheath\",\n" +
+					"    \"Alrewas\",\n" +
+					"    \"Clapham\",\n" +
+					"    \"Harby\"\n" +
+					"  ],\n" +
+					"  \"United Arab Emirates\":[\n" +
+					"    \"Abu Dhabi\",\n" +
+					"    \"Abu al Abyad\",\n" +
+					"    \"Adhen\",\n" +
+					"    \"Ajman\",\n" +
+					"    \"Al Ain\",\n" +
+					"    \"Al Ajban\",\n" +
+					"    \"Al Aryam\",\n" +
+					"    \"Al Awir\",\n" +
+					"    \"Al Badiyah\",\n" +
+					"    \"Al Bataeh\",\n" +
+					"    \"Al Bithnah\",\n" +
+					"    \"Al Faqa\",\n" +
+					"    \"Al Halah\",\n" +
+					"    \"Al Hamraniyah\",\n" +
+					"    \"Al Hamriyah\",\n" +
+					"    \"Al Jazirah Al Hamra\",\n" +
+					"    \"Al Jeer\",\n" +
+					"    \"Al Khawaneej\",\n" +
+					"    \"Al Lisaili\",\n" +
+					"    \"Al Madam\",\n" +
+					"    \"Al Manama\",\n" +
+					"    \"Al Mirfa\",\n" +
+					"    \"Al Qor\",\n" +
+					"    \"Al Qusaidat\",\n" +
+					"    \"Al Rafaah\",\n" +
+					"    \"Al Rashidya\",\n" +
+					"    \"Al Shuwaib\",\n" +
+					"    \"Al Yahar\",\n" +
+					"    \"Ar-Rams\",\n" +
+					"    \"Asimah\",\n" +
+					"    \"Dadna\",\n" +
+					"    \"Dalma\",\n" +
+					"    \"Dhaid\",\n" +
+					"    \"Dibba Al-Fujairah\",\n" +
+					"    \"Dibba Al-Hisn\",\n" +
+					"    \"Digdaga\",\n" +
+					"    \"Dubai\",\n" +
+					"    \"Falaj Al Mualla\",\n" +
+					"    \"Fujairah\",\n" +
+					"    \"Ghalilah\",\n" +
+					"    \"Ghayathi\",\n" +
+					"    \"Ghub\",\n" +
+					"    \"Habshan\",\n" +
+					"    \"Hatta\",\n" +
+					"    \"Huwaylat\",\n" +
+					"    \"Jebel Ali\",\n" +
+					"    \"Kalba\",\n" +
+					"    \"Khatt\",\n" +
+					"    \"Khor Fakkan\",\n" +
+					"    \"Khor Khwair\",\n" +
+					"    \"Lahbab\",\n" +
+					"    \"Liwa Oasis\",\n" +
+					"    \"Madinat Zayed\",\n" +
+					"    \"Marawah\",\n" +
+					"    \"Masafi\",\n" +
+					"    \"Masfut\",\n" +
+					"    \"Mirbah\",\n" +
+					"    \"Mleiha\",\n" +
+					"    \"Nahil\",\n" +
+					"    \"RAK City\",\n" +
+					"    \"Ruwais\",\n" +
+					"    \"Sha'am\",\n" +
+					"    \"Sharjah\",\n" +
+					"    \"Sila\",\n" +
+					"    \"Sir Bani Yas\",\n" +
+					"    \"Sweihan\",\n" +
+					"    \"Umm Al Quwain\",\n" +
+					"    \"Wadi Shah\",\n" +
+					"    \"Zubarah\"\n" +
+					"  ],\n" +
+					"  \"Syria\":[\n" +
+					"    \"Damascus\",\n" +
+					"    \"`Ara\",\n" +
+					"    \"Aleppo\",\n" +
+					"    \"Ad Darah\"\n" +
+					"  ],\n" +
+					"  \"Guinea\":[\n" +
+					"    \"Conakry\",\n" +
+					"    \"Forécariah\",\n" +
+					"    \"Nzérékoré\",\n" +
+					"    \"Labé\",\n" +
+					"    \"Kankan\",\n" +
+					"    \"Port Kamsar\",\n" +
+					"    \"Boké\",\n" +
+					"    \"Mamou\",\n" +
+					"    \"Dabola\",\n" +
+					"    \"Lola\",\n" +
+					"    \"Sangaredi\",\n" +
+					"    \"Kalia\"\n" +
+					"  ],\n" +
+					"  \"Congo\":[\n" +
+					"    \"Kinshasa\",\n" +
+					"    \"Lubumbashi\",\n" +
+					"    \"Goma\",\n" +
+					"    \"Banana\",\n" +
+					"    \"Likasi\"\n" +
+					"  ],\n" +
+					"  \"Swaziland\":[\n" +
+					"    \"Mbabane\",\n" +
+					"    \"Piggs Peak\",\n" +
+					"    \"Lobamba\",\n" +
+					"    \"Kwaluseni\",\n" +
+					"    \"Manzini\"\n" +
+					"  ],\n" +
+					"  \"Burkina Faso\":[\n" +
+					"    \"Ouagadougou\",\n" +
+					"    \"Bobo-Dioulasso\",\n" +
+					"    \"Tenkodogo\"\n" +
+					"  ],\n" +
+					"  \"Sierra Leone\":[\n" +
+					"    \"Freetown\"\n" +
+					"  ],\n" +
+					"  \"Somalia\":[\n" +
+					"    \"Hargeysa\",\n" +
+					"    \"Mogadishu\"\n" +
+					"  ],\n" +
+					"  \"Niger\":[\n" +
+					"    \"Niamey\"\n" +
+					"  ],\n" +
+					"  \"Central African Republic\":[\n" +
+					"    \"Bangui\"\n" +
+					"  ],\n" +
+					"  \"Togo\":[\n" +
+					"    \"Lomé\",\n" +
+					"    \"Sansanne-Mango\"\n" +
+					"  ],\n" +
+					"  \"Burundi\":[\n" +
+					"    \"Bujumbura\",\n" +
+					"    \"\"\n" +
+					"  ],\n" +
+					"  \"Equatorial Guinea\":[\n" +
+					"    \"Malabo\"\n" +
+					"  ],\n" +
+					"  \"South Sudan\":[\n" +
+					"    \"Juba\"\n" +
+					"  ],\n" +
+					"  \"Senegal\":[\n" +
+					"    \"Sama\",\n" +
+					"    \"Dakar\",\n" +
+					"    \"Guediawaye\",\n" +
+					"    \"Louga\",\n" +
+					"    \"Kaolack\",\n" +
+					"    \"Dodji\",\n" +
+					"    \"Boussinki\",\n" +
+					"    \"Tanaf\",\n" +
+					"    \"Saint-Louis\",\n" +
+					"    \"Camberene\",\n" +
+					"    \"Kedougou\",\n" +
+					"    \"Madina Kokoun\"\n" +
+					"  ],\n" +
+					"  \"Mauritania\":[\n" +
+					"    \"Nouakchott\"\n" +
+					"  ],\n" +
+					"  \"Djibouti\":[\n" +
+					"    \"Djibouti\"\n" +
+					"  ],\n" +
+					"  \"Comoros\":[\n" +
+					"    \"Moutsamoudou\",\n" +
+					"    \"Moroni\"\n" +
+					"  ],\n" +
+					"  \"Tunisia\":[\n" +
+					"    \"Tunis\",\n" +
+					"    \"Le Bardo\",\n" +
+					"    \"Sousse\",\n" +
+					"    \"Gafsa\",\n" +
+					"    \"Monastir\",\n" +
+					"    \"Hammamet\",\n" +
+					"    \"Sidi Bouzid\",\n" +
+					"    \"Manouba\",\n" +
+					"    \"Beja\",\n" +
+					"    \"Rades\",\n" +
+					"    \"Ariana\",\n" +
+					"    \"Sfax\"\n" +
+					"  ],\n" +
+					"  \"Nauru\":[\n" +
+					"    \"Anabar\"\n" +
+					"  ],\n" +
+					"  \"South Georgia and the South Sandwich Islands\":[\n" +
+					"    \"Grytviken\"\n" +
+					"  ],\n" +
+					"  \"U.S. Minor Outlying Islands\":[\n" +
+					"    \"\"\n" +
+					"  ],\n" +
+					"  \"Sint Maarten\":[\n" +
+					"    \"Philipsburg\",\n" +
+					"    \"\"\n" +
+					"  ],\n" +
+					"  \"São Tomé and Príncipe\":[\n" +
+					"    \"Neves\",\n" +
+					"    \"São Tomé\",\n" +
+					"    \"\"\n" +
+					"  ],\n" +
+					"  \"Falkland Islands\":[\n" +
+					"    \"Stanley\"\n" +
+					"  ],\n" +
+					"  \"Northern Mariana Islands\":[\n" +
+					"    \"Saipan\"\n" +
+					"  ],\n" +
+					"  \"East Timor\":[\n" +
+					"    \"Dili\",\n" +
+					"    \"\"\n" +
+					"  ],\n" +
+					"  \"Bonaire\":[\n" +
+					"    \"Kralendijk\",\n" +
+					"    \"Dorp Nikiboko\"\n" +
+					"  ],\n" +
+					"  \"American Samoa\":[\n" +
+					"    \"American Samoa\",\n" +
+					"    \"Pago Pago\"\n" +
+					"  ],\n" +
+					"  \"Federated States of Micronesia\":[\n" +
+					"    \"Yap\"\n" +
+					"  ],\n" +
+					"  \"Palau\":[\n" +
+					"    \"\"\n" +
+					"  ],\n" +
+					"  \"Guyana\":[\n" +
+					"    \"Georgetown\",\n" +
+					"    \"New Amsterdam\",\n" +
+					"    \"Linden\"\n" +
+					"  ],\n" +
+					"  \"Honduras\":[\n" +
+					"    \"Tegucigalpa\",\n" +
+					"    \"San Pedro Sula\",\n" +
+					"    \"Morazan\",\n" +
+					"    \"La Ceiba\",\n" +
+					"    \"Santa Barbara\",\n" +
+					"    \"Copán\",\n" +
+					"    \"Coxen Hole\",\n" +
+					"    \"El Progreso\",\n" +
+					"    \"San Antonio de Flores\",\n" +
+					"    \"Piraera\",\n" +
+					"    \"La Hacienda\",\n" +
+					"    \"Comayaguela\",\n" +
+					"    \"Choloma\",\n" +
+					"    \"Comayagua\",\n" +
+					"    \"Nacaome\",\n" +
+					"    \"Pinalejo\",\n" +
+					"    \"Puerto Lempira\",\n" +
+					"    \"Sula\",\n" +
+					"    \"El Barro\",\n" +
+					"    \"El Paraiso\"\n" +
+					"  ],\n" +
+					"  \"Laos\":[\n" +
+					"    \"Vientiane\"\n" +
+					"  ],\n" +
+					"  \"Uruguay\":[\n" +
+					"    \"Montevideo\",\n" +
+					"    \"La Floresta\",\n" +
+					"    \"Barra de Carrasco\",\n" +
+					"    \"Paysandú\",\n" +
+					"    \"Salto\",\n" +
+					"    \"Las Piedras\",\n" +
+					"    \"Tacuarembó\",\n" +
+					"    \"Toledo\",\n" +
+					"    \"Colonia del Sacramento\",\n" +
+					"    \"Mercedes\",\n" +
+					"    \"Union\",\n" +
+					"    \"Florida\",\n" +
+					"    \"Maldonado\",\n" +
+					"    \"Canelones\",\n" +
+					"    \"La Paz\",\n" +
+					"    \"San Carlos\",\n" +
+					"    \"Durazno\",\n" +
+					"    \"Punta del Este\"\n" +
+					"  ],\n" +
+					"  \"Eritrea\":[\n" +
+					"    \"Asmara\",\n" +
+					"    \"\"\n" +
+					"  ],\n" +
+					"  \"Cuba\":[\n" +
+					"    \"Havana\",\n" +
+					"    \"Habana\",\n" +
+					"    \"La Habana\",\n" +
+					"    \"Matanzas\",\n" +
+					"    \"Villa\",\n" +
+					"    \"Bayamo\",\n" +
+					"    \"Cienfuegos\",\n" +
+					"    \"Santiago de Cuba\",\n" +
+					"    \"Holguín\",\n" +
+					"    \"Ciego de Ávila\",\n" +
+					"    \"Pinar del Río\",\n" +
+					"    \"Sancti Spíritus\",\n" +
+					"    \"Camagüey\",\n" +
+					"    \"Las Tunas\",\n" +
+					"    \"Guantánamo\",\n" +
+					"    \"Varadero\"\n" +
+					"  ],\n" +
+					"  \"Saint Helena\":[\n" +
+					"    \"Tristan Da Cunha\",\n" +
+					"    \"Jamestown\"\n" +
+					"  ],\n" +
+					"  \"Christmas Island\":[\n" +
+					"    \"Flying Fish Cove\"\n" +
+					"  ],\n" +
+					"  \"Ethiopia\":[\n" +
+					"    \"Addis Ababa\",\n" +
+					"    \"Awasa\",\n" +
+					"    \"Jijiga\"\n" +
+					"  ],\n" +
+					"  \"British Indian Ocean Territory\":[\n" +
+					"    \"\"\n" +
+					"  ]\n" +
+					"}");
 
 			JSONObject jsonObject = (JSONObject) obj;
 
