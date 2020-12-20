@@ -75,7 +75,7 @@ public class RegionsControler {
         myRegion.getRegionStatistics().setNbConfirmed(stat.getNbConfirmed());
         myRegion.getRegionStatistics().setNbDeaths(stat.getNbDeaths());
         myRegion.getRegionStatistics().setNbSuspected(stat.getNbSuspected());
-
+        myRegion.getRegionStatistics().setStatisticsValidate(false);
         regionRepository.save(myRegion);
 
         myCountry.getCountryStatistics().setNbDeaths(d);
