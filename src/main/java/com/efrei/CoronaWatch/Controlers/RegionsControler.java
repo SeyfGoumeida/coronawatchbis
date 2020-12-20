@@ -2,6 +2,7 @@ package com.efrei.CoronaWatch.Controlers;
 
 import com.efrei.CoronaWatch.Entities.Country;
 import com.efrei.CoronaWatch.Entities.Region;
+import com.efrei.CoronaWatch.Entities.RegionRisks;
 import com.efrei.CoronaWatch.Entities.Statistics;
 import com.efrei.CoronaWatch.Repositories.CountryRepository;
 import com.efrei.CoronaWatch.Repositories.RegionRepository;
@@ -23,6 +24,10 @@ public class RegionsControler {
     @GetMapping("/Regions/Countries")
     public Iterable<Country> getCountries(){
         return countryRepository.findAll();
+    }
+    @GetMapping("/Regions")
+    public Iterable<Region> getRegions(){
+        return regionRepository.findAll();
     }
     @GetMapping("/Regions/CountryByName")
     public Country getCountryByName(@RequestParam(name = "countryName") String countryName){
@@ -80,7 +85,7 @@ public class RegionsControler {
         countryRepository.save(myCountry);
     }
     @PostMapping("/Regions/Risk")
-    public void addArticle(@RequestParam(name = "risk") Boolean risk,@RequestParam(name = "id") long id) throws Exception {
+    public void addArticle(@RequestParam(name = "risk") RegionRisks risk, @RequestParam(name = "id") long id) throws Exception {
         Region myRegion = getRegionById(id);
         myRegion.setRegionRisk(risk);
         regionRepository.save(myRegion);

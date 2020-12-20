@@ -2,24 +2,30 @@ package com.efrei.CoronaWatch.Controlers;
 
 import com.efrei.CoronaWatch.Entities.Article;
 import com.efrei.CoronaWatch.Entities.Commentary;
+import com.efrei.CoronaWatch.Entities.WebUser;
 import com.efrei.CoronaWatch.Repositories.ArticleRepository;
+import com.efrei.CoronaWatch.Repositories.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 @RestController
 public class ArticlesControler {
 
     ArticleRepository articleRepository;
+    UserRepository userRepository;
 
     @Autowired
-    public ArticlesControler(ArticleRepository articleRepository) {
+    public ArticlesControler(ArticleRepository articleRepository,UserRepository userRepository) {
         super();
         this.articleRepository = articleRepository;
+        this.userRepository = userRepository;
     }
 
 
@@ -172,6 +178,32 @@ public class ArticlesControler {
                 }
             }
         }
+
+    }
+
+    @PostMapping("/Articles/Article/AddComment")
+    @Transactional(propagation = Propagation.REQUIRES_NEW, rollbackFor = Exception.class)
+        public void AddComment(@RequestParam(name = "id") long id,@RequestParam(name = "content") String content,@RequestParam(name = "idUser") long idUser){
+        Article article = articleRepository.findByIdArticle(id);
+
+        if (article == null) {
+            System.out.println("----------------------------------");
+            System.out.println("There is no article with suck id");
+            System.out.println("----------------------------------");
+        }else {
+            Commentary myComment = new Commentary(content);
+            myComment.setCommentArticle(article);
+            Set<Commentary> comments = new HashSet<Commentary>();
+            comments.add(myComment);
+            WebUser myUser = (WebUser) userRepository.findByIdUser(idUser);
+            myUser.setWebUserCommentaries(comments);
+            myComment.setCommentEditor(myUser);
+            article.setArticleCommentaries(comments);
+            userRepository.save(myUser);
+            articleRepository.save(article);
+
+        }
+
 
     }
 

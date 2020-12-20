@@ -37,7 +37,7 @@ public class UsersControler {
         Iterable<User> listOfUsers = getUsers();
         User SuperAdmin = new User();
         for(User user :listOfUsers ){
-            if(user.getUserType().equals("SuperAdmin"))
+            if(user.getUserType().toString().equals("SuperAdmin"))
             {
                 SuperAdmin = user;
             }
@@ -49,7 +49,7 @@ public class UsersControler {
         Iterable<User> listOfUsers = getUsers();
         List<User> listOfRedactors = new ArrayList<>();
         for(User user :listOfUsers ){
-            if(user.getUserType().equals("Redactor"))
+            if(user.getUserType().toString().equals("Redactor"))
             {
                 listOfRedactors.add(user);
             }
@@ -61,7 +61,7 @@ public class UsersControler {
         Iterable<User> listOfUsers = getUsers();
         List<User> listOfModerators = new ArrayList<>();
         for(User user :listOfUsers ){
-            if(user.getUserType().equals("Moderator"))
+            if(user.getUserType().toString().equals("Moderator"))
             {
                 listOfModerators.add(user);
             }
@@ -73,13 +73,26 @@ public class UsersControler {
         Iterable<User> listOfUsers = getUsers();
         List<User> listOfHealthAgents = new ArrayList<>();
         for(User user :listOfUsers ){
-            if(user.getUserType().equals("HealthAgent"))
+            if(user.getUserType().toString().equals("HealthAgent"))
             {
                 listOfHealthAgents.add(user);
             }
         }
         return listOfHealthAgents;
     }
+    @GetMapping("/Users/WebUsers")
+    public Iterable<User> getWebUsers(){
+        Iterable<User> listOfUsers = getUsers();
+        List<User> listOfWebUsers = new ArrayList<>();
+        for(User user :listOfUsers ){
+                if(user.getUserType().toString().equals("WebUser"))
+            {
+                listOfWebUsers.add(user);
+            }
+        }
+        return listOfWebUsers;
+    }
+
     @GetMapping("/User")
     public User getUser(@RequestParam String email){
         return userRepository.findByEmail(email);

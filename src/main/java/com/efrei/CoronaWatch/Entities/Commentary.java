@@ -5,7 +5,7 @@ import javax.persistence.*;
 public class Commentary {
     private long idCommentary;
     private String commentContent;
-    private WebUser commentEditor ;
+    private User commentEditor ;
     private Article commentArticle;
     private Boolean inappropriate;
 
@@ -42,11 +42,11 @@ public class Commentary {
         this.commentContent = commentContent;
     }
     @ManyToOne(cascade= CascadeType.ALL,optional = true, targetEntity=WebUser.class)
-    public WebUser getCommentEditor() {
+    public User getCommentEditor() {
         return commentEditor;
     }
 
-    public void setCommentEditor(WebUser commentEditor) {
+    public void setCommentEditor(User commentEditor) {
         this.commentEditor = commentEditor;
     }
     @ManyToOne(optional = true, targetEntity=Article.class)

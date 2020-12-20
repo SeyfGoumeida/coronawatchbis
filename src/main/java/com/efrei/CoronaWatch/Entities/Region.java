@@ -10,14 +10,14 @@ public class Region {
     private String regionName;
     private Country regionCountry;
     private RegionsStatistics regionRegionsStatistics;
-    private Boolean regionRisk;
+    private RegionRisks regionRisk;
 
     public Region() {
         super();
     }
     public Region( String regionName) {
         this.regionName = regionName;
-        this.regionRisk = false;
+        this.regionRisk = RegionRisks.NonRisk;
     }
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -53,11 +53,11 @@ public class Region {
         return regionRegionsStatistics;
     }
 
-    public Boolean getRegionRisk() {
+    public RegionRisks getRegionRisk() {
         return regionRisk;
     }
 
-    public void setRegionRisk(Boolean regionRisk) {
+    public void setRegionRisk(RegionRisks regionRisk) {
         this.regionRisk = regionRisk;
     }
 

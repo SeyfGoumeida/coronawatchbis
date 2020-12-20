@@ -114,12 +114,14 @@ public class CoronaWatchApplication {
 			SuperAdmin SuperAdmin = new SuperAdmin("SuperAdmin", "Super", "Admin", "superadmin@gmail.com", encoder.encode("azerty"), UserType.SuperAdmin);
 			Moderator moderator = new Moderator("Moderator", "firstnameModerator", "LastNameModerator", "Moderator@gmail.com",  encoder.encode("azerty"), UserType.Moderator);
 			HealthAgent healthagent = new HealthAgent("HealthAgent", "firstnameHealthAgent", "LastNameHealthAgent", "HealthAgent@gmail.com",  encoder.encode("azerty"), UserType.HealthAgent);
+			WebUser webuser = new WebUser("WebUser", "firstnameWebUser", "LastNameWebUser", "WebUser@gmail.com",  encoder.encode("azerty"), UserType.WebUser);
 
 
 			userrepository.save(healthagent);
 			userrepository.save(moderator);
 			userrepository.save(SuperAdmin);
 			userrepository.save(redactor);
+			userrepository.save(webuser);
 
 
 
@@ -128,11 +130,11 @@ public class CoronaWatchApplication {
 			article1.setArticleValidate(true);
 			Commentary comment1 = new Commentary("Bla Bla Bla Bla Bla Bla Bla Bla ");
 			comment1.setCommentArticle(article1);
-			Commentary comment2 = new Commentary("Bla Bla Bla Bla Bla Bla Bla Bla ");
+			Commentary comment2 = new Commentary("TEST TEST TEST TEST TEST TEST TEST ");
 			comment2.setCommentArticle(article1);
-			Commentary comment3 = new Commentary("Bla Bla Bla Bla Bla Bla Bla Bla ");
+			Commentary comment3 = new Commentary("SOMETHING SOMETHING SOMETHING ");
 			comment3.setCommentArticle(article1);
-			Commentary comment4 = new Commentary("Bla Bla Bla Bla Bla Bla Bla Bla ");
+			Commentary comment4 = new Commentary("ANYWAYS ......");
 			comment4.setCommentArticle(article1);
 			Set<Commentary> comments = new HashSet<Commentary>();
 			comments.add(comment1);
@@ -144,6 +146,17 @@ public class CoronaWatchApplication {
 			article2.setArticleValidate(false);
 			Article article3 = new Article("Article Title 3 ", "Article Content 3");
 			article1.setArticleValidate(true);
+			articlerepository.save(article1);
+			articlerepository.save(article2);
+			articlerepository.save(article3);
+
+			webuser.setWebUserCommentaries(comments);
+			comment1.setCommentEditor(webuser);
+			comment2.setCommentEditor(webuser);
+			comment3.setCommentEditor(webuser);
+			comment4.setCommentEditor(webuser);
+			userrepository.save(webuser);
+
 			articlerepository.save(article1);
 			articlerepository.save(article2);
 			articlerepository.save(article3);
@@ -269,7 +282,7 @@ public class CoronaWatchApplication {
 
 			 */
 
-			readJsonCountries(countryRepository,regionrepository,statisticsRepository,regionsStatisticsRepository);
+			//readJsonCountries(countryRepository,regionrepository,statisticsRepository,regionsStatisticsRepository);
 
 		};
 	}
