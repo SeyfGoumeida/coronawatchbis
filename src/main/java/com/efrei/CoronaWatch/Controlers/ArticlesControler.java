@@ -102,6 +102,7 @@ public class ArticlesControler {
     @PostMapping("/Articles/AddArticle")
     @Transactional(propagation = Propagation.REQUIRES_NEW, rollbackFor = Exception.class)
     public void addArticle(@RequestBody Article article) throws Exception {
+        article.setArticleValidate(false);
         articleRepository.save(article);
 
     }
@@ -135,7 +136,7 @@ public class ArticlesControler {
 
         }
         else {
-            article.setArticleValidate(editedarticle.getArticleValidate());
+            article.setArticleValidate(false);
             article.setArticleRedactor(editedarticle.getArticleRedactor());
             article.setArticleModerator(editedarticle.getArticleModerator());
             article.setContent(editedarticle.getContent());
