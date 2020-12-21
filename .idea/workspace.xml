@@ -5,7 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="51fcae89-0c64-44ef-bcb3-e41348457253" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/build/resources/main/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/efrei/CoronaWatch/CoronaWatchApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/efrei/CoronaWatch/CoronaWatchApplication.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/efrei/CoronaWatch/Security/WebSecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/efrei/CoronaWatch/Security/WebSecurityConfig.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -146,13 +147,6 @@
       <workItem from="1608463035810" duration="5899000" />
       <workItem from="1608474071702" duration="11728000" />
       <workItem from="1608550498753" duration="1567000" />
-    </task>
-    <task id="LOCAL-00004" summary="[Test] sourceCompatibility = '11' with sourceCompatibility = '1.8'">
-      <created>1607267882987</created>
-      <option name="number" value="00004" />
-      <option name="presentableId" value="LOCAL-00004" />
-      <option name="project" value="LOCAL" />
-      <updated>1607267882987</updated>
     </task>
     <task id="LOCAL-00005" summary="[Test] sourceCompatibility = '11' back again">
       <created>1607268105528</created>
@@ -490,7 +484,14 @@
       <option name="project" value="LOCAL" />
       <updated>1608566519477</updated>
     </task>
-    <option name="localTasksCounter" value="53" />
+    <task id="LOCAL-00053" summary="[TRYING] CORS FILTER.6">
+      <created>1608567105808</created>
+      <option name="number" value="00053" />
+      <option name="presentableId" value="LOCAL-00053" />
+      <option name="project" value="LOCAL" />
+      <updated>1608567105808</updated>
+    </task>
+    <option name="localTasksCounter" value="54" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -523,7 +524,6 @@
     <ignored-roots>
       <path value="$PROJECT_DIR$/src/main/coronawatch" />
     </ignored-roots>
-    <MESSAGE value="[DEPLOY] TEST" />
     <MESSAGE value="[ADD] Statistics for Region , Country , Continent" />
     <MESSAGE value="[ADD] Word Statistics" />
     <MESSAGE value="[change]  application.properties" />
@@ -548,6 +548,7 @@
     <MESSAGE value="[TRYING] CORS FILTER.3" />
     <MESSAGE value="[TRYING] CORS FILTER.4" />
     <MESSAGE value="[TRYING] CORS FILTER.5" />
-    <option name="LAST_COMMIT_MESSAGE" value="[TRYING] CORS FILTER.5" />
+    <MESSAGE value="[TRYING] CORS FILTER.6" />
+    <option name="LAST_COMMIT_MESSAGE" value="[TRYING] CORS FILTER.6" />
   </component>
 </project>

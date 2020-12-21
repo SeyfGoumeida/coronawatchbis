@@ -17,8 +17,10 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 import org.springframework.web.cors.CorsConfiguration;
+import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
+import org.springframework.web.cors.reactive.CorsConfigurationSource;
 
-import java.util.List;
+import java.util.Arrays;
 
 @Configuration
 @EnableWebSecurity
@@ -71,20 +73,31 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
         http.cors().and().csrf().disable()
                 .exceptionHandling().authenticationEntryPoint(unauthorizedHandler).and()
                 .sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS).and()
-                .authorizeRequests().antMatchers("/**").permitAll()
+                .authorizeRequests().antMatchers("/signin").permitAll()
+                .antMatchers("/signup").permitAll()
 
 
                // .antMatchers("/signin").permitAll()
                 ;
-            http.cors().configurationSource(request -> {
+         /*   http.cors().configurationSource(request -> {
                 var cors = new CorsConfiguration();
                 cors.setAllowedOrigins(List.of("http://localhost:3000","http://coronawatchapp.herokuapp.com/"));
                 cors.setAllowedMethods(List.of("GET","POST", "PUT", "DELETE", "OPTIONS"));
                 cors.setAllowedHeaders(List.of("*"));
                 return cors;
-            });
+            });*/
 
        http.addFilterBefore(authenticationJwtTokenFilter(), UsernamePasswordAuthenticationFilter.class);
+    }
+
+    @Bean
+    CorsConfigurationSource corsConfigurationSource() {
+        CorsConfiguration configuration = new CorsConfiguration();
+        configuration.setAllowedOrigins(Arrays.asList("http://coronawatchapp.herokuapp.com/","http://localhost:3000"));
+        configuration.setAllowedMethods(Arrays.asList("GET","POST", "PUT", "DELETE", "OPTIONS"));
+        UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
+        source.registerCorsConfiguration("/**", configuration);
+        return (CorsConfigurationSource) source;
     }
 
 }
