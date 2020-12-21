@@ -9,10 +9,16 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.method.configuration.EnableGlobalMethodSecurity;
+import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
+import org.springframework.security.config.http.SessionCreationPolicy;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
+import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
+import org.springframework.web.cors.CorsConfiguration;
+
+import java.util.List;
 
 @Configuration
 @EnableWebSecurity
@@ -60,18 +66,18 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
             }
         };
     } */
-  /*  @Override
+    @Override
     protected void configure(HttpSecurity http) throws Exception {
         http.cors().and().csrf().disable()
                 .exceptionHandling().authenticationEntryPoint(unauthorizedHandler).and()
                 .sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS).and()
                 .authorizeRequests().antMatchers("/signin").permitAll()
-                .antMatchers("/Users/AddUser").permitAll()
+             //   .antMatchers("/Users/AddUser").permitAll()
                 .antMatchers("/signup").permitAll()
 
                // .antMatchers("/signin").permitAll()
                 ;
-           /* http.cors().configurationSource(request -> {
+            http.cors().configurationSource(request -> {
                 var cors = new CorsConfiguration();
                 cors.setAllowedOrigins(List.of("http://localhost:3000","http://coronawatchapp.herokuapp.com/"));
                 cors.setAllowedMethods(List.of("GET","POST", "PUT", "DELETE", "OPTIONS"));
@@ -80,6 +86,6 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
             });
 
        http.addFilterBefore(authenticationJwtTokenFilter(), UsernamePasswordAuthenticationFilter.class);
-    }*/
+    }
 
 }

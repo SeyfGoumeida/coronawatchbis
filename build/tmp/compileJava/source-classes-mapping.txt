@@ -22,8 +22,9 @@ com/efrei/CoronaWatch/Payload/Request/LoginRequest.java
  com.efrei.CoronaWatch.Payload.Request.LoginRequest
 com/efrei/CoronaWatch/Entities/Statistics.java
  com.efrei.CoronaWatch.Entities.Statistics
-com/efrei/CoronaWatch/Security/WebSecurityConfig.java
- com.efrei.CoronaWatch.Security.WebSecurityConfig
+com/efrei/CoronaWatch/CoronaWatchApplication.java
+ com.efrei.CoronaWatch.CoronaWatchApplication
+ com.efrei.CoronaWatch.CoronaWatchApplication$1
 com/efrei/CoronaWatch/Repositories/RegionRepository.java
  com.efrei.CoronaWatch.Repositories.RegionRepository
 com/efrei/CoronaWatch/Repositories/UserRepository.java
@@ -88,6 +89,5 @@ com/efrei/CoronaWatch/Controlers/AuthController.java
  com.efrei.CoronaWatch.Controlers.AuthController
 com/efrei/CoronaWatch/Controlers/StatisticsControler.java
  com.efrei.CoronaWatch.Controlers.StatisticsControler
-com/efrei/CoronaWatch/CoronaWatchApplication.java
- com.efrei.CoronaWatch.CoronaWatchApplication
- com.efrei.CoronaWatch.CoronaWatchApplication$1
+com/efrei/CoronaWatch/Security/WebSecurityConfig.java
+ com.efrei.CoronaWatch.Security.WebSecurityConfig
