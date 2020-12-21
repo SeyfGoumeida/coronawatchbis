@@ -5,7 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="51fcae89-0c64-44ef-bcb3-e41348457253" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/application.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/efrei/CoronaWatch/Security/WebSecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/efrei/CoronaWatch/Security/WebSecurityConfig.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -146,13 +146,6 @@
       <workItem from="1608463035810" duration="5899000" />
       <workItem from="1608474071702" duration="11728000" />
       <workItem from="1608550498753" duration="1567000" />
-    </task>
-    <task id="LOCAL-00003" summary="[FIX] Packages &amp; [ADD]RestWebService">
-      <created>1607265139709</created>
-      <option name="number" value="00003" />
-      <option name="presentableId" value="LOCAL-00003" />
-      <option name="project" value="LOCAL" />
-      <updated>1607265139709</updated>
     </task>
     <task id="LOCAL-00004" summary="[Test] sourceCompatibility = '11' with sourceCompatibility = '1.8'">
       <created>1607267882987</created>
@@ -490,7 +483,14 @@
       <option name="project" value="LOCAL" />
       <updated>1608565988604</updated>
     </task>
-    <option name="localTasksCounter" value="52" />
+    <task id="LOCAL-00052" summary="[TRYING] CORS FILTER.5">
+      <created>1608566519477</created>
+      <option name="number" value="00052" />
+      <option name="presentableId" value="LOCAL-00052" />
+      <option name="project" value="LOCAL" />
+      <updated>1608566519477</updated>
+    </task>
+    <option name="localTasksCounter" value="53" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
