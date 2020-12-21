@@ -27,11 +27,14 @@ public class StatisticsControler {
 
 
         @GetMapping("/Statistics")
+        @CrossOrigin(origins = "http://coronawatchapp.herokuapp.com")
         public Iterable<Statistics> getStatistics(){ return statisticsRepository.findAll(); }
         @GetMapping("/Statistics/RegionsStatistics")
+        @CrossOrigin(origins = "http://coronawatchapp.herokuapp.com")
         public Iterable<RegionsStatistics> getStatisticsRegionsStatistics(){ return regionsStatisticsRepository.findAll(); }
 
         @GetMapping("/Statistics/World")
+        @CrossOrigin(origins = "http://coronawatchapp.herokuapp.com")
         public Statistics getStatisticsWord(){
 
             Iterable<Statistics> listOfStatistics = getStatistics();
@@ -48,6 +51,7 @@ public class StatisticsControler {
             return WorldsStatistics;
         }
         @GetMapping("/Statistics/Country")
+        @CrossOrigin(origins = "http://coronawatchapp.herokuapp.com")
         public Iterable<Statistics> getStatisticsContinents(){
 
             Iterable<Statistics> listOfStatistics = getStatistics();
@@ -63,6 +67,7 @@ public class StatisticsControler {
         }
 
     @GetMapping("/Statistics/Regions")
+    @CrossOrigin(origins = "http://coronawatchapp.herokuapp.com")
     public Iterable<RegionsStatistics> getStatisticsRegions(){
         Iterable<RegionsStatistics> listOfStatistics = getStatisticsRegionsStatistics();
         List<RegionsStatistics> listOfValidatesStatistics = new ArrayList<>();
@@ -75,6 +80,7 @@ public class StatisticsControler {
         return listOfValidatesStatistics;
     }
     @GetMapping("/Statistics/Regions/Validate")
+    @CrossOrigin(origins = "http://coronawatchapp.herokuapp.com")
     public Iterable<RegionsStatistics> getValidatesStatisticsRegions(){
         Iterable<RegionsStatistics> listOfStatistics = getStatisticsRegionsStatistics();
         List<RegionsStatistics> listOfValidatesStatistics = new ArrayList<>();
@@ -87,6 +93,7 @@ public class StatisticsControler {
         return listOfValidatesStatistics;
     }
         @GetMapping("/Statistics/Regions/Invalidate")
+        @CrossOrigin(origins = "http://coronawatchapp.herokuapp.com")
         public Iterable<RegionsStatistics> getInvalidatesStatisticsRegions(){
             Iterable<RegionsStatistics> listOfStatistics = getStatisticsRegionsStatistics();
             List<RegionsStatistics> listOfValidatesStatistics = new ArrayList<>();
@@ -100,6 +107,7 @@ public class StatisticsControler {
         }
 
         @PostMapping("/Statistics/Region")
+        @CrossOrigin(origins = "http://coronawatchapp.herokuapp.com")
         @Transactional(propagation = Propagation.REQUIRES_NEW, rollbackFor = Exception.class)
         public void addStatistics(@RequestBody RegionsStatistics statistics) throws Exception {
             regionsStatisticsRepository.save(statistics);
@@ -107,6 +115,7 @@ public class StatisticsControler {
         }
 
     @PutMapping("/Statistics/Region/Validate")
+    @CrossOrigin(origins = "http://coronawatchapp.herokuapp.com")
     @Transactional(propagation = Propagation.REQUIRES_NEW, rollbackFor = Exception.class)
     public void validateStatistics(@RequestParam(name = "id") long id,@RequestParam(name = "validate")boolean validate)throws Exception  {
         RegionsStatistics regionStat = regionsStatisticsRepository.findRegionsStatisticsByIdStatistics(id);

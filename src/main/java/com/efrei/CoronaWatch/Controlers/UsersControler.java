@@ -29,6 +29,7 @@ public class UsersControler {
     }
 
     @GetMapping("/Users")
+    @CrossOrigin(origins = "http://coronawatchapp.herokuapp.com")
     public Iterable<User> getUsers(){
         return userRepository.findAll();
     }
@@ -45,6 +46,7 @@ public class UsersControler {
         return SuperAdmin;
     }
     @GetMapping("/Users/Redactors")
+    @CrossOrigin(origins = "http://coronawatchapp.herokuapp.com")
     public Iterable<User> getRedactors(){
         Iterable<User> listOfUsers = getUsers();
         List<User> listOfRedactors = new ArrayList<>();
@@ -57,6 +59,7 @@ public class UsersControler {
         return listOfRedactors;
     }
     @GetMapping("/Users/Moderators")
+    @CrossOrigin(origins = "http://coronawatchapp.herokuapp.com")
     public Iterable<User> getModerators(){
         Iterable<User> listOfUsers = getUsers();
         List<User> listOfModerators = new ArrayList<>();
@@ -69,6 +72,7 @@ public class UsersControler {
         return listOfModerators;
     }
     @GetMapping("/Users/HealthAgents")
+    @CrossOrigin(origins = "http://coronawatchapp.herokuapp.com")
     public Iterable<User> getHealthAgents(){
         Iterable<User> listOfUsers = getUsers();
         List<User> listOfHealthAgents = new ArrayList<>();
@@ -81,6 +85,7 @@ public class UsersControler {
         return listOfHealthAgents;
     }
     @GetMapping("/Users/WebUsers")
+    @CrossOrigin(origins = "http://coronawatchapp.herokuapp.com")
     public Iterable<User> getWebUsers(){
         Iterable<User> listOfUsers = getUsers();
         List<User> listOfWebUsers = new ArrayList<>();
@@ -94,6 +99,7 @@ public class UsersControler {
     }
 
     @GetMapping("/User")
+    @CrossOrigin(origins = "http://coronawatchapp.herokuapp.com")
     public User getUser(@RequestParam String email){
         return userRepository.findByEmail(email);
     }
@@ -101,6 +107,7 @@ public class UsersControler {
 
     //----------------DELETE----------------------
     @DeleteMapping("/Users/DeleteUser")
+    @CrossOrigin(origins = "http://coronawatchapp.herokuapp.com")
 
     public void delete(@RequestParam(name = "username") String username) {
         User user = userRepository.findByUserName(username);
@@ -113,6 +120,7 @@ public class UsersControler {
     }
     //---------------POST-------------------------
     @PostMapping("/Users/AddUser")
+    @CrossOrigin(origins = "http://coronawatchapp.herokuapp.com")
     @Transactional(propagation = Propagation.REQUIRES_NEW, rollbackFor = Exception.class)
     public void addUser(@RequestBody User user) throws Exception {
         //String passencoded = user.getPassWord();
@@ -137,6 +145,7 @@ public class UsersControler {
     }
 
     @PostMapping("/Login")
+    @CrossOrigin(origins = "http://coronawatchapp.herokuapp.com")
     @Transactional(propagation = Propagation.REQUIRES_NEW, rollbackFor = Exception.class)
     public User Login(@RequestBody String email , String password) throws Exception {
         User user = userRepository.findByEmail(email);

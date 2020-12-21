@@ -5,7 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="51fcae89-0c64-44ef-bcb3-e41348457253" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/efrei/CoronaWatch/Controlers/AuthController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/efrei/CoronaWatch/Controlers/AuthController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/efrei/CoronaWatch/Controlers/UsersControler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/efrei/CoronaWatch/Controlers/UsersControler.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -475,7 +475,14 @@
       <option name="project" value="LOCAL" />
       <updated>1608562273023</updated>
     </task>
-    <option name="localTasksCounter" value="48" />
+    <task id="LOCAL-00048" summary="[TRYING] CORS FILTER.2">
+      <created>1608562551070</created>
+      <option name="number" value="00048" />
+      <option name="presentableId" value="LOCAL-00048" />
+      <option name="project" value="LOCAL" />
+      <updated>1608562551070</updated>
+    </task>
+    <option name="localTasksCounter" value="49" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -508,7 +515,6 @@
     <ignored-roots>
       <path value="$PROJECT_DIR$/src/main/coronawatch" />
     </ignored-roots>
-    <MESSAGE value="[FIX] Infinite Recursion with Jackson JSON and Hibernate JPA issue" />
     <MESSAGE value="[FIX] Cascade problem and TABLE_PER_CLASS strategy" />
     <MESSAGE value="[Test] To deploy" />
     <MESSAGE value="[ADD] CorsFilter &amp; DeleteUser" />
@@ -533,6 +539,7 @@
     <MESSAGE value="[FIX] CORS FILTER" />
     <MESSAGE value="[TRYING] CORS FILTER" />
     <MESSAGE value="[TRYING] CORS FILTER.1" />
-    <option name="LAST_COMMIT_MESSAGE" value="[TRYING] CORS FILTER.1" />
+    <MESSAGE value="[TRYING] CORS FILTER.2" />
+    <option name="LAST_COMMIT_MESSAGE" value="[TRYING] CORS FILTER.2" />
   </component>
 </project>
