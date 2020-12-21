@@ -4,8 +4,8 @@ com/efrei/CoronaWatch/Security/Jwt/AuthEntryPointJwt.java
  com.efrei.CoronaWatch.Security.Jwt.AuthEntryPointJwt
 com/efrei/CoronaWatch/Security/Services/UserDetailsImpl.java
  com.efrei.CoronaWatch.Security.Services.UserDetailsImpl
-com/efrei/CoronaWatch/Controlers/AuthController.java
- com.efrei.CoronaWatch.Controlers.AuthController
+com/efrei/CoronaWatch/Entities/Country.java
+ com.efrei.CoronaWatch.Entities.Country
 com/efrei/CoronaWatch/Repositories/ContinentRepository.java
  com.efrei.CoronaWatch.Repositories.ContinentRepository
 com/efrei/CoronaWatch/Entities/Article.java
@@ -38,8 +38,8 @@ com/efrei/CoronaWatch/Security/Jwt/AuthTokenFilter.java
  com.efrei.CoronaWatch.Security.Jwt.AuthTokenFilter
 com/efrei/CoronaWatch/Security/Services/UserDetailsServiceImpl.java
  com.efrei.CoronaWatch.Security.Services.UserDetailsServiceImpl
-com/efrei/CoronaWatch/Controlers/StatisticsControler.java
- com.efrei.CoronaWatch.Controlers.StatisticsControler
+com/efrei/CoronaWatch/Entities/Commentary.java
+ com.efrei.CoronaWatch.Entities.Commentary
 com/efrei/CoronaWatch/Entities/Region.java
  com.efrei.CoronaWatch.Entities.Region
 com/efrei/CoronaWatch/Entities/Redactor.java
@@ -72,8 +72,8 @@ com/efrei/CoronaWatch/Repositories/RegionsStatisticsRepository.java
  com.efrei.CoronaWatch.Repositories.RegionsStatisticsRepository
 com/efrei/CoronaWatch/Entities/SuperAdmin.java
  com.efrei.CoronaWatch.Entities.SuperAdmin
-com/efrei/CoronaWatch/Controlers/UsersControler.java
- com.efrei.CoronaWatch.Controlers.UsersControler
+org/springframework/web/filter/CorsFilter.java
+ org.springframework.web.filter.CorsFilter
 com/efrei/CoronaWatch/Entities/WebUser.java
  com.efrei.CoronaWatch.Entities.WebUser
 com/efrei/CoronaWatch/Controlers/RegionsControler.java
@@ -82,12 +82,12 @@ com/efrei/CoronaWatch/Entities/StatisticsTypes.java
  com.efrei.CoronaWatch.Entities.StatisticsTypes
 com/efrei/CoronaWatch/Repositories/ArticleRepository.java
  com.efrei.CoronaWatch.Repositories.ArticleRepository
-com/efrei/CoronaWatch/Entities/Country.java
- com.efrei.CoronaWatch.Entities.Country
-com/efrei/CoronaWatch/Entities/Commentary.java
- com.efrei.CoronaWatch.Entities.Commentary
+com/efrei/CoronaWatch/Controlers/UsersControler.java
+ com.efrei.CoronaWatch.Controlers.UsersControler
+com/efrei/CoronaWatch/Controlers/AuthController.java
+ com.efrei.CoronaWatch.Controlers.AuthController
+com/efrei/CoronaWatch/Controlers/StatisticsControler.java
+ com.efrei.CoronaWatch.Controlers.StatisticsControler
 com/efrei/CoronaWatch/CoronaWatchApplication.java
  com.efrei.CoronaWatch.CoronaWatchApplication
  com.efrei.CoronaWatch.CoronaWatchApplication$1
-org/springframework/web/filter/CorsFilter.java
- org.springframework.web.filter.CorsFilter

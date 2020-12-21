@@ -5,7 +5,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="51fcae89-0c64-44ef-bcb3-e41348457253" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/efrei/CoronaWatch/Controlers/UsersControler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/efrei/CoronaWatch/Controlers/UsersControler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/6.6.1/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.6.1/executionHistory/executionHistory.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/6.6.1/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.6.1/executionHistory/executionHistory.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/6.6.1/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.6.1/fileHashes/fileHashes.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/6.6.1/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.6.1/fileHashes/fileHashes.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/6.6.1/javaCompile/javaCompile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.6.1/javaCompile/javaCompile.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/tmp/compileJava/source-classes-mapping.txt" beforeDir="false" afterPath="$PROJECT_DIR$/build/tmp/compileJava/source-classes-mapping.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/springframework/web/filter/CorsFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/springframework/web/filter/CorsFilter.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -482,7 +490,14 @@
       <option name="project" value="LOCAL" />
       <updated>1608562551070</updated>
     </task>
-    <option name="localTasksCounter" value="49" />
+    <task id="LOCAL-00049" summary="[TRYING] CORS FILTER.3">
+      <created>1608563549134</created>
+      <option name="number" value="00049" />
+      <option name="presentableId" value="LOCAL-00049" />
+      <option name="project" value="LOCAL" />
+      <updated>1608563549134</updated>
+    </task>
+    <option name="localTasksCounter" value="50" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -515,7 +530,6 @@
     <ignored-roots>
       <path value="$PROJECT_DIR$/src/main/coronawatch" />
     </ignored-roots>
-    <MESSAGE value="[FIX] Cascade problem and TABLE_PER_CLASS strategy" />
     <MESSAGE value="[Test] To deploy" />
     <MESSAGE value="[ADD] CorsFilter &amp; DeleteUser" />
     <MESSAGE value="[DEPLOY] TEST" />
@@ -540,6 +554,7 @@
     <MESSAGE value="[TRYING] CORS FILTER" />
     <MESSAGE value="[TRYING] CORS FILTER.1" />
     <MESSAGE value="[TRYING] CORS FILTER.2" />
-    <option name="LAST_COMMIT_MESSAGE" value="[TRYING] CORS FILTER.2" />
+    <MESSAGE value="[TRYING] CORS FILTER.3" />
+    <option name="LAST_COMMIT_MESSAGE" value="[TRYING] CORS FILTER.3" />
   </component>
 </project>
