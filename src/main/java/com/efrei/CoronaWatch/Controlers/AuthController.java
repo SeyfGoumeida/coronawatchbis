@@ -51,7 +51,6 @@ public class AuthController {
     JwtUtils jwtUtils;
 
     @PostMapping("/signin")
-    @CrossOrigin(origins = "http://coronawatchapp.herokuapp.com")
     @Transactional(propagation = Propagation.REQUIRES_NEW, rollbackFor = Exception.class)
     public ResponseEntity<?> authenticateUser(@Valid @RequestBody LoginRequest loginRequest) {
 
