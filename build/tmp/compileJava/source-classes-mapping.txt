@@ -89,3 +89,5 @@ com/efrei/CoronaWatch/Entities/Commentary.java
 com/efrei/CoronaWatch/CoronaWatchApplication.java
  com.efrei.CoronaWatch.CoronaWatchApplication
  com.efrei.CoronaWatch.CoronaWatchApplication$1
+org/springframework/web/filter/CorsFilter.java
+ org.springframework.web.filter.CorsFilter
