@@ -94,4 +94,5 @@ public class Article {
     public void setArticleValidate(Boolean articleValidate) {
         this.articleValidate = articleValidate;
     }
+
 }

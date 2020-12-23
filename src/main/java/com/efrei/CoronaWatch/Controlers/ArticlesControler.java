@@ -200,7 +200,9 @@ public class ArticlesControler {
 
     @PostMapping("/Articles/Article/AddComment")
     @Transactional(propagation = Propagation.REQUIRES_NEW, rollbackFor = Exception.class)
-        public void AddComment(@RequestParam(name = "id") long id,@RequestParam(name = "content") String content,@RequestParam(name = "idUser") long idUser){
+        public void AddComment(@RequestParam(name = "id") long id,
+                               @RequestParam(name = "content") String content,
+                               @RequestParam(name = "idUser") long idUser){
         Article article = articleRepository.findByIdArticle(id);
 
         if (article == null) {
