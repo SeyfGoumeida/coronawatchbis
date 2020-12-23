@@ -1,7 +1,5 @@
 package com.efrei.CoronaWatch.Entities;
 
-import com.efrei.CoronaWatch.Entities.Article;
-
 import javax.persistence.*;
 
 @Entity
@@ -9,14 +7,15 @@ import javax.persistence.*;
 public class Attachment {
     private long idAttachment;
     private String title;
-    private String content ;
+    private String type;
+    private byte[] data;
     private Article attachementArticle;
 
     public Attachment(){super();}
-    public Attachment(long idAttachment, String title, String content) {
-        this.idAttachment = idAttachment;
+    public Attachment(String title,String type, byte[] data) {
         this.title = title;
-        this.content = content;
+        this.type = type;
+        this.data = data;
     }
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -36,12 +35,16 @@ public class Attachment {
         this.title = title;
     }
 
-    public String getContent() {
-        return content;
+    public byte[] getData() { return data; }
+
+    public void setData(byte[] data) { this.data = data; }
+
+    public String getType() {
+        return type;
     }
 
-    public void setContent(String content) {
-        this.content = content;
+    public void setType(String type) {
+        this.type = type;
     }
 
     @ManyToOne(optional = true, targetEntity=Article.class)

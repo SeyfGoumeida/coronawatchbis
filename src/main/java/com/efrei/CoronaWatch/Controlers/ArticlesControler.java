@@ -1,14 +1,21 @@
 package com.efrei.CoronaWatch.Controlers;
 
 import com.efrei.CoronaWatch.Entities.Article;
+import com.efrei.CoronaWatch.Entities.Attachment;
 import com.efrei.CoronaWatch.Entities.Commentary;
 import com.efrei.CoronaWatch.Entities.WebUser;
+import com.efrei.CoronaWatch.Payload.Response.MessageResponse;
 import com.efrei.CoronaWatch.Repositories.ArticleRepository;
+import com.efrei.CoronaWatch.Repositories.AttachmentRepository;
 import com.efrei.CoronaWatch.Repositories.UserRepository;
+import com.efrei.CoronaWatch.Service.AttachmentStorageService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.multipart.MultipartFile;
 
 import java.util.ArrayList;
 import java.util.HashSet;
@@ -20,12 +27,17 @@ public class ArticlesControler {
 
     ArticleRepository articleRepository;
     UserRepository userRepository;
+    AttachmentStorageService attachmentStorageService;
+    AttachmentRepository attachmentRepository;
+
 
     @Autowired
-    public ArticlesControler(ArticleRepository articleRepository,UserRepository userRepository) {
+    public ArticlesControler(ArticleRepository articleRepository,UserRepository userRepository,AttachmentStorageService attachmentStorageService,AttachmentRepository attachmentRepository) {
         super();
         this.articleRepository = articleRepository;
         this.userRepository = userRepository;
+        this.attachmentStorageService = attachmentStorageService;
+        this.attachmentRepository = attachmentRepository;
     }
 
 
@@ -208,5 +220,38 @@ public class ArticlesControler {
 
     }
 
+// ATTACHMENT :
+// GET ATTACHMENT (GET)----------------------------------------------------------------------------------
+    
+// ADD ATTACHMENT (POST)---------------------------------------------------------------------------------
 
+    @PostMapping("/Articles/Article/AddAttachment")
+    @Transactional(propagation = Propagation.REQUIRES_NEW, rollbackFor = Exception.class)
+    public ResponseEntity<MessageResponse> AddAttachment(@RequestParam(name = "id") long id, @RequestParam(name = "file") MultipartFile file){
+        Article article = articleRepository.findByIdArticle(id);
+        String message = "";
+
+        if (article == null) {
+            message = "There is no article with such id: " ;
+            return ResponseEntity.status(HttpStatus.OK).body(new MessageResponse(message));
+        }else {
+            try{
+                Attachment attachment = attachmentStorageService.store(file);
+                attachment.setAttachementArticle(article);
+                article.getArticleAttachments().add(attachment);
+                attachmentRepository.save(attachment);
+                articleRepository.save(article);
+                message = "Uploaded the file successfully: " + file.getOriginalFilename();
+                return ResponseEntity.status(HttpStatus.OK).body(new MessageResponse(message));
+
+            }catch (Exception e) {
+                message = "Could not upload the file: " + file.getOriginalFilename() + "!";
+                return ResponseEntity.status(HttpStatus.EXPECTATION_FAILED).body(new MessageResponse(message));
+            }
+
+
+        }
+
+
+    }
 }
