@@ -4,23 +4,27 @@ import com.efrei.CoronaWatch.Entities.Article;
 import com.efrei.CoronaWatch.Entities.Attachment;
 import com.efrei.CoronaWatch.Entities.Commentary;
 import com.efrei.CoronaWatch.Entities.WebUser;
+import com.efrei.CoronaWatch.Payload.Response.AttachmentResponse;
 import com.efrei.CoronaWatch.Payload.Response.MessageResponse;
 import com.efrei.CoronaWatch.Repositories.ArticleRepository;
 import com.efrei.CoronaWatch.Repositories.AttachmentRepository;
 import com.efrei.CoronaWatch.Repositories.UserRepository;
 import com.efrei.CoronaWatch.Service.AttachmentStorageService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
+import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
+import java.util.stream.Collectors;
 
 @RestController
 public class ArticlesControler {
@@ -222,7 +226,42 @@ public class ArticlesControler {
 
 // ATTACHMENT :
 // GET ATTACHMENT (GET)----------------------------------------------------------------------------------
+@GetMapping("/Articles/Article/Attachments")
+public  ResponseEntity<List<AttachmentResponse>> getArticleAttachments(@RequestParam(name = "id") long id){
+    Article article = articleRepository.findByIdArticle(id);
 
+    if (article == null) {
+        System.out.println("----------------------------------");
+        System.out.println("There is no article with suck id");
+        System.out.println("----------------------------------");
+        return null;
+    }else {
+        List<AttachmentResponse> attachments = article.getArticleAttachments().stream().map(attachment -> {
+            String fileDownloadUri = ServletUriComponentsBuilder
+                    .fromCurrentContextPath()
+                    .path("/Articles/Article/Attachments/")
+                    .path(attachment.getIdAttachment()+"")
+                    .toUriString();
+            return new AttachmentResponse(
+                    attachment.getTitle(),
+                    fileDownloadUri,
+                    attachment.getType(),
+                    attachment.getData().length);
+        }).collect(Collectors.toList());
+        return ResponseEntity.status(HttpStatus.OK).body(attachments);
+    }
+
+}
+// this is for the downloading url :
+//-------------------------------------------------------------------------------------------------------
+@GetMapping("/Articles/Article/Attachments/{id}")
+public ResponseEntity<byte[]> getFile(@PathVariable long id) {
+    Attachment attachment = attachmentStorageService.getAttachment(id);
+
+    return ResponseEntity.ok()
+            .header(HttpHeaders.CONTENT_DISPOSITION, "attachment; filename=\"" + attachment.getTitle() + "\"")
+            .body(attachment.getData());
+}
 // ADD ATTACHMENT (POST)---------------------------------------------------------------------------------
 
     @PostMapping("/Articles/Article/AddAttachment")

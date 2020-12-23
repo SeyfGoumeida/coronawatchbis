@@ -84,14 +84,14 @@ com/efrei/CoronaWatch/Repositories/ArticleRepository.java
  com.efrei.CoronaWatch.Repositories.ArticleRepository
 com/efrei/CoronaWatch/Entities/Attachment.java
  com.efrei.CoronaWatch.Entities.Attachment
-com/efrei/CoronaWatch/Security/WebSecurityConfig.java
- com.efrei.CoronaWatch.Security.WebSecurityConfig
- com.efrei.CoronaWatch.Security.WebSecurityConfig$1
+com/efrei/CoronaWatch/Repositories/AttachmentRepository.java
+ com.efrei.CoronaWatch.Repositories.AttachmentRepository
 com/efrei/CoronaWatch/Payload/Response/AttachmentResponse.java
  com.efrei.CoronaWatch.Payload.Response.AttachmentResponse
 com/efrei/CoronaWatch/Service/AttachmentStorageService.java
  com.efrei.CoronaWatch.Service.AttachmentStorageService
-com/efrei/CoronaWatch/Repositories/AttachmentRepository.java
- com.efrei.CoronaWatch.Repositories.AttachmentRepository
+com/efrei/CoronaWatch/Security/WebSecurityConfig.java
+ com.efrei.CoronaWatch.Security.WebSecurityConfig
+ com.efrei.CoronaWatch.Security.WebSecurityConfig$1
 com/efrei/CoronaWatch/Controlers/ArticlesControler.java
  com.efrei.CoronaWatch.Controlers.ArticlesControler

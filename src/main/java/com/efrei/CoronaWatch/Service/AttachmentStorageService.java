@@ -26,7 +26,4 @@ public class AttachmentStorageService {
         return attachmentRepository.findByidAttachment(id);
     }
 
-   /* public Stream<FileDB> getAllFiles() {
-        return fileDBRepository.findAll().stream();
-    }*/
 }
